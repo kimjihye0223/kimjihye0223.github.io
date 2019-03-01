@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>대구광역시청</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon-16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon-32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon-57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon-72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon-114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="대구광역시 홈페이지">
+    <meta name="author" content="KIM">
+    <meta name="description" content="대구광역시 Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="대구광역시, 대구, 대구시">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR" rel="stylesheet">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <script src="./script/main.js"></script>
+    <script src="./script/mainbanner.js"></script>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .section1, .section2, .section3, .section4, .section5, .section6, section7, section8 {display: block;}
+        .hd {width: 1200px; height: 200px; top: 0; left: 0; margin: 0 auto;  color: #333;}
+        .logo {display: block; float: left; background-image: url("./img/logo.jpg"); background-repeat: no-repeat; background-position: center center; width: 105px; height: 37px; text-indent: -9999px; top: 0; left: 0; margin-top: 8px;}
+        #gnb {width: 1200px; height: 50px;}
+        #gnb ul li{background: transparent; font-size: 16px; line-height: 1.3em; padding-top: 20px; font-weight: 600; }
+        #gnb li a {color: #333;}
+        .mainmenu li {float: left; position: relative; padding-left: 15px; margin-left: 20px;}
+        .topNav {float: right; position: relative; right:50px; top: 0;}
+        .topNav li {float: left; padding: 0 10px; margin: 0;  }
+        .topNav a{font-size: 14px; font-weight: 600;}
+        .topBar { display: block; width: 1200px; height: 50px; position: relative; }
+        .topBinner {position: relative; width: 1200px; top: 30px; background: #4761a1; padding-top: 20px;}
+        .dlogo { display: block; position: relative; margin-bottom: 40px; line-height:40px;left: 50px; bottom: 35px; width: 147px; height: 25px;}
+        .search { clear: both; width: 400px; height: 45px; display: block; margin: 0 auto; border: 2px solid #4761a1; box-sizing: border-box;}
+        #searchForm {display: inline-block; font-size: 14px; float: left; padding: 12px;}
+        #searchBtn { display: inline-block; width: 26px; height: 25px; background: url("./img/icon_set_common.png"); background-position: -38px -103px;  background-repeat: no-repeat; float: right; margin: 7px 5px 5px 7px; position: absolute; right: 400px; cursor: pointer;}
+    </style>
+    <style>
+        .Wrap {width: 1200px; height: 1050px; margin: 0 auto;}
+        #snb {width: 200px; height: 100%; position: relative; top: 0px; float: left; padding: 0 35px; 30px; 100px;}
+        #snb h2 {text-align: center; padding-bottom: 20px; border-bottom: 2px solid #666; font-weight: 600;}
+        .snbMenu {margin-top: 30px; display: block; min-height: 500px; overflow-y: visible;}
+        .snbBtn { display: block; color: #333; font-size: 16px; font-weight: 300; cursor: pointer; }
+        .snbdrop { display: block; float: right; margin-top: 10px;}
+        .snbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+        .snbMenu input[type=radio] {display: none;}
+        .snbMenu input[type=radio]:checked ~ .snbBtn {font-weight: 600;}
+        .snbMenu input[type=radio]:checked ~ .snbDetail.menu1 {height: 120px; margin-top: 10px; text-indent: 10px; background: #f0f3fd; padding: 10px 0 10px 0; }
+        .snbMenu input[type=radio]:checked ~ .snbDetail.menu2 {height: 100px; margin-top: 10px; text-indent: 10px; background: #f0f3fd; padding: 10px 0 10px 0; }
+        .snbMenu input[type=radio]:checked ~ .snbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #f0f3fd; padding: 10px 0 10px 0; }
+        .snbMenu input[type=radio]:checked ~ .snbDetail.menu4 {height: 80px; margin-top: 10px; text-indent: 10px; background: #f0f3fd; padding: 10px 0 10px 0; }
+        .snbMenu input[type=radio]:checked ~ .snbDetail.menu5 {height: 100px; margin-top: 10px; text-indent: 10px; background: #f0f3fd; padding: 10px 0 10px 0; }
+        .snbDetail {margin-bottom: 20px;}
+        .snbDetail li a{ color: #333; font-size: 14px;}
+        .snbDetail li:hover a{color: #4761a1;}
+    </style>
+    <style>
+        .contents { width: 900px;display: block; float: right; position: relative; }
+        .topCon {margin-bottom: 50px;}
+        .topTit {text-align: center; margin-top: 30px; color: #333; }
+        .topTit h2 {font-size: 32px; font-weight: 400;}
+        .topTit .bread {margin-top: 10px;}
+        .topTit .bread span { background: url("./img/link.png") no-repeat; display: inline-block; width: 5px; height: 9px; text-indent: -9999px; vertical-align: middle; margin: 0 10px; }
+        .print { display: block; float: right; background: url("./img/icon_set_common.png") no-repeat; width: 30px; height: 30px; background-position: -0px -200px; border: 1px solid #999; padding: 5px 5px 2px 2px; text-indent: -9999px; margin-top:-50px; margin-right: 30px;
+        }
+        .colrow {margin: 0px 20px; }
+        .colBox {height: 200px; width: 205px;  float: left; border: 1px solid #ddd;  padding: 25px; margin: 0 25px 25px 0;}
+        .colTit {font-weight: 500; margin-bottom: 10px; font-size: 18px;}
+        .colBox li a {display: block; font-size: 14px; line-height: 24px; color: #333;}
+        .colBox span { background: url("./img/link.png") no-repeat; display: inline-block; width: 5px; height: 9px; text-indent: -9999px; vertical-align: middle; margin: 0 10px; }
+        .colBox.item1 {background: url("./img/intro1.png"); background-repeat: no-repeat; background-size: 260px 192px; background-position: center bottom; }
+        .colBox.item2 {background: url("./img/intro2.png"); background-repeat: no-repeat; background-size: 271px 169px; background-position: center bottom; }
+        .colBox.item3 {background: url("./img/intro3.png"); background-repeat: no-repeat; background-size: 80px 180px; background-position: right bottom; }
+        .daeguBox {width: 630px; height: 250px; text-align: center; margin: 0 auto; display: block; clear: both; margin-bottom: 50px;}
+        .colBox .subLink {display: block; line-height: 24px; color: #333;}
+        .colBox .subLink .colCom {font-size: 14px;}
+        .colBox.item4 {background: url("./img/intro4.jpg"); background-repeat: no-repeat; background-size: 250px 130px; background-position: right bottom; cursor: pointer;}
+        .colBox.item5 {background: url("./img/intro5.jpg"); background-repeat: no-repeat; background-size: 271px 294px; background-position: center bottom; cursor: pointer;}
+        .colBox.item6 {background: url("./img/intro6.jpg"); background-repeat: no-repeat; background-size: 271px 294px; background-position: center bottom; cursor: pointer;}
+    </style>
+    <style>
+        .ft {width: 1200px; height: 148px; margin: 0 auto; display: block; border-top: 1px solid #eee;}
+        .ftTop {width: 1200px; height: auto; position: relative; margin: 0 auto; padding-bottom: 25px; border-bottom: 2px solid #eee; float: left;}
+        .ftTop .ftsitemap {padding: 15px;}
+        .ftTop .ftsitemap li{float: left;  }
+        .ftTop .ftsitemap li a {color: #666; font-size: 12px; font-weight: 300; padding-right: 17px;}
+        .ftTop .ftsitemap li a:after {content: "|"; position: absolute; top: 24%; width: 1px; height: 14px; margin-left: 6px; color: #999;}
+        .ftsns {display: block; float: right;}
+        .ftsns li {background: url("./img/icon_mayor_sns.png") no-repeat; width: 24px; height: 24px; float: left; margin-right: 5px; cursor: pointer;}
+        .ftsns .bl {background-position: 0px 0px;}
+        .ftsns .tw {background-position: -26px 0px;}
+        .ftsns .fb {background-position: -52px 0px;}
+        .ftsns .yt {background-position: -78px 0px;}
+        .ftsns .ig {background-position: -104px 0px;}
+        .ftsns .kp {background-position: -130px 0px;}  
+        .ftBottom {width: 1200px; height: 52px;margin: 0 auto; position: relative; display: block; padding: 10px; float: left;} 
+        .ftBottom a { display: block; width: 160px; height: 38px; background-image: url("./img/logo.png"); background-repeat: no-repeat; text-indent: -9999px; float: left;}
+        .copy {display: block; position: relative; left: 20px; color: #666; font-size: 12px; font-weight: 100; line-height: 20px; top:5px;}
+        
+    </style>
+</head>
+<body>
+    <header class="hd">
+        <nav id="gnb">
+            <a href="./index.html" class="logo">로고</a>
+            <ul class="mainmenu">
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="index.html#page2">나의대구</a></li>
+                <li><a href="index.html#page3">전자우편</a></li>
+                <li><a href="sub.html">대구소개</a></li>
+                <li><a href="sub1.html">시민참여</a></li>
+                <li><a href="sub2.html">부서안내</a></li>
+                <li><a href="sub3.html">청사안내</a></li>
+            </ul>
+            <ul class="topNav">
+                <li><a href="index.html#news">대구소식</a></li>
+                <li><a href="index.html#qna">두드리소</a></li>
+                <li><a href="index.html#info">정보공개</a></li>
+                <li><a href="index.html#infodt">분야정보</a></li>
+            </ul>
+        </nav>
+        <div class="topBar">
+            <div class="topBinner">
+            <div class="search">
+                <input type="text" id="searchForm" name="searchForm" placeholder="검색어를 입력하세요." size="50" maxlength="99" required>
+                <button id="searchBtn" type="button"></button>
+            </div>
+            <div class="dlogo"><img src="./img/idaeguw.png" alt=""></div>
+            </div>
+        </div>
+    </header>
+    <div class="Wrap">
+        <nav id="snb">
+            <h2>대구소개</h2>
+            <ul class="snbMenu">
+                <li class="snbtitm1">
+                   <input type="radio" name="snbdt" id="snbdt1">
+                   <label for="snbdt1" class="snbBtn">시청안내<img src="./img/snbdrop.png" alt="" class="snbdrop"></label>
+                    <ul class="snbDetail menu1">
+                        <li><a href="">시청사안내</a></li>
+                        <li><a href="">행정조직도</a></li>
+                        <li><a href="">직원검색</a></li>
+                        <li><a href="">전화번호안내</a></li>
+                        <li><a href="">찾아오시는길</a></li>
+                    </ul>
+                </li>
+                <li class="snbtitm2">
+                  <input type="radio" name="snbdt" id="snbdt2">
+                   <label for="snbdt2" class="snbBtn">대구의 상징<img src="./img/snbdrop.png" alt="" class="snbdrop"></label>
+                    <ul class="snbDetail menu2">
+                        <li><a href="">심벌·로고</a></li>
+                        <li><a href="">시조·시목·시화</a></li>
+                        <li><a href="">대구시민의 노래</a></li>
+                        <li><a href="">수달이모티콘</a></li>
+                    </ul>
+                </li>
+                <li class="snbtitm3">
+                  <input type="radio" name="snbdt" id="snbdt3">
+                   <label for="snbdt3" class="snbBtn">대구의 연혁<img src="./img/snbdrop.png" alt="" class="snbdrop"></label>
+                    <ul class="snbDetail menu3">
+                        <li><a href="">역사</a></li>
+                        <li><a href="">연표</a></li>
+                        <li><a href="">지명유래</a></li>
+                        <li><a href="">대구시사</a></li>
+                        <li><a href="">대구자료총서</a></li>
+                    </ul>
+                </li>
+                <li class="snbtitm4">
+                  <input type="radio" name="snbdt" id="snbdt4">
+                   <label for="snbdt4" class="snbBtn">대구의 현황<img src="./img/snbdrop.png" alt="" class="snbdrop"></label>
+                    <ul class="snbDetail menu4">
+                        <li><a href="">행정구역</a></li>
+                        <li><a href="">시정현황</a></li>
+                        <li><a href="">대구 지도포털</a></li>
+                    </ul>
+                </li>
+                <li class="snbtitm5">
+                  <input type="radio" name="snbdt" id="snbdt5">
+                   <label for="snbdt5" class="snbBtn">스토리인대구<img src="./img/snbdrop.png" alt="" class="snbdrop"></label>
+                    <ul class="snbDetail menu5">
+                        <li><a href="">대구스토리텔링</a></li>
+                        <li><a href="">대구인포그래픽</a></li>
+                        <li><a href="">도시브랜드웹툰</a></li>
+                        <li><a href="">도시브랜드동영상</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="contents">
+            <div class="topCon">
+               <div class="topTit">
+                <h2>대구소개</h2>
+                <p class="bread">HOME <span>></span>대구소개</p>
+                </div>
+                <div class="print">
+                    <a href="">print</a>
+                </div>
+            </div>
+            <div class="colrow">
+            <div class="colBox item1">
+                <h3 class="colTit">본청안내</h3>
+                <ul>
+                    <li><a href="">본청 조직안내<span>></span></a></li>
+                    <li><a href="">찾아오시는 길<span>></span></a></li>
+                </ul>
+            </div>
+            <div class="colBox item2">
+                <h3 class="colTit">상징</h3>
+                <ul>
+                    <li><a href="">심벌·로고<span>></span></a></li>
+                    <li><a href="">시조·시목·시화<span>></span></a></li>
+                </ul>
+            </div>
+            <div class="colBox item3">
+                <h3 class="colTit">스토리인대구</h3>
+                <ul>
+                    <li><a href="">대구스토리텔링<span>></span></a></li>
+                    <li><a href="">대구인포그래픽<span>></span></a></li>
+                    <li><a href="">도시브랜드웹툰<span>></span></a></li>
+                    <li><a href="">도시브랜드동영상<span>></span></a></li>
+                </ul>
+            </div>
+            </div>
+            <div class="daeguBox">
+                <img src="./img/daeguimg.png" alt="">
+            </div>
+            <div class="colrow">
+            <div class="colBox item4">
+                <a href="" class="subLink">
+                <h3 class="colTit">열린시장실</h3>
+                <p class="colCom">시민과 소통하는</p>
+                </a>
+            </div>
+            <div class="colBox item5">
+                <a href="" class="subLink">
+                <h3 class="colTit">역대대구시장</h3>
+                </a>
+            </div>
+            <div class="colBox item6">
+                <a href="" class="subLink"><h3 class="colTit">대구의 역사</h3>
+                <p class="colCom">살아숨쉬는<br>대구의 역사가 펼쳐집니다.</p>
+                </a>
+            </div>
+            </div>
+        </div>
+    </div>
+   <footer class="ft">
+        <div class="ftTop">
+            <ul class="ftsitemap">
+                <li><a href="">홈페이지 도우미</a></li>
+                <li><a href="">개인정보처리방침</a></li>
+                <li><a href="">저작권 정책</a></li>
+                <li><a href="">영상정보처리기기 운영 관리방침</a></li>
+                <li><a href="">홈페이지 바로잡기</a></li>
+                <li><a href="">사이트맵</a></li>
+            </ul>
+            <div class="ftsns">
+               <ul>
+                    <li class="bl">
+                       <a href="#">
+                       </a>
+                    </li>
+                    <li class="tw"><a href="#"></a>
+                    </li>
+                    <li class="fb"><a href="#"></a>
+                    </li>
+                    <li class="yt"><a href="#"></a>
+                    </li>
+                    <li class="ig"><a href="#"></a>
+                    </li>
+                    <li class="kp"><a href="#"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="ftBottom">
+            <a href="" class="ftLogo">logo</a>
+            <p class="copy">(41911) 대구광역시 중구 공평로 88 | 별관: 대구광역시 북구 연암로 40 | 전화번호 : 053)120, 053)803-0114 <br>© Daegu Metropolitan City all rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
