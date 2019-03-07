@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lee Je Hoon</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="이제훈">
+    <meta name="author" content="KIM">
+    <meta name="description" content="Lee Je Hoon Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="이제훈, Lee Je Hoon, 사람엔터테인먼트">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./script/main.js"></script>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script>
+    $(document).ready(function(){
+        var wd = parseInt($(".vsBox").width());
+        var len = $(".vsFrm li").length;
+        var sw1 = true;
+        var sw2 = true;
+        function nextAni(){
+            $(".vsFrm").not(":animated").animate({"opacity":"1"}, 900, function(){
+                $(".vsFrm li").removeClass("on");
+                $(".vsFrm li").eq(0).appendTo($(".vsFrm"));
+                $(".vsFrm li").eq(0).addClass("on");
+            });
+        }
+        function prevAni(){
+            $(".vsFrm li").removeClass("on");
+            $(".vsFrm").not(":animated").animate({"opacity":"1"}, 400, function(){
+                $(".vsFrm li").eq(len-1).prependTo($(".vsFrm"));
+                $(".vsFrm li").eq(0).addClass("on");
+            });
+        }
+        var intv = setInterval(function(){
+            nextAni();
+        }, 3500); 
+        $(".next").click(function(){
+            clearInterval(intv);
+            nextAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".prev").click(function(){
+            clearInterval(intv);
+            prevAni();
+            intv = setInterval(function(){ nextAni(); }, 3500); 
+        });
+        $(".pause").click(function(){
+            if(sw1==true){
+                clearInterval(intv);
+                $(this).find("i").removeClass("fa-pause").addClass("fa-play");
+            } else {
+                intv = setInterval(function(){ nextAni(); }, 3500);
+                $(this).find("i").removeClass("fa-play").addClass("fa-pause");
+            }
+            sw1=!sw1;
+        });
+        $(".zoom").click(function(){
+           if(sw2==true){
+               $(".hd").fadeOut();
+               $(".ft").fadeOut();
+               $(this).find("i").removeClass("fa-expand").addClass("fa-compress");
+           } else {
+               $(".hd").fadeIn();
+               $(".ft").fadeIn();
+               $(this).find("i").removeClass("fa-compress").addClass("fa-expand");
+           }
+           sw2=!sw2;
+        });
+        function lighter1(){
+            $(".lighter").animate({"margin-left":"200px"}, 2500);
+        }
+        function lighter2(){
+            $(".lighter").animate({"margin-left" : "-180px"}, 20);
+        }
+        
+        var intv2 = setInterval(function(){
+            lighter1();
+            lighter2();
+        }, 3500);
+    });    
+    </script>
+    <style>
+  
+        .hd {position: fixed; width: 100%; height: 10%; background-color: rgba(0,0,0,0.3); display: block; z-index: 99; line-height: 90px; }
+        .hd .logo { display: block; background: url("./img/logo.png") no-repeat; background-position: center center; background-size: cover; width: 40%; height: 60%; content: ''; float: left;  margin-top: 15px; margin-left: 20px;}
+        .menuOpen {position: absolute; width: 20%; height: 80%; float: right; background-color: transparent; display: block; cursor: pointer;  z-index: 99; top: -10%; right: 0;}
+        .menuOpen .open {display: inline-block; width: 40%; height: 6%; text-align: center; background: #fff; border-radius: 60px; margin-left: 15%; top: -15%; }
+        .menuOpen .open::before {content: ""; display: block; width: 40%; height: 6%; text-align: center; background: #fff; position: absolute; top: 55%; border-radius: 60px;}
+        .menuOpen .open::after {content: ""; display: block; width: 40%; height: 6%; text-align: center; background: #fff; position: absolute; top: 75%; border-radius: 60px;}
+        #gnb {width: 90%; height: 100%; right: -100%; z-index: 900; position: fixed; transition: 0.6s;}
+        .menuBox {width: 100%; height: 100%; right: 0; background-color: rgba(0,0,0,.9); position: relative; display: block;}
+        .menuBox .menuTop {  position: relative; width: 100%; height: 10%; background-color: rgba(0,0,0,0.6); border-bottom: 1px solid #222;  line-height: 65px;}
+        
+        .ckBox {display: none;}
+        #menuBtn:checked ~ #gnb {right: 0;}
+        .menuClose {display: block; color: #fff; font-size: 2em; padding-left: 7%; float: left; margin-right: 220px;}
+        .menuTop .login {display: block; float: right; }
+        .menuTop a i {color: #fff; font-size: 1.6em;}
+        .menuList li{height: 10%; line-height: 60px; margin-left: 10%; border-bottom: 0.5px solid #222; width: 80%;}
+        .menuList li a {color: #fff; font-weight: 300; font-size: 1em; }
+    
+    </style>
+    <style>
+        .contents {width: 100%; height: 100%; display: block; background: #000;}
+        .vsBox {width: 100%; height: 100%; position: relative; overflow: hidden;}
+        .vsFrm {width: 100%; height: 100%; }
+        .vsFrm li {width: 0; height: 0; margin: 0 auto; background-size: 200% auto; background-position: center center; background-repeat: no-repeat; transition: 1s; transition-property: width, opacity, fade-out;  transition-delay: 0s, 0.3s, 0.7s; opacity: 0; }
+        .vsFrm li.on {opacity: 1; background-size: cover; width: 100%; height: 100%;}
+        .vsFrm .item1 {background-image: url("./img/item1.jpg");}
+        .vsFrm .item2 {background-image: url("./img/item2.jpg");}
+        .vsFrm .item3 {background-image: url("./img/item3.jpg");}
+        .vsFrm .item4 {background-image: url("./img/item4.jpg");}
+        .vsFrm .item5 {background-image: url("./img/item5.jpg");}
+        .vsFrm .item6 {background-image: url("./img/item6.jpg");}
+        .vsFrm .item7 {background-image: url("./img/item7.jpg");}
+        .vsFrm .item8 {background-image: url("./img/item8.jpg");}
+        .vsFrm .item9 {background-image: url("./img/item9.jpg");}
+        .vsFrm .item10 {background-image: url("./img/item10.jpg");}
+        
+        .btnBox {position: absolute; display: block; z-index: 9; top: 35%; right: 7%;}
+        .btnBox button {width: 50px; height: 50px; display: block; background:rgba(0,0,0,.4); font-size: 0.9em; text-align: center; color: #fff;}
+        .light {clear: both; position: fixed; top: 90%; left: 5%; bottom: 100px; z-index: 998; overflow: hidden;}
+        .lighter {display: block; width: 120px; height: 10px; background: url("./img/lighter.png") no-repeat; background-size: 450px 4px; content: ""; z-index: 999; position: fixed;}
+        .ft { position: fixed; width: 100%; height: 8%; display: block; z-index: 100; bottom: 0; text-align: center; background-color: rgba(0,0,0,.4); line-height: 60px;}
+        .copy {color: #fff; font-weight: 300; font-size: 0.8em;}
+</style>
+</head>
+<body>
+    <header class="hd">
+        <a href="" class="logo"></a>
+        <input type="checkbox" id="menuBtn" class="ckBox">
+        <label for="menuBtn" class="menuOpen">
+        <span class="open"></span>
+        </label>
+        <nav id="gnb">
+           <div class="menuBox">
+            <div class="menuTop">
+                <label for="menuBtn" class="menuClose">
+                <span class="close"><i class="fas fa-times"></i>
+                </span></label>
+                <a href="login"><i class="fas fa-user"></i></a>
+            </div>
+            <ul class="menuList">
+                <li class="menu1">
+                    <a href="">INTRO</a>
+                </li>
+                <li class="menu2">
+                    <a href="">GALLERY</a>
+                </li>
+                <li class="menu3">
+                    <a href="">COMMUNITY</a>
+                </li>
+                <li class="menu4">
+                    <a href="">GOODS</a>
+                </li>
+                <li class="menu5">
+                    <a href="">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </header>
+    <div class="contents">
+        <div class="vsBox">
+            <ul class="vsFrm" style="opacity: 1;">
+                <li class="item1 on"></li>
+                <li class="item2"></li>
+                <li class="item3"></li>
+                <li class="item4"></li>
+                <li class="item5"></li>
+                <li class="item6"></li>
+                <li class="item7"></li>
+                <li class="item8"></li>
+                <li class="item9"></li>
+                <li class="item10"></li>
+            </ul>
+        </div>
+        <ul class="btnBox">
+            <li class="btn1">
+                <button class="zoom"><i class="fas fa-expand"></i></button>
+            </li>
+            <li class="btn2">
+                <button class="prev"><i class="fas fa-chevron-left"></i></button>
+            </li>
+            <li class="btn3">
+                <button class="next"><i class="fas fa-chevron-right"></i></button>
+            </li>
+            <li class="btn4">
+                <button class="pause"><i class="fas fa-pause"></i></button>
+            </li>
+        </ul>
+    </div>
+    <footer class="ft">
+        <p class="copy">COPYRIGHT ⓒ 2019 KIM</p>
+    </footer>
+    <div class="light">
+    <span class="lighter"></span></div>
+</body>
+</html>
