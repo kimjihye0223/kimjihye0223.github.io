@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>아웃백스테이크하우스</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="아웃백 스테이크 하우스">
+    <meta name="author" content="KIM">
+    <meta name="description" content="아웃백 Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="아웃백, 아웃백스테이크하우스, OUTBACK, OutBack">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Sans+KR" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="./script/main.js"></script>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<style>
+    #wrap {width: 100%; height: 100%; }
+    .hd {width: 100%; height: 10%; display: block; position: relative; background-color: transparent;}
+    #gnb {width: 100%; height: 100%; transition: 1s; left: -100%; position: fixed; z-index: 9900;}
+    .logo { position: relative; display: block; text-align: center; top: 30%; left: 0%;  width: 70%; height: 100%; float: left; z-index: 99;}
+    .menuBox {clear: both; display: block; width: 90%; height: 100%; background: #fff; z-index: 999; position: fixed;  }
+    .menuTop {width: 100%; height: 10%; position: relative; background: #000; }
+    .menuTop .close {content: ""; background: url("./img/close.png") no-repeat; background-position: center center; display: block; text-indent:9999px; position: relative; width: 10%; height: 100%; left: 5%; float: left; }
+    .menuTop a {position: relative; float: left; right: -30%; margin-left: 7%; margin-top: 6%; color: #fff; font-weight: 100; font-size: 0.9em; background-repeat: no-repeat; background-position: center center; background-size: 70%; width: 36px; height: 36px; text-indent: 9999px;}
+    .menuTop .globe {background-image: url("./img/globe.png"); }
+    .menuTop .search {background-image: url("./img/search.png");}
+    .menuTop .login {background-image: url("./img/login.png");}
+    .menuDt { line-height: 3.4em; border-bottom: 1px solid #eee; margin-left: 5%;}
+    .menuDt a {color: #222; font-weight: 600; font-size: 1.1em; }
+    .menuDt .arrow { content: ""; background: url("./img/arrow1.png") no-repeat; background-position: center center; position: absolute; width: 24px; height: 24px; display: block; text-indent: 9999px; margin-top: -12%; right: 5%;}
+    .menuOpen {position: relative; width: 20%; height: 100%; float: left; background-color: transparent; display: block; cursor: pointer;  z-index: 99;}
+    .menuOpen .open {display: inline-block; width: 50%; height: 6%; text-align: center; background: #fff; border-radius: 60px; margin-left: 15%; top: 10%;}
+    .menuOpen .open::before {content: ""; display: block; width: 50%; height: 6%; text-align: center; background: #fff; position: absolute; top: 45%; border-radius: 60px;}
+    .menuOpen .open::after {content: ""; display: block; width: 50%; height: 6%; text-align: center; background: #fff; position: absolute; bottom: 22%; border-radius: 60px;}
+    .ckBox {display: none;}
+    #menuBtn:checked ~ #gnb {left: 0;}
+    #menuBtn:checked ~ #gnb li a i.fas {display: block;}
+    #gnb li a i.fas {display: block; float: right; margin-top: 10px; margin-right: 43px; display: none;}
+    .subMenu {display: none;}    
+</style>
+<style>
+    .contents {position: relative; width: 100%; height: 100%; top: -70px; z-index: 1;}
+    .vsFrm {position: relative; width: 100%; height: 100%;}
+    .slideBox {position: relative; width: 100%; height: 100%; z-index: 99; }
+    .slideBox .slideFrm {width: 400%; height: 100%; display: block; overflow: hidden;}
+    .slideBox .item1 {background-image: url("./img/slide01.jpg");}
+    .slideBox .item2 {background-image: url("./img/slide02.jpg");}
+    .slideBox .item3 {background-image: url("./img/slide03.jpg");}
+    .slideBox .item4 {background-image: url("./img/slide04.jpg");}
+    .slideBox .slide {float: left; width: 25%; height: 100%; background-repeat: no-repeat; background-position: center center; background-size: cover; transition: 0.6s;} 
+    .btFrm {position: absolute; bottom: 50px; left: 0; width: 100%; margin-top: 20px; text-align: center; }
+    .btFrm li {position: relative; width: 15px; height: 15px; margin: 0 10px; display: inline-block; border-radius: 100%; background: #fff; opacity: 0.5;}
+    .btFrm .on {position: relative; width: 15px; height: 15px; margin: 0 10px; display: inline-block; border-radius: 100%; background: #fff; opacity: 1; }    
+</style>
+<style>
+    .section1 {position: relative; margin-top: 20px; width: 100%; height: 80%;}
+    .videoWrap img {display: block; position: relative; overflow: hidden; margin: 0 auto;}
+    .videoWrap a { width: 100%; height: 100%; display: block; background: url(./img/play-btn.png) center center no-repeat; background-size: 104px 104px; z-index: 999; position: relative;}
+</style>
+<style>
+    .section2 {position: relative; display: block; height:310px; padding:35px 0px; color:#fff; background-image:url('./img/member.jpg'); background-size: 100% auto; text-align:center; overflow:hidden; box-sizing:border-box;}
+    .section2 .member h3 {font-size:2em; line-height:1.3em;}
+    .section2 .member .info {margin:10px 0 20px 0; font-size:0.8em; color: #fff;}
+    .section2 .member ul li {float:left; width:33%; padding:0 10px; box-sizing:border-box;}
+    .section2 .member ul li span {display:inline-block; width:100%; text-align:center;}
+    .section2 .member ul li .icon img {height:27px;}
+    .section2 .member ul li .icoTit {margin:15px 0 5px 0; color: #fff;}
+    .section2 .member ul li .icoTxt {max-width:150px; margin:0 auto; font-size:0.8em; color: #fff;}    
+</style>
+<style>
+    .section3 {position: relative; display: block; width: 100%; height: 400%; margin-top: 20px; padding-bottom: 50%}
+    .foodlist {position: relative; display: block; width: 100%; height: 100%;}
+    .listDt {width: 100%; height: 10%; margin: 0 auto; display: block; position: relative; text-align: center; margin-bottom: 5%}
+    .listDt img {width: 70%; height: 70%;}
+    .listCom { position: relative;  clear: both; width: 69.5%; top: -1.6%; border: 1px solid #eee; text-align: center; margin: 0 auto; line-height: 2em; padding-top: 3%; padding-bottom: 3%}
+</style>
+<style>
+    .section4 {position: relative; display: block; clear: both; width: 100%; height: 20%; margin-top: 20%}
+    .customer li {float:left; width:50%;}
+    .customer li a {position:relative; display:block; color:#fff;   box-sizing: border-box; height:79px; margin-left:10px; line-height:12px;  padding:15px 20px 0; font-size:0.8em;}
+    .customer span {display:block;}
+    .customer span.title {margin-top:-5px; line-height:1.286rem;}
+    .customer span.txt {margin-top:-22px; font-size:0.8em; margin-top: 5px;}
+    .customer {position:relative; top:0; height:150px; margin:0 0 0 -10px; padding:30px 15px; background-color:#fff; box-sizing:border-box;}
+    .customer .voucher a {background:#333;}
+    .customer .reserve a {background:#333;}
+    .customer .voucher .icon {top:50%;right:3px;margin-top:-22px; float: right;}
+    .customer .reserve .icon {top:50%;right:3px;margin-top:-12px; float: right;}
+    .customer .voucher .icon img{width:43px; }
+    .customer .reserve .icon img{width:34px;}
+
+</style>
+<style>
+    .ft {position: relative; display: block; clear: both; background: #000; text-align:center; color: #fff; padding:25px 15px 25px;}
+    .ftTop a {font-size: 0.8em; color: #fff;}
+    .ftTop a:after { margin-left: 15px; border-right: 1px solid #999; text-align:center;}
+    .ftTop a:first-child {margin-left:0;}
+    .ft address {margin-top:20px; font-size:0.8em; opacity: 0.6;}
+    .ft .copy {margin-top:2px; font-size:0.7em;}
+    .ft .tel {margin:20px -15px 0 -15px; padding-top:20px;  border-top:1px solid #4b4b4b}
+    .ft .tel span {display:block; color:#fff;}
+    .ft .number {font-size:0.9rem; line-height:1;}
+    .ft .number strong {margin-left:10px; font-weight:500;}
+    .ft .time {padding:13px 0; font-size:0.8em; line-height:1.1em; opacity: 0.6; }
+    .ft .owner {font-size:0.9em; line-height:1; }
+    .ft .owner strong {margin-left:8px; font-weight:500;}
+</style>
+ <script>
+    $(document).ready(function(){
+       var lsw = [ true, true, true, true ];
+       console.log(lsw[0], lsw[1], lsw[2], lsw[3]);
+       var idx;    
+       $(".menuDt i.fas").click(function(){
+           idx = $(this).parents("li.menuDt").index();
+           console.log(idx);
+           if(lsw[idx]==true){
+               $(this).removeClass("fa-plus").addClass("fa-minus");
+               $(this).parents(".menuDt").find(".subMenu").slideDown();
+           } else {
+               $(this).removeClass("fa-minus").addClass("fa-plus");
+               $(this).parents(".menuDt").find(".subMenu").slideUp();
+           }
+           lsw[idx]=!lsw[idx];
+       }); 
+    });    
+    </script>
+<body>
+<div id="wrap">
+    <header class="hd">
+        <input type="checkbox" id="menuBtn" class="ckBox">
+        <label for="menuBtn" class="menuOpen">
+        <span class="open"></span></label>
+        <a href="" class="logo">
+            <img src="./img/logo_white.png" alt="">
+        </a>
+        <nav id="gnb">
+                <div class="menuTop">
+                    <label for="menuBtn" class="menuClose">
+                    <span class="close">
+                    </span></label>
+                    <a href="" class="globe">r</a>
+                    <a href="" class="search">r</a>
+                    <a href="" class="login">r</a>
+                </div>
+            <ul class="menuBox">
+                <li class="menuDt">
+                    <a href="">BRAND<i class="fas fa-plus"></i></a>
+                    <ul class="subMenu">
+                        <li class="subDt">
+                            <a href="">OUTBACK STORY</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">BEEF STORY</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">OUTBACK CSR</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">PRESS CENTER</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuDt">
+                    <a href="">MENU<i class="fas fa-plus"></i></a>
+                    <ul class="subMenu">
+                        <li class="subDt">
+                            <a href="">TOMAHAWK STEAK</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">BLACK LABEL STEAKS</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">SIGNATURE STEAKS</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">FAVORITES</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">LUNCH SET</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">PASTAS &amp; SALADS</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">DESSERTS &amp; OTHERS</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">KIDS MENU</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">LUNCH BOX</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuDt">
+                    <a href="">MEMBERSHIP<i class="fas fa-plus"></i></a>
+                    <ul class="subMenu">
+                        <li class="subDt">
+                            <a href="">MEMBERSHIP BENEFIT</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">BOOMERANG VIP</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuDt">
+                    <a href="">BENEFIT<i class="fas fa-plus"></i></a>
+                    <ul class="subMenu">
+                        <li class="subDt">
+                            <a href="">CREDIT CARDS</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">SKT&amp;KT</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">POINT PAYMENT</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">VOUCHER</a>
+                        </li>
+                        <li class="subDt">
+                            <a href="">EVENT</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menuDt">
+                    <a href="">STORE</a>
+                </li>
+                <li class="menuDt">
+                    <a href="">아웃백 APP</a>
+                </li>
+                <li class="menuDt">
+                    <a href="">아웃백 페이스북</a>
+                </li>
+                <li class="menuDt">
+                    <a href="">공지사항</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="contents">
+        <figure class="vsFrm">
+      <div class="slideBox">
+          <ul class="slideFrm">
+              <li class="slide item1 on">
+                  <a href=""></a>
+              </li>
+              <li class="slide item2">
+                  <a href=""></a>
+              </li>
+              <li class="slide item3">
+                  <a href=""></a>
+              </li>
+              <li class="slide item4">
+                  <a href=""></a>
+              </li>
+          </ul>
+          <ul class="btFrm">
+              <li class="btn1 on">
+                  <a href=""></a>
+              </li>
+              <li class="btn2">
+                  <a href=""></a>
+              </li>
+              <li class="btn3">
+                  <a href=""></a>
+              </li>
+              <li class="btn4">
+                  <a href=""></a>
+              </li>
+          </ul>
+      </div>
+     </figure>
+        <div class="section1">
+         <div class="videoWrap">
+             <a href="./video/2018%20%EC%95%84%EC%9B%83%EB%B0%B1%20x%20Just%20Jerk%20%EB%8C%84%EC%8A%A4%20%ED%92%80%EB%B2%84%EC%A0%84%20CF.mp4" class="video"><img src="./img/reserved.jpg" alt="" ></a>
+         </div>
+     </div>
+        <div class="section2">
+             <div class="member">
+             <h3>OUTBACK BENEFIT</h3>
+                 <p class="info">다양한 멤버십과 제휴 할인 혜택을 누리세요</p>
+			 <ul>
+			    <li>
+					<a href="">
+				    <span class="icon"><img src="./img/icon_01.png" alt=""/></span>
+					<span class="icoTit">MEMBERSHIP</span>
+					<span class="icoTxt">부메랑클럽 가입하고 멤버십혜택 풍성하게 즐겨보세요</span>	
+					</a>
+				</li>
+				<li>
+					<a href="">
+				    <span class="icon"><img src="./img/icon_02.png" alt=""/></span>
+					<span class="icoTit">DISCOUNT</span>
+					<span class="icoTxt">아웃백 제휴 할인 혜택의 기회를 놓치지 마세요</span>	
+					</a>
+				</li>
+				<li>
+					<a href="">
+				    <span class="icon"><img src="./img/icon_03.png" alt=""/></span>
+					<span class="icoTit">GIFT CARD</span>
+					<span class="icoTxt">소중한 사람에게 감사한 마음을 선물하세요</span>
+					</a>
+				</li>
+            </ul>
+         </div>
+        </div> 
+        <div class="section3">
+            <div class="foodlist">	
+				<div class="listDt">
+					<img src="./img/menu1.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">블랙 라벨 램 세트</h3><p>BLACK LABEL CHEF EDITION<br>			
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu2.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">블랙 라벨 랍스터 세트</h3><p>BLACK LABEL CHEF EDITION<br>			
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu3.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">갈릭 립아이</h3><p>GARLIC RIBEYE<br>
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu4.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">베이비 백 립</h3><p>BABY BACK RIBS<br>
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu5.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">기브미 파이브</h3><p>GIMME FIVE<br>
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu6.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">투움바 안심 파스타</h3><p>TOOWOOMBA FILET PASTA<br>		
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu7.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">토마토 치오피노 파스타</h3><p>TOMATO CIOPPINO PASTA<br>			
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu8.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">캘리포니아 스테이크 샐러드</h3><p>CALIFORNIA STEAK SALAD<br>			
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu9.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">서로인 스테이크 라이스</h3><p>SIRLOIN STEAK RICE<br>			
+                             </div>			
+                </div>
+                <div class="listDt">
+					<img src="./img/menu10.jpg">						
+							<div class="listCom">	
+									<h3 class="listTit">카카두 김치 그릴러</h3><p>KAKADU KIMCHI GRILLER<br>			
+                             </div>			
+                </div>
+			 </div>				
+        </div>
+        <div class="section4">
+            <ul class="customer">
+			<li class="voucher">
+				<a href="">
+					<span class="title">VOUCHER</span>
+					<span class="txt">기프트 카드 &amp; <br>상품권</span>
+					<span class="icon"><img src="./img/customer1.png" alt=""></span>
+				</a>
+			</li>
+			<li class="reserve">
+				<a href="">
+					<span class="title">RESERVE</span>
+					<span class="txt">예약하기</span>
+					<span class="icon"><img src="./img/customer2.png" alt=""></span>
+				</a>
+			</li>
+		</ul>
+
+        </div> 
+    </div>
+</div>
+ <footer class="ft">
+        <div class="ftTop">
+				<p>
+					<a href="">개인정보 처리방침</a>				
+					<a href="">홈페이지 이용약관</a>
+					<a href="">위치정보 이용약관</a>
+				</p>
+				<p>
+					<a href="">공지사항</a>
+					<a href="">윤리경영</a>
+				</p>
+			</div>
+			<address>사업자등록번호 : 211-86-42619</address>
+			<p class="copy">ⓒ 2018 OUTBACK STEAKHOUSE, All Rights Rerserved.</p>			
+			<p class="tel">
+				<span class="number">홈페이지 관련문의<strong>070-7096-0416</strong></span>
+				<span class="time">상담시간 : 월~금 10:00 ~ 17:00<br>(토/일, 공휴일 휴무, 점심시간 12:00 ~ 13:30)</span>
+				<span class="owner">대표번호<strong>1577-0500</strong></span>
+			</p>
+</footer>    
+</body>
+</html>
