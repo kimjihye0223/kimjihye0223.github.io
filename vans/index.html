@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VANS</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="VANS 홈페이지">
+    <meta name="author" content="KIM">
+    <meta name="description" content="VANS Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="VANS, 반스, VANs, fashion">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        .hd {width: 100%; height: 60px; position: fixed; background: rgba(255, 255, 255, 0.90); z-index: 5;}
+        .logo { display: block; text-align: center; background:url("./img/logo.png") no-repeat center center; width: 178px; height: 60px; background-size: 60%; margin: 0 auto;}
+        .blackbg {display: none;}
+        .deskBtn {display: none;}
+        .mo {display: block; position: absolute; width: 33px; height: 33px; z-index: 10; }
+        .order:before {width: 36px; height: 36px; display: block; content: ""; background: url("./img/order.png") no-repeat; background-color: transparent; background-size: cover; }
+        .search:before {width: 36px; height: 36px; display: block; content: ""; background: url("./img/search.png") no-repeat; background-color: transparent; background-size: cover}
+        .menulst:before { width: 36px; height: 36px; display: block; content: ""; background: url("./img/menuOpen.png") no-repeat; background-color: transparent; background-size: cover}
+        .search {top: 12px; left: 55px;}
+        .order {top: 12px; left: 15px;}
+        .menulst {right: 15px; top: 12px; }
+        .raItem {display: none;}
+        #gnb {position: fixed; right: -100%; top: 0; width: 100%; height: 100%; z-index: 99; transition: 0.6s; background: #fff;}
+        #sel1:checked ~ #search {top: 9%;}
+        #sel2:checked ~ #gnb {right: 0;}
+        #sel3:checked ~ #order {top: 9%;}
+    </style>
+    <style>
+        #gnb .close {right: 15px; top: 10px;}
+        #gnb .close:before { width: 36px; height: 36px; display: block; content: ""; background: url("./img/menuClose.png") no-repeat; background-color: transparent; background-size: cover}
+        #gnb {width: 100%; height: 100%; background: #fff; z-index: 99; position: fixed; top: 0; float: left;}
+        #gnb .menuList { margin: 20px; width: 80%; height: 85%; position: relative; border-bottom: 1px solid #ccc; overflow-y: visible; display: block; }
+        #gnb .menuList li a {color: #333; font-size: 0.92em; }
+        .gnbBtn { display: block; color: #333; font-size: 1.4em; font-weight: 600; cursor: pointer; }
+        .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;margin-bottom: 10px;}
+        #gnb .gnbDetail li a{ color: #fff; font-size: 14px;}
+        .menuList input[type=checkbox] {display: none;}
+        .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 120px; margin-top: 10px; text-indent: 10px; background: #000;  }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 120px; margin-top: 10px; text-indent: 10px; background: #000; padding: 10px 0 10px 0; }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #000; padding: 10px 0 10px 0; }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #000; padding: 10px 0 10px 0; }
+        .mainMenu{ padding-bottom: 5%;}
+        
+        .btArea {clear: both; }
+        .btArea a {color: #333; font-size: 0.9em; font-weight: 600; padding: 10px;}
+        #curriSl {position: relative; width: 100px; margin: 15px; background: #333; padding: 5px; color: #fff;}
+        #curriSl option {transition: 0.6s; }
+        .copy a {margin-left: 10px; display: block; color: #333; font-size: 0.9em;}
+    </style>
+    <style>
+        #search{ width: 100%; height: 40%; position: fixed; background: #fff;  transition: 0.6s; z-index: 99; top: -100%; transition: 0.5s;}
+        #search .close { width: 36px; height: 36px; display: block; content: ""; background: url("./img/menuClose.png") no-repeat; background-color: transparent; background-size: cover; right: 4%; bottom: 4%;}
+        .searchForm {clear: both; margin: 0 auto; border: 1px solid #ddd; width: 80%; padding: 2%; margin-bottom: 10%}
+        #searchBoxBtn {content: ''; width: 40px; height: 40px; background: url("./img/search.png") no-repeat; background-position: center center; background-size: 70%; background-color: transparent; display: block; position: absolute; right: 10%; top: 0;}
+        .news {position: relative; width: 100%; height: 150px; overflow: hidden; margin: 0 auto; text-align: center;}
+        .news .newsLst {width: 60%; height: 100%; position: relative; margin: 0 auto;}
+        .news .newsLst li {overflow: hidden; height: 30px;}
+        .news .newsLst li a {color: #999; font-size: 0.7em; vertical-align: middle;}
+        .news .newsLst li.on a {color: #000; font-size: 1em; font-weight: 600;}
+        .news .newsLst li.on {border-top: 1px solid #999; border-bottom: 1px solid #999; }
+    </style>
+    <style>
+    #order{ width: 100%; height: 40%; position: fixed; background: #fff;  transition: 0.6s; z-index: 99; top: -100%; transition: 0.5s;}
+    #order .close { width: 36px; height: 36px; display: block; content: ""; background: url("./img/menuClose.png") no-repeat; background-color: transparent; background-size: cover; right: 4%; bottom: 4%;}
+    #order h3 {padding: 5%;}
+    .cart {position: relative; width: 90%; margin: 0 auto; height: 60%;}
+    .cart label { width: 33.33333%; float: left; color: #666; font-size: 0.9em; text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 3%}
+    .cart ul li { position: absolute; width: 100%; height: 80%; bottom: 0; opacity: 0; display: block;}
+    .cart ul li p { text-align: center; position: relative; height: 100%; margin-top: 10%; font-size: 0.9em; }
+    #ra1:checked ~ .item1 {opacity: 1;}
+    #ra1:checked ~ .tabBt1 {font-weight: 600; color: #333; border-bottom: 2px solid #333;} 
+    #ra2:checked ~ .item2 {opacity: 1;}
+    #ra2:checked ~ .tabBt2 {font-weight: 600; color: #333; border-bottom: 2px solid #333;} 
+    #ra3:checked ~ .item3 {opacity: 1;}
+    #ra3:checked ~ .tabBt3 {font-weight: 600; color: #333; border-bottom: 2px solid #333;}     
+    </style>
+    <script>
+    $(document).ready(function(){
+        var wd = parseInt($(".news").width());
+        function nextAni(){
+            $(".newsLst").not(":animated").animate({"margin-top":"-29px"}, 600, function(){
+                $(".newsLst li").removeClass("on");
+                $(".newsLst li").eq(2).appendTo($(".newsLst"));
+                $(".newsLst").css("margin-top", "0px");
+                $(".newsLst li").eq(2).addClass("on");         
+            });
+        }
+        var intv = setInterval(function(){
+            nextAni();
+        }, 2800); 
+    
+    }); 
+    </script>
+    <style>
+        #contents.mobile {position: relative; width: 100%; display: block; overflow: hidden; background: #fffef7;  }
+        #contents.desk {display: none;}
+        .slide {position: relative; clear: both;}
+        .slide .banFrame { width:500%; min-width:2520px; position: relative;}
+        .slide .banFrame li { float:left; width: 360px; height:582px; overflow: hidden;}
+        .slide .banFrame li img {width: 360px; height: 582px; transition: 0.6s;}
+        .slide .btFrm {position: absolute; top: 520px; left: 0; width: 100%; margin-top: 20px; text-align: center; z-index: 50;}
+        .slide .btFrm li {position: relative; width: 15px; height: 15px; margin: 0 10px; display: inline-block; border-radius: 100%; background: #fff; opacity: 0.5;}
+        .slide .btFrm .on {position: relative; width: 15px; height: 15px; margin: 0 10px; display: inline-block; border-radius: 100%; background: #fff; opacity: 1; }  
+        .category {clear: both; display: block; position: relative; padding-top: 6%;}
+        .category li {margin: 1% 0; position: relative;}
+        .category img {width: 100%; }
+        .category h3 { position:absolute; top: 35%; right: 10%; text-align: center; font-size: 1.8em; color: #fff;}
+        [class*=product] { clear: both; position: relative; padding-top: 3%;}
+        [class*=product] li {width: 100%; margin-bottom: 8%; position: relative; text-align: center;}
+        [class*=product] img {width: 90%; }
+        .txtbox {display: block; position: absolute; background: rgba(255,255,255,0.8); left: 5%; bottom: 1%; width: 90%;  padding: 3% 0;}
+        [class*=product] h4 {font-weight: 400; color: #333;}
+        [class*=product] .price {color: #d40c0c;}
+        .banner {width: 100%; position: relative; display: block; }
+        .banner li {width: 90%; margin: 0 auto;}
+        .banner li img {position: relative; width: 100%;}
+        .leftBanner {display: none;}
+        #ft {position: relative; clear: both; width: 100%; height: auto;  padding-bottom: 10px; text-align: center; background: #111;}
+        .ftTop {position: relative; width: 100%; height: auto; line-height: 2;}
+        .ftTop ul {display: flex; width: 100%; border-top: 1px solid #ddd; }
+        .ftTop ul li {width: 50%; height: 213px; box-sizing: border-box; border-bottom: 1px solid #999;}
+        .ftTop ul li:first-child {float: left; border-right: 1px solid #999; height: }
+        .ftTop ul li:last-child {float: right;}
+        .ftTop .tit {font-weight: 600; font-size: 1.2em; padding-top: 10px; color: #fff;}
+        .ftTop .com {font-weight: 100; font-size: 1.4em; color: #ccc; }
+        .ftTop .txt {font-weight: 100; font-size: 0.7em; color: #ccc;}
+        .ftTop .button {margin-top: 10%; display: inline-block; border: 1px solid #999; padding: 2% 15%; font-size: 0.8em; color: #ccc; text-align: center;   }
+        .ftMid {clear: both; text-align: justify; padding-left: 10%; padding-top: 4%; font-size: 0.8em; color: #fff;}
+        .ftMid .emailFrm {padding: 2.3%; margin-top: 6%; display: inline-block; margin-bottom: 5%}
+        .emailBt {display: inline-block;  background: url("./img/arrow_bl_next.png") no-repeat; width: 3%; height: 30px; background-size: cover; text-indent: -9999em; background-color: #fff; vertical-align: middle; margin-top: -0.5%; }
+        .ftMid .privacy {display: block; margin-right: 1%; clear: both; }
+        .ftMid .txt {font-size: 0.9em; color: #ddd; padding-right: 10%; word-break: keep-all;}
+        .ftMid span {color: #4a87fc}
+        .ftBot {clear: both; position: relative; width: 100%; height: auto; margin-top: 5%; border-top: 1px solid #999; }
+        .ftBot ul {display: flex; width: 100%;}
+        .ftBot ul li { float: left; width: 24%; }
+        .ftBot ul li a {color: #ddd; font-size: 0.67em;}
+    </style>
+    <script>
+   $(document).ready(function(){
+        var wd = parseInt($(".slide").width());
+        function nextAni(){
+            $(".banFrame").not(":animated").animate({"margin-left":"-360px"}, 600, function(){
+                $(".banFrame li").removeClass("on");
+                $(".banFrame li").eq(0).appendTo($(".banFrame"));
+                $(".banFrame").css("margin-left", "0px");
+                $(".banFrame li").eq(0).addClass("on");
+                                
+            });
+        }
+        var intv = setInterval(function(){
+            nextAni();
+        }, 3200); 
+        
+        
+
+    });     
+    </script>
+    <style>
+     @media screen and (min-width:1280px) {
+        .hd {position: fixed; width: 15%; height: 100%; right: 0; top: 0;}
+        .logo {background: url("./img/vansvt.png") no-repeat center center; width: 94px; height: 225px; position: absolute; top: 10%; left: 35%; z-index: 999;}
+        .search {top: 50%; left: 45%; z-index: 999; cursor: pointer;}
+        .order {top: 55%; left: 45%; z-index: 999; cursor: pointer;}
+        .menulst {top: 45%; left: 45%; z-index: 999; cursor: pointer;}
+        .blackbg {display: none; width: 70%; height: 100%; background: rgba(0,0,0,0.7); position: fixed; top: 0; left: 15%; z-index: 90;}
+        #gnb {right: 0; display: none; width: 86%;}
+        #gnb .close {top: 45%; right: 7.6%; display: none; transition-delay: 2s;}
+        #sel2:checked ~ #gnb {display: block;}
+        #sel2:checked ~ .menulst {display: none;}
+        #sel2:checked ~ #gnb .close {display: block;}
+        .btArea {display: none;}
+        #gnb .menuList { margin: 440px auto; width: 100%;}
+        #gnb .menuList li {float: left; width: 150px;}
+        #gnb .menuList li {text-align: center;}
+        #search {left: 30%; width: 40%; border: 1px solid #333; padding-top: 40px; display: none;}
+        #searchBoxBtn { top: 11%;}
+        #sel1:checked ~ #search {display: block; top: 25%;}
+        #sel1:checked ~ .blackbg {display: block;}
+        #order {top: 30%; left: 30%; width: 40%; border: 1px solid #333; padding-top: 40px; display: none;}
+        #sel3:checked ~ #order {display: block; top: 25%;}
+        #sel3:checked ~ .blackbg {display: block;}
+        .deskBtn {position: absolute; width: 6%;height: 200px; left: 48%; top: 65%; z-index: 999; display: block;}
+        .deskBtn a {position: relative; color: #333; writing-mode: tb-rl; margin-bottom: 20px;}
+        #contents.mobile {display: none;}
+        #contents.desk {position: relative; width: 70%; clear: both; display: block; overflow: hidden; margin-left: 15%}
+        .leftBanner {position: absolute; width: 15%; height: 100%; display: block; left: 0; top: 0;}
+        .banner {width: 100%; height: 100%; position: relative; display: block;  }
+        .banner .gif {position: absolute; top: 30%; }
+        .gif a {margin: 0 auto; width: 100%; height: 150px;}
+        .gif a img {width: 100%; height: 100%;} 
+        .gif a p {text-align: center; color: #333; text-decoration: underline; font-size: 0.9vw;}
+        .deskslide {position: relative; clear: both;}
+        .deskslide .deskbanFrame { width:500%; min-width:6660px; position: relative;}
+        .deskslide .deskbanFrame li { float:left; width: 1332px; height:628px; overflow: hidden;}
+        .deskslide .deskbanFrame li img {width: 1332px; height: 628px; transition: 0.6s;}  
+        .category {padding-top: 0;}
+        .category li { width: 33.33333%; float: left; margin: 0 auto; }
+        .product1 li { width: 33.33333%; box-sizing: border-box; float: left;}
+        .product2 li { width: 33.33333%; box-sizing: border-box; float: left;}
+        #ft {width: 85%;}
+        .ftTop ul li {height: 223px;}
+        .ftTop .button {margin-top: 1%; padding: 2% 5%;}
+        .ftMid {padding-top: 2%; }
+        .ftMid .emailFrm {padding: 1%; margin-top: 1%; margin-bottom: 1%}
+        .emailBt {width: 1%; height: 44px; margin-top: -0.1%; }
+        .ftMid .privacy {display: block; margin-right: 1%; clear: both; }
+        .ftBot {margin-top: 1%; }
+        .ftBot ul li a {color: #ddd; font-size: 0.8em;}
+        }
+        
+    </style>
+    <script>
+    $(document).ready(function(){
+    var intv = setInterval(function() { nextAni(); }, 2400);
+    function nextAni() {
+        $(".deskbanFrame").not(":animated").animate({"margin-left":"-1332px"}, 800, function(){
+            $(".deskbanFrame li").eq(0).appendTo($(".deskbanFrame"));
+            $(".deskbanFrame").css("margin-left", "0px");
+        });
+    }
+    function prevAni(){
+        $(".deskbanFrame li").eq(2).prependTo($(".deskbanFrame"));
+        $(".deskbanFrame").css("margin-left", "-1332px");
+        $(".deskbanFrame").not(":animated").animate({"margin-left":"0px"}, 800);
+    }
+    $(".nextBtn").click(function(){
+        clearInterval(intv);
+        nextAni();
+        intv = setInterval(function() { nextAni(); }, 2400);
+    });
+    $(".prevBtn").click(function(){
+        clearInterval(intv);
+        prevAni();
+        intv = setInterval(function() { nextAni(); }, 2400);
+    });
+    $(".popOpenBtn").click(function(){
+       $(".popBox").fadeIn(); 
+    });
+    $(".closeBtn").click(function(){
+       $(".popBox").fadeOut(); 
+    });
+});
+    </script>
+    <style>
+        @media screen and (min-width:768px) and (max-width:959px){
+            .hd {height: 10%;} 
+            .logo{width: 240px; height: 90px;} 
+            .blackbg {display: none;}
+            .deskBtn {display: none;}
+            #gnb .menuList li a {font-size: 1.5em;}
+            .gnbBtn {font-size: 1.8em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 170px; margin-top: 10px; background: #000; padding: 2% }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 170px; margin-top: 10px; background: #000; padding: 2% }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 170px; margin-top: 10px; background: #000; padding: 2% }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 70px; margin-top: 10px;  background: #000; padding: 2% }
+            .mainMenu{ padding-bottom: 8%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            #curriSl {width: 20%; margin: 10px; padding: 1%; font-size: 1em;}
+            [class*=section] {width: 100%; height: 34%; display: block; clear: both;}
+            .col h2 {position: relative; text-align: center; color: #a173c3; font-size: 3em; padding-left: 5%; }
+            .category h3 {font-size: 4em;}
+            [class*=product] li {width: 50%; float: left;}
+            .ftTop ul li {height: 240px;}
+            .emailBt {width: 2.5%; height: 47px; margin-top: -0.4%;}
+            
+        }
+    </style>
+    <style>
+        @media screen and (min-width:960px) and (max-width:1279px){
+            .hd {height: 10%;} 
+            .logo {width: 140px;} 
+            .blackbg {display: none;}
+            .deskBtn {display: none;}
+            #gnb .menuList li a {font-size: 1.5em;}
+            .apply {font-size: 1.3em;}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox] {display: none;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .mainMenu{ padding-bottom: 10%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            #curriSl {position: relative; width: 20%; margin: 10px; background: #eedbeb; padding: 1%; float: left;}
+            [class*=section] {width: 100%; height: 34%; display: block; clear: both;}
+            .col h2 {position: relative; text-align: center; color: #a173c3; font-size: 3em; padding-left: 5%; }
+        }    
+    </style>
+</head>
+<body>
+<header class="hd">
+<input type="radio" name="collapRa" class="raItem" id="sel0" checked>
+<input type="radio" name="collapRa" class="raItem" id="sel1">
+<input type="radio" name="collapRa" class="raItem" id="sel2">
+<input type="radio" name="collapRa" class="raItem" id="sel3">
+    <label for="sel3" class="order mo"></label>
+    <label for="sel1" class="search mo"></label>
+    <a href="index.html" class="logo">
+    </a>
+    <label for="sel2" class="menulst mo"></label>
+    <div class="deskBtn">
+        <a href="#">LOGIN</a>
+        <a href="#">MY PAGE</a>
+        <a href="#">LANGUAGE</a>
+    </div>
+<nav id="gnb">
+    <label for="sel0" class="close mo"></label>
+    <div class="btArea">
+        <select name="curri" id="curriSl">
+            <option value="">ENGLISH</option>
+            <option value="">KOREAN</option>
+        </select>
+    </div>
+    <ul class="menuList">
+        <li class="mainMenu">
+           <input type="checkbox" name="gnbdt" id="gnbdt1">
+           <label for="gnbdt1" class="gnbBtn">NEW</label>
+            <ul class="gnbDetail menu1">
+                <li><a href="">신발 신상품</a></li>
+                <li><a href="">의류 신상품</a></li>
+                <li><a href="">액세서리 신상품</a></li>
+                <li><a href="">THIS IS THE ERA</a></li>
+                <li><a href="">COMFYCUSH</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+          <input type="checkbox" name="gnbdt" id="gnbdt2">
+           <label for="gnbdt2" class="gnbBtn">MEN</label>
+            <ul class="gnbDetail menu2">
+                <li><a href="">신발</a></li>
+                <li><a href="">의류</a></li>
+                <li><a href="">액세서리</a></li>
+                <li><a href="">WHAT'S HOT</a></li>
+                <li><a href="">SALE</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+          <input type="checkbox" name="gnbdt" id="gnbdt3">
+           <label for="gnbdt3" class="gnbBtn">WOMEN</label>
+            <ul class="gnbDetail menu3">
+                <li><a href="">신발</a></li>
+                <li><a href="">의류</a></li>
+                <li><a href="">액세서리</a></li>
+                <li><a href="">WHAT'S HOT</a></li>
+                <li><a href="">SALE</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+          <input type="checkbox" name="gnbdt" id="gnbdt4">
+           <label for="gnbdt4" class="gnbBtn">KIDS</label>
+            <ul class="gnbDetail menu4">
+                <li><a href="">신발</a></li>
+                <li><a href="">CUSTOMS</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+            <a href="">ABOUT VANS</a> 
+        </li>
+        <li class="mainMenu">
+            <a href="">HOUSE OF VANS</a> 
+        </li>
+        <li class="mainMenu">
+            <a href="">매장찾기</a> 
+        </li>
+        <li class="mainMenu">
+            <a href="">마이페이지</a> 
+        </li>
+        <li class="mainMenu">
+            <a href="">고객센터</a> 
+        </li>
+    </ul>
+</nav>
+<nav id="search">
+    <label for="sel0" class="close mo"></label>
+    <div class="searchForm">
+        <input type="text" id="searchBoxForm" placeholder="상품을 검색해주세요.">
+        <button type="button" id="searchBoxBtn"><span></span></button>
+    </div>
+    <div class="news">
+        <ul class="newsLst">
+            <li><a href="">VANS X 유스케 하나이</a></li>
+            <li><a href="">VANS X 안티히어로</a></li>
+            <li class="on"><a href="">애너하임 팩토리</a></li>
+            <li><a href="">올드스쿨 프로 BMX</a></li>
+            <li><a href="">울트라레인지 키즈</a></li>
+            <li><a href="">Flower 패턴</a></li>
+            <li><a href="">Puppy&amp;Cat 패턴</a></li>
+            <li><a href="">CUSTOMADE by 팔로알토</a></li>
+            <li><a href="">Get the Real #95 에라</a></li>
+            <li><a href="">MONOCROME 컬렉션</a></li>
+        </ul>
+    </div>   
+</nav>
+<nav id="order">
+    <label for="sel0" class="close mo"></label>
+    <h3>CART</h3>
+    <div class="cart">
+        <ul class="tabBox">
+        <input type="radio" name="raItem" id="ra1" class="raItem" checked>
+        <input type="radio" name="raItem" id="ra2" class="raItem">
+        <input type="radio" name="raItem" id="ra3" class="raItem">
+        <label for="ra1" class="tabBt1">장바구니</label>
+        <label for="ra2" class="tabBt2">관심상품</label>
+        <label for="ra3" class="tabBt3">최근본상품</label>
+            <li class="item1">
+                <p>장바구니가 비어 있습니다.</p>
+            </li>
+            <li class="item2">
+                <p>관심상품 내역이 없습니다.</p>
+            </li>
+            <li class="item3">
+                <p>최근 본 상품 내역이 없습니다.</p>
+            </li>
+        </ul>
+    </div>    
+</nav>
+<div class="blackbg"></div>
+</header>
+<div id="contents" class="mobile">
+    <div class="slide">
+        <ul class="banFrame">
+            <li class="on"><a href=""><img src="./img/vsm1.jpg" alt="배너1"></a></li>
+            <li><a href=""><img src="./img/vsm2.jpg" alt="배너2"></a></li>
+            <li><a href=""><img src="./img/vsm3.jpg" alt="배너3"></a></li>
+            <li><a href=""><img src="./img/vsm4.jpg" alt="배너1"></a></li>
+            <li><a href=""><img src="./img/vsm5.jpg" alt="배너2"></a></li>
+        </ul>
+        <ul class="btFrm">
+              <li class="btn1 on">
+                  <a href=""></a>
+              </li>
+              <li class="btn2">
+                  <a href=""></a>
+              </li>
+              <li class="btn3">
+                  <a href=""></a>
+              </li>
+              <li class="btn4">
+                  <a href=""></a>
+              </li>
+              <li class="btn5">
+                  <a href=""></a>
+              </li>
+          </ul>
+    </div>
+    <div class="category">
+        <ul>
+            <li>
+                <a href="">
+                    <h3>MEN</h3>
+                    <img src="./img/men.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>WOMEN</h3>
+                    <img src="./img/women.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>KIDS</h3>
+                    <img src="./img/kids.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="product1">
+        <ul>
+            <li><a href="">
+                    <img src="./img/item1.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>코어클래식 ERA 에라</h4>
+                        <p class="price">59,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item2.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>코어클래식 SK8-Hi스케잇 하이</h4>
+                        <p class="price">79,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item3.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>코어클래식 Slip-On 체커보드 슬립온</h4>
+                        <p class="price">59,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item4.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>토틀러 Authentic 어센틱 엘라스틱 레이스</h4>
+                        <p class="price">39,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item5.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>울트라레인지 래피드웰드</h4>
+                        <p class="price">109,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item6.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>배릭스 VARIX WC</h4>
+                        <p class="price">129,000원</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="product2">
+        <ul>
+            <li><a href="">
+                    <img src="./img/item7.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>반스 클래식 티셔츠</h4>
+                        <p class="price">35,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item8.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>반스 클래식 티셔츠</h4>
+                        <p class="price">35,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item9.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>리얼름 백팩 NEW</h4>
+                        <p class="price">55,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item10.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>스케이트 오버 반팔 티셔츠</h4>
+                        <p class="price">49,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item11.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>스케이트 오버 반팔 티셔츠</h4>
+                        <p class="price">49,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item12.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>스케이트 오버 반팔 티셔츠</h4>
+                        <p class="price">49,000원</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="banner">
+        <ul>
+            <li>
+                <a href="">
+                    <img src="./img/banner1.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <img src="./img/banner2.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+<div id="contents" class="desk">
+    <div class="deskslide">
+        <ul class="deskbanFrame">
+            <li><img src="./img/vsd1.jpg" alt="배너1"></li>
+            <li><img src="./img/vsd2.jpg" alt="배너2"></li>
+            <li><img src="./img/vsd3.jpg" alt="배너3"></li>
+            <li><img src="./img/vsd4.jpg" alt="배너1"></li>
+            <li><img src="./img/vsd5.jpg" alt="배너2"></li>
+        </ul>
+        <ul class="btFrm">
+              <li class="btn1 on">
+                  <a href=""></a>
+              </li>
+              <li class="btn2">
+                  <a href=""></a>
+              </li>
+              <li class="btn3">
+                  <a href=""></a>
+              </li>
+              <li class="btn4">
+                  <a href=""></a>
+              </li>
+              <li class="btn5">
+                  <a href=""></a>
+              </li>
+          </ul>
+    </div>
+    <div class="category">
+        <ul>
+            <li>
+                <a href="">
+                    <h3>MEN</h3>
+                    <img src="./img/men.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>WOMEN</h3>
+                    <img src="./img/women.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <h3>KIDS</h3>
+                    <img src="./img/kids.jpg" alt="">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="product1">
+        <ul>
+            <li><a href="">
+                    <img src="./img/item1.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>코어클래식 ERA 에라</h4>
+                        <p class="price">59,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item2.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>코어클래식 SK8-Hi스케잇 하이</h4>
+                        <p class="price">79,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item3.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>코어클래식 Slip-On 체커보드 슬립온</h4>
+                        <p class="price">59,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item4.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>토틀러 Authentic 어센틱 엘라스틱 레이스</h4>
+                        <p class="price">39,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item5.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>울트라레인지 래피드웰드</h4>
+                        <p class="price">109,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item6.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>배릭스 VARIX WC</h4>
+                        <p class="price">129,000원</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="product2">
+        <ul>
+            <li><a href="">
+                    <img src="./img/item7.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>반스 클래식 티셔츠</h4>
+                        <p class="price">35,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item8.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>반스 클래식 티셔츠</h4>
+                        <p class="price">35,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item9.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>리얼름 백팩 NEW</h4>
+                        <p class="price">55,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item10.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>스케이트 오버 반팔 티셔츠</h4>
+                        <p class="price">49,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item11.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>스케이트 오버 반팔 티셔츠</h4>
+                        <p class="price">49,000원</p>
+                    </div>
+                </a>
+            </li>
+            <li><a href="">
+                    <img src="./img/item12.jpg" alt="">
+                    <div class="txtbox">
+                        <h4>스케이트 오버 반팔 티셔츠</h4>
+                        <p class="price">49,000원</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="leftBanner">
+    <div class="banner">
+        <div class="gif">
+            <a href="#">
+                <img src="./img/left.gif" alt="">
+                <p>VANS X COLLABORATION</p>
+            </a>
+        </div>
+    </div>
+</div>
+<footer id="ft">
+    <div class="ftTop">
+        <ul>
+            <li>
+                <p class="tit">CALL CENTER</p>
+                <p class="com">1522-1882</p>
+                <p class="txt">MON-FRI 9AM-6PM<br>WEEKEND, HOLIDAY OFF</p>
+                <p class="button">바로 연결</p>
+            </li>
+            <li>
+                <p class="tit">INFO</p>
+                <p class="com">VF KOREA</p>
+                <p class="txt">220-88-43451<br>서울특별시 강남구 테헤란로 317</p>
+                <p class="button">문의하기</p>
+            </li>
+        </ul>
+    </div>
+    <div class="ftMid">
+        <h2>NEWS LETTER</h2>
+        <input type="text" class="emailFrm"><a href="" class="emailBt">bt</a>
+        <input type="checkbox" class="privacy">
+        <p class="txt">본인은 이용약관, 개인정보수집동의에 관한 내용을 읽고 이해했습니다. <span>(개인정보 처리방침 확인)</span></p>
+    </div>
+    <div class="ftBot">
+        <ul>
+            <li><a href="">이용약관</a></li>
+            <li><a href="">개인정보처리방침</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">PC VER</a></li>
+        </ul>
+    </div>
+</footer>
+</body>
+</html>
