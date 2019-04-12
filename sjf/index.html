@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seoul Jazz Festival</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="Seoul Jazz Festival 홈페이지">
+    <meta name="author" content="KIM">
+    <meta name="description" content="Seoul Jazz Festival Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="Seoul Jazz Festival, 서울재즈페스티벌, SJF, 서재페">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link rel="stylesheet" href="./font/KoPubWorld Dotum Light.ttf">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        .hd {width: 100%; height: 60px; position: relative; background: #eedbeb;}
+        .logo { display: block; width: 100%; height: auto; padding: 13px 0px; text-align: center;}
+        .logo img {width: 80px; margin: 0 auto;}
+        .mo {display: block; position: absolute; width: 33px; height: 33px; z-index: 10; top: 0; }
+        .mo:before { width: 33px; height: 33px; display: block; content: ""; background: url("./img/btnset.png") no-repeat; background-size: 33px 100px; background-color: transparent;}
+        .menulst {right: 15px; top: 14px; }
+        .menulst:before {background-position: center -33px;}
+        .raItem {display: none;}
+        #gnb {position: fixed; left: -100%; top: 0; width: 100%; height: 100%; z-index: 99; transition: 0.6s; background: #fff;}
+        #sel2:checked ~ #gnb {left: 0;}
+    </style>
+    <style>
+        .close {right: 15px; top: 10px;}
+        .close:before { background-position: center -66px;}
+        #gnb {width: 100%; height: 100%; background: #fff; z-index: 99; position: fixed; top: 0; float: left;}
+        .eventBtn {position: relative; display: block; clear: both; width: 50%; height: 50px; text-align: center; margin: 0 auto; background: #eedbeb; line-height: 50px; border-radius: 40px; margin-top: 80px; }
+        .eventBtn .apply { font-size: 1.2em; color: #333; font-weight: 600;}
+        #gnb .menuList { margin: 20px; width: 80%; height: 55%; position: relative; border-bottom: 1px solid #ccc; overflow-y: visible; display: block;}
+        #gnb .menuList li a {color: #333; font-size: 0.92em; font-weight: 600;}
+        .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+        .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+        .menuList input[type=checkbox] {display: none;}
+        .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+        .mainMenu{ padding-bottom: 10%;}
+        .gnbDetail {margin-bottom: 20px;}
+        .gnbDetail li a{ color: #333; font-size: 14px;}
+        #gnb img {width: 20px; height: 20px; margin-right: 20px; vertical-align: middle;}
+        #curriSl {position: relative; width: 100px; margin: 10px; background: #eedbeb; padding: 5px;}
+        #curriSl option {transition: 0.6s; }
+        .btArea a {color: #333; font-size: 0.9em; font-weight: 600; padding: 10px;}
+        .copy a {margin-left: 10px; display: block; color: #333; font-size: 0.9em;}
+    </style>
+    <style>
+        #contents.mobile {position: relative; clear: both; width: 100%; height: 100%; display: block; overflow: hidden; background: #eedbeb; }
+        #contents.desk {display: none;}
+        .banFrame { width:700%; min-width:2520px; }
+        .banFrame li { float:left; width: 360px; height:220px; overflow: hidden;}
+        .banFrame li img {width: 360px; height: 220px;}
+        .btnFrame { position:absolute; top:80px; z-index:90; width:100%; }
+        .btnFrame li { width: 30px; height:30px; }
+        .btnFrame .left { float: left; margin-left: 10px; }
+        .btnFrame .right { float: right; margin-right: 10px; }
+        .btnFrame .banBtn { display:block; width: 30px; height:30px;  text-indent:-9999px;   cursor:pointer; background-color: transparent;}
+        .prevBtn {width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-right: 30px solid #aaa; }
+        .nextBtn { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 30px solid #aaa; }
+        .column { position: relative; width: 100%; height: 70%; clear: both; float: left; display: block;  background: url("./img/bgm.png") no-repeat center top; background-size: 100%;}
+        [class*=section] {width: 100%; display: block; clear: both;}
+        .col {position: relative; width: 100%; height: 100%;}
+        .col h2 {position: relative; padding-top: 17%; padding-left: 28%; text-align: center; color: #a173c3; font-size: 2em; }
+        #ft {position: relative; clear: both; width: 100%; height: auto;  padding-bottom: 10px; text-align: center; background: #eedbeb;}
+        #ft a {color: #666; font-weight: 100;}
+    </style>
+    <script>
+    $(document).ready(function(){
+    var intv = setInterval(function() { nextAni(); }, 2800);
+    function nextAni() {
+        $(".banFrame").not(":animated").animate({"margin-left":"-360px"}, 800, function(){
+            $(".banFrame li").eq(0).appendTo($(".banFrame"));
+            $(".banFrame").css("margin-left", "0px");
+        });
+    }
+    function prevAni(){
+        $(".banFrame li").eq(2).prependTo($(".banFrame"));
+        $(".banFrame").css("margin-left", "-360px");
+        $(".banFrame").not(":animated").animate({"margin-left":"0px"}, 800);
+    }
+    $(".nextBtn").click(function(){
+        clearInterval(intv);
+        nextAni();
+        intv = setInterval(function() { nextAni(); }, 2800);
+    });
+    $(".prevBtn").click(function(){
+        clearInterval(intv);
+        prevAni();
+        intv = setInterval(function() { nextAni(); }, 2800);
+    });
+    $(".popOpenBtn").click(function(){
+       $(".popBox").fadeIn(); 
+    });
+    $(".closeBtn").click(function(){
+       $(".popBox").fadeOut(); 
+    });
+});
+    </script>
+    <style>
+     @media screen and (min-width:1280px) {
+            .hd {position: absolute; width: 240px; height: 100%; left: 0; z-index: 99; background: #fff;}
+             #contents.mobile { display: none;}
+             #contents.desk {position: relative; width: 87.3%; float: left; padding-left: 240px; display: block; background: #eedbeb}
+            .mo {display: none;}
+            .mobile .slide, .mobile .column {display: none; !important}
+            .logo {margin-top: 10px; }
+            .logo img {width: 140px;} 
+            #gnb {position: relative; top: auto; right: auto; display: block; left: 0; height: 849px;}
+            .eventBtn {width: 80%;}
+            #contents .eventBtn {margin-top: 30px; width: 20%; margin-bottom: 30px;}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox] {display: none;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .mainMenu{ padding-bottom: 10%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            .gnbDetail li:hover a{color: #eedbeb;}
+            .deskcanvas { width: 100%; height: 100%; min-height: 969px; background-size: cover; clear: both; float: left; display: block; position: relative; background: url("./img/bg.png") no-repeat center center; background-size: 90%}
+            [class*=desksection] { width: 418px; height: 889px; position: absolute; transition-duration: 0.4s; }
+            .desksection1 { top: 41px; left: 157px;}
+            .desksection2 { top: 41px; left: 621px;}
+            .desksection3 { top: 41px; left: 1086px;}
+            [class*=deskcol] { position: absolute; width: 0px; height: 970px; transition: 0.4s; }
+            .deskcol1 { top: 41px; left: 157px; }
+            .deskcol2 { top: 41px; left: 621px; }
+            .deskcol3 { top: 41px; left: 1086px; }
+            .lineUp, .tickets {position: relative; width: 100%; height: 0%; margin: 0 0 0 2%; }
+            .deskcol1 h2, .deskcol2 h2, .deskcol3 h2 {font-size: 3em; padding: 2%; color: #333; display: inline-block; opacity: 0; transition: 1s;}
+            .lineUp ul li {  width: 0px; height: 0px; content: ""; background-repeat: no-repeat; transition: 0.8s; float: left; display: none; position: relative; }
+            .lineUp ul li:first-child { background:url("./img/item1.jpg"); }
+            .lineUp ul li:nth-child(2) { background:url("./img/item2.jpg"); }
+            .lineUp ul li:nth-child(3) { background:url("./img/item3.jpg"); }
+            .lineUp ul li:nth-child(4) { background:url("./img/item4.jpg"); }
+            .lineUp ul li:nth-child(5) { background:url("./img/item5.jpg"); }
+            .lineUp ul li:nth-child(6) { background:url("./img/item6.jpg"); }
+            .lineUp ul li:nth-child(7) { background:url("./img/item7.jpg"); }
+            .lineUp ul li:nth-child(8) { background:url("./img/item8.jpg"); }
+            .lineUp ul li:nth-child(9) { background:url("./img/item9.jpg"); }
+            .lineUp ul li:nth-child(10) { background:url("./img/item10.jpg"); }
+            .lineUp ul li:nth-child(11) { background:url("./img/item11.jpg"); }
+            .lineUp ul li:nth-child(12) { background:url("./img/item12.jpg"); }
+            .lineUp ul li:nth-child(13) { background:url("./img/item13.jpg"); }
+            .lineUp ul li:nth-child(14) { background:url("./img/item14.jpg"); }
+            .lineUp ul li:nth-child(15) { background:url("./img/item15.jpg"); }
+            .lineUp ul li .artName { opacity: 0; transition:0.6s; color: rgba(255,255,255,0.9); font-size: 2.5em; font-weight: 900; position: absolute; text-align: center; bottom: 10%; display: none;}
+            .bgcolor { position: relative; width: 100%; height: 100%;}
+            .tickets h4 {line-height: 3; display: none;} 
+            .tickets h3 {line-height: 3; display: none;} 
+            .ticBox { margin: 1% 0; padding: 0.5%; }
+            .tickets p {line-height: 2; font-weight: 600; display: none; }
+            .tickets li {line-height: 1.8; display: none; }
+             
+            [class*=close] {width: 0px; height: 0px; background: url("./img/menuClose.png") no-repeat; position: absolute; top: 3%; right: 2%; background-size: cover }
+            #ck1:checked ~ .deskcol1 {width: 1347px; height: 889px; background-color: #fff; z-index: 91; display: block; top: 41px; left: 157px; transition: 0.4s;}
+            #ck1:checked ~ .deskcol1 .close1 {width: 46px; height: 46px; }
+            #ck1:checked ~ .deskcol1 .lineUp ul li {width: 250px; height: 214px; background-size: cover; display: block;}
+            #ck1:checked ~ .deskcol1 h2 {opacity: 1; }
+            #ck2:checked ~ .deskcol2 h2 {opacity: 1; }
+            #ck3:checked ~ .deskcol3 h2 {opacity: 1; }
+            .lineUp ul li:hover .artName {display: block; opacity: 1;}
+            .lineUp ul li:hover .bgcolor {background-color: rgba(0,0,0,0.5);}
+            #ck2:checked ~ .deskcol2 {width: 1347px;  height: 889px; background-color: #fff; z-index: 91; top: 41px; left: 157px;display: block;}
+            #ck2:checked ~ .deskcol2 .close2 {width: 46px; height: 46px; }
+            #ck2:checked ~ .deskcol2 .tickets h4{display: block;}
+            #ck2:checked ~ .deskcol2 .tickets h3{display: block;}
+            #ck2:checked ~ .deskcol2 .tickets p{display: block;}
+            #ck2:checked ~ .deskcol2 .tickets li{display: block;}            
+            #ck3:checked ~ .deskcol3 {width: 1347px;  height: 889px;background-color: #fff; z-index: 91;top: 41px; left: 157px; display: block;}
+            #ck3:checked ~ .deskcol3 .close3 {width: 46px; height: 46px; }
+            .deskcol3 .timetable { content: ""; width:75%; height: 80%; display: block; background: url("./img/time.png") no-repeat center center; background-size:100%; margin: 0 auto;}
+            .deskslide {position: absolute; width: 417px; float: left; top: 4%; left: 45.3%; overflow: hidden; }
+            .desk .deskbanFrame { width:2919px; min-width:2919px; }
+            .desk .deskbanFrame li { float:left; width: 417px; height:274px; overflow: hidden;}
+            .desk .deskbanFrame li img {width: 417px; height: 274px;}
+            .desk .deskbtnFrame { position:absolute; top:45%; z-index:90; width:100%; }
+            .desk .deskbtnFrame li { width: 30px; height:30px; }
+            .desk .deskbtnFrame .left { float: left; margin-left: 10px; }
+            .desk .deskbtnFrame .right { float: right; margin-right: 10px; }
+            .desk .deskbtnFrame .banBtn { display:block; width: 30px; height:30px;  text-indent:-9999px;   cursor:pointer; background-color: transparent;}
+            .prevBtn {width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-right: 30px solid #aaa; }
+            .nextBtn { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 30px solid #aaa; }
+            #ft {display: none;}
+            .copy {width: 88%;}
+            .ckItem {display: none;}
+        }
+    </style>
+    <script>
+    $(document).ready(function(){
+    var intv = setInterval(function() { nextAni(); }, 2400);
+    function nextAni() {
+        $(".deskbanFrame").not(":animated").animate({"margin-left":"-417px"}, 800, function(){
+            $(".deskbanFrame li").eq(0).appendTo($(".deskbanFrame"));
+            $(".deskbanFrame").css("margin-left", "0px");
+        });
+    }
+    function prevAni(){
+        $(".deskbanFrame li").eq(2).prependTo($(".deskbanFrame"));
+        $(".deskbanFrame").css("margin-left", "-417px");
+        $(".deskbanFrame").not(":animated").animate({"margin-left":"0px"}, 800);
+    }
+    $(".nextBtn").click(function(){
+        clearInterval(intv);
+        nextAni();
+        intv = setInterval(function() { nextAni(); }, 2400);
+    });
+    $(".prevBtn").click(function(){
+        clearInterval(intv);
+        prevAni();
+        intv = setInterval(function() { nextAni(); }, 2400);
+    });
+    $(".popOpenBtn").click(function(){
+       $(".popBox").fadeIn(); 
+    });
+    $(".closeBtn").click(function(){
+       $(".popBox").fadeOut(); 
+    });
+});
+    </script>
+    <style>
+        @media screen and (min-width:768px) and (max-width:959px){
+            .hd {height: 10%;} 
+            .logo img {width: 140px;} 
+            .apply {font-size: 1.3em;}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox] {display: none;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .mainMenu{ padding-bottom: 10%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            #curriSl {position: relative; width: 20%; margin: 10px; background: #eedbeb; padding: 1%; float: left;}
+            [class*=section] {width: 100%; height: 34%; display: block; clear: both;}
+            .col h2 {position: relative; text-align: center; color: #a173c3; font-size: 3em; padding-left: 5%; }
+
+        }
+    </style>
+    <style>
+        @media screen and (min-width:960px) and (max-width:1279px){
+        .hd {height: 10%;} 
+            .logo img {width: 140px;} 
+            #gnb .menuList li a {font-size: 1.5em;}
+            .apply {font-size: 1.3em;}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox] {display: none;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .mainMenu{ padding-bottom: 10%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            #curriSl {position: relative; width: 20%; margin: 10px; background: #eedbeb; padding: 1%; float: left;}
+            [class*=section] {width: 100%; height: 34%; display: block; clear: both;}
+            .col h2 {position: relative; text-align: center; color: #a173c3; font-size: 3em; padding-left: 5%; }
+        }    
+    </style>
+</head>
+<body>
+<header class="hd">
+<input type="radio" name="collapRa" class="raItem" id="sel0" checked>
+<input type="radio" name="collapRa" class="raItem" id="sel1">
+<input type="radio" name="collapRa" class="raItem" id="sel2">
+    <a href="index.html" class="logo">
+        <img src="./img/logo.png" alt="로고">
+    </a>
+    <label for="sel2" class="menulst mo"></label>
+<nav id="gnb">
+    <label for="sel0" class="close mo"></label>
+    <div class="eventBtn">
+        <a href="" class="apply">BUY TICKET</a> 
+    </div>
+    <ul class="menuList">
+        <li class="mainMenu">
+           <input type="checkbox" name="gnbdt" id="gnbdt1">
+           <label for="gnbdt1" class="gnbBtn">PROGRAM</label>
+            <ul class="gnbDetail menu1">
+                <li><a href="">ARTIST</a></li>
+                <li><a href="">TIMETABLE</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+          <input type="checkbox" name="gnbdt" id="gnbdt2">
+           <label for="gnbdt2" class="gnbBtn">TICKETS</label>
+            <ul class="gnbDetail menu2">
+                <li><a href="">TICKETING INFO</a></li>
+                <li><a href="">BUY TICKET</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+          <input type="checkbox" name="gnbdt" id="gnbdt3">
+           <label for="gnbdt3" class="gnbBtn">INFORMATION</label>
+            <ul class="gnbDetail menu3">
+                <li><a href="">NOTICE</a></li>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">관람안내</a></li>
+                <li><a href="">행사장안내</a></li>
+                <li><a href="">오시는 길</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+          <input type="checkbox" name="gnbdt" id="gnbdt4">
+           <label for="gnbdt4" class="gnbBtn">GALLERY</label>
+            <ul class="gnbDetail menu4">
+                <li><a href="">PHOTO</a></li>
+                <li><a href="">VIDEO</a></li>
+            </ul>
+        </li>
+        <li class="mainMenu">
+            <a href="">FAQ</a> 
+        </li>
+        <li class="mainMenu">
+            <a href="">HISTORY</a> 
+        </li>
+        <li class="mainMenu">
+            <a href="">SPONSOR</a> 
+        </li>
+    </ul>
+    <div class="btArea">
+        <select name="curri" id="curriSl">
+            <option value="">ENGLISH</option>
+            <option value="">KOREAN</option>
+        </select>
+    </div>
+    <div class="copy"><a href="">COPYRIGHT(C) KIM 2019.<br>ALL RIGHTS RESERVED.</a></div>
+</nav>
+</header>
+<div id="contents" class="mobile">
+    <div class="slide">
+        <ul class="banFrame">
+            <li><img src="./img/vs1.jpg" alt="배너1"></li>
+            <li><img src="./img/vs2.jpg" alt="배너2"></li>
+            <li><img src="./img/vs3.jpg" alt="배너3"></li>
+            <li><img src="./img/vs4.jpg" alt="배너1"></li>
+            <li><img src="./img/vs5.jpg" alt="배너2"></li>
+            <li><img src="./img/vs6.jpg" alt="배너3"></li>
+            <li><img src="./img/vs7.jpg" alt="배너3"></li>
+        </ul>
+        <ul class="btnFrame">
+            <li class="left">
+                <button class="banBtn prevBtn"></button>
+            </li>
+            <li class="right">
+                <button class="banBtn nextBtn"></button>
+            </li>
+        </ul>
+    </div>
+    <section class="column">
+        <div class="section1">
+            <a href="" class="col">
+                
+            </a>
+        </div>
+        <div class="section2">
+            <a href="" class="col">
+                
+            </a>
+        </div>
+        <div class="section3">
+            <a href="" class="col">
+                
+            </a>
+        </div>
+    </section>
+</div>
+<div id="contents" class="desk">
+    <section class="deskcanvas">
+        <input type="checkbox" name="ckevent" class="ckItem" id="ck1">
+        <input type="checkbox" name="ckevent" class="ckItem"  id="ck2">
+        <input type="checkbox" name="ckevent" class="ckItem" id="ck3">
+        <label for="ck1" class="desksection1"></label>
+            <div class="deskcol1">
+                <label for="ck1" class="close1"></label>
+                <h2>LINE UP</h2>
+                <div class="lineUp">
+                    <ul>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Wynton Marsalis</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Clean Bandit</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">John Scofield's Combo</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Pink Martini</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Rudimental</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Chrisitian Mcbride And Tip City</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Omara Portuondo</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Lauv</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Tommy Emmanual</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">The Puppini Sisters</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Leon Bridges</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Wouter Hamel</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">LUCID FALL morpholine</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Yongjoo Song Quartet</p>
+                            </div>
+                        </li>
+                        <li class="artList">
+                            <div class="bgcolor">
+                            <p class="artName">Fitz &amp; the Tantrums</p>
+                            </div>
+                        </li>
+                    </ul>    
+                </div>               
+            </div>
+        <label for="ck2" class="desksection2"></label>
+            <div class="deskcol2">
+                <label for="ck2" class="close2"></label>
+                <h2>TICKETS</h2>
+                <div class="tickets">
+                    <h4>서울재즈페스티벌 안내사항은 지속적으로 업데이트 됩니다. 수시로 확인바랍니다.</h4>
+                    <h3>입장권 예매 안내사항</h3>
+                    <div class="ticBox">
+                    <p class="tit">예매</p>
+                        <ul>
+                            <li>- &lang;서울재즈페스티벌2019&rang; 티켓은 1인 4매까지 예매 가능합니다. </li>
+                            <li>- 2일권 티켓은 &lang;서울재즈페스티벌2019&rang; 5월 25일(토)과 26일(일) 양일간 (2일권) 티켓입니다. </li>
+                            <li>- 모든 티켓은 한정 수량 판매됩니다.</li>
+                            <li>- 1일권 예매자는 예매 시 지정한 날짜에만 관람이 가능하오니 유의해주시기 바랍니다.</li>
+                            <li>- 출연 예정 아티스트는 변경될 수 있습니다.</li>
+                        </ul>
+                    </div>
+                    <div class="ticBox">
+                    <p class="tit">티켓</p>
+                        <ul>
+                            <li>- 페스티벌 현장의 혼잡과 불편함을 막기 위해 예매하신 티켓은 공연 전 일괄 배송됩니다.<br> (일괄배송일 : 5월 7일~5월 8일 / 일괄배송일 이후 예매 시, 현장수령과 배송중 선택하여 예매가 가능합니다.) </li>
+                            <li>- 티켓은 현장에서 입장팔찌(손목밴드)로 교환하신 후, 공연장 내로 입장하실 수 있습니다.</li>
+                            <li>- 티켓과 입장팔찌는 분실 및 훼손 시 절대 재발급 되지 않습니다.</li>
+                            <li>- 티켓의 임의적인 상거래는 불법행위 입니다. 티켓을 양도받거나 개인적인 경로를 통해 구매한 티켓을 사용불가 합니다.</li>
+
+                        </ul>
+                    </div>
+                    <div class="ticBox">
+                        <p class="tit">환불</p>
+                        <ul>
+                            <li>- 2일권 티켓(2-Day-Pass:블라인드, 얼리버드, 정가티켓)은 양일 관람권으로 부분 취소 및 변경이 불가합니다.</li>
+                            <li>- 1일권 티켓은 예매하신 날짜에만 관람이 가능하며, 다른 날짜로 변경이 불가합니다.</li>
+                            <li>- 예매한 티켓의 환불은 공연 전날까지 가능하며 취소 일자에 따라 수수료가 발생합니다.</li>
+                            <li>- 개인사정이나 변심으로 인한 취소 및 변경 시에도 동일한 취소 규정이 적용되며 취소 수수료가 발생합니다.</li>
+                            <li>- 공연 당일 교환 및 환불은 불가합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <label for="ck3" class="desksection3"></label>
+            <div class="deskcol3">
+                <label for="ck3" class="close3"></label>
+                <h2>TIME TABLE</h2>
+               <div class="timetable"></div>
+            </div>        
+    </section>
+    <div class="deskslide">
+        <ul class="deskbanFrame">
+            <li><img src="./img/vs1.jpg" alt="배너1"></li>
+            <li><img src="./img/vs2.jpg" alt="배너2"></li>
+            <li><img src="./img/vs3.jpg" alt="배너3"></li>
+            <li><img src="./img/vs4.jpg" alt="배너1"></li>
+            <li><img src="./img/vs5.jpg" alt="배너2"></li>
+            <li><img src="./img/vs6.jpg" alt="배너3"></li>
+            <li><img src="./img/vs7.jpg" alt="배너3"></li>
+        </ul>
+        <ul class="deskbtnFrame">
+            <li class="left">
+                <button class="banBtn prevBtn"></button>
+            </li>
+            <li class="right">
+                <button class="banBtn nextBtn"></button>
+            </li>
+        </ul>
+    </div>
+</div>
+<footer id="ft">
+    <div class="copy"><a href="">COPYRIGHT(C) KIM 2019.<br>ALL RIGHTS RESERVED.</a></div>
+</footer>
+</body>
+</html>

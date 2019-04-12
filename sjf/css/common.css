@@ -1,0 +1,141 @@
+@charset "utf-8";
+        .hd {width: 100%; height: 60px; position: relative; background: #eedbeb;}
+        .logo { display: block; width: 100%; height: auto; padding: 13px 0px; text-align: center;}
+        .logo img {width: 80px; margin: 0 auto;}
+        .mo {display: block; position: absolute; width: 33px; height: 33px; z-index: 10; top: 0; }
+        .mo:before { width: 33px; height: 33px; display: block; content: ""; background: url("./img/btnset.png") no-repeat; background-size: 33px 100px; background-color: transparent;}
+        .menulst {right: 15px; top: 14px; }
+        .menulst:before {background-position: center -33px;}
+        .raItem {display: none;}
+        #gnb {position: fixed; left: -100%; top: 0; width: 100%; height: 100%; z-index: 99; transition: 0.6s; background: #fff;}
+        #sel2:checked ~ #gnb {left: 0;}
+
+        .close {right: 15px; top: 10px;}
+        .close:before { background-position: center -66px;}
+        #gnb {width: 100%; height: 100%; background: #fff; z-index: 99; position: fixed; top: 0; float: left;}
+        .eventBtn {position: relative; display: block; clear: both; width: 50%; height: 50px; text-align: center; margin: 0 auto; background: #eedbeb; line-height: 50px; border-radius: 40px; margin-top: 80px; }
+        .eventBtn .apply { font-size: 1.2em; color: #333; font-weight: 600;}
+        #gnb .menuList { margin: 20px; width: 80%; height: 55%; position: relative; border-bottom: 1px solid #ccc; overflow-y: visible; display: block;}
+        #gnb .menuList li a {color: #333; font-size: 0.92em; font-weight: 600;}
+        .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+        .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+        .menuList input[type=checkbox] {display: none;}
+        .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+        .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+        .mainMenu{ padding-bottom: 10%;}
+        .gnbDetail {margin-bottom: 20px;}
+        .gnbDetail li a{ color: #333; font-size: 14px;}
+        #gnb img {width: 20px; height: 20px; margin-right: 20px; vertical-align: middle;}
+        #curriSl {position: relative; width: 100px; margin: 10px; background: #eedbeb; padding: 5px;}
+        #curriSl option {transition: 0.6s; }
+        .btArea a {color: #333; font-size: 0.9em; font-weight: 600; padding: 10px;}
+        .copy a {margin-left: 10px; display: block; color: #333; font-size: 0.9em;}
+
+        #contents.mobile {position: relative; clear: both; width: 100%; height: 100%; display: block; overflow: hidden; background: #eedbeb; }
+        #contents.desk {display: none;}
+        .banFrame { width:700%; min-width:2520px; }
+        .banFrame li { float:left; width: 360px; height:220px; overflow: hidden;}
+        .banFrame li img {width: 360px; height: 220px;}
+        .btnFrame { position:absolute; top:80px; z-index:90; width:100%; }
+        .btnFrame li { width: 30px; height:30px; }
+        .btnFrame .left { float: left; margin-left: 10px; }
+        .btnFrame .right { float: right; margin-right: 10px; }
+        .btnFrame .banBtn { display:block; width: 30px; height:30px;  text-indent:-9999px;   cursor:pointer; background-color: transparent;}
+        .prevBtn {width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-right: 30px solid #aaa; }
+        .nextBtn { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 30px solid #aaa; }
+        .column { position: relative; width: 100%; height: 70%; clear: both; float: left; display: block;  background: url("./img/bgm.png") no-repeat center top; background-size: 100%;}
+        [class*=section] {width: 100%; display: block; clear: both;}
+        .col {position: relative; width: 100%; height: 100%;}
+        .col h2 {position: relative; padding-top: 17%; padding-left: 28%; text-align: center; color: #a173c3; font-size: 2em; }
+        #ft {position: relative; clear: both; width: 100%; height: auto;  padding-bottom: 10px; text-align: center; background: #eedbeb;}
+        #ft a {color: #666; font-weight: 100;}
+
+     @media screen and (min-width:1280px) {
+            .hd {position: absolute; width: 240px; height: 100%; left: 0; z-index: 99; background: #fff;}
+             #contents.mobile { display: none;}
+             #contents.desk {position: relative; width: 87.3%; float: left; padding-left: 240px; display: block;}
+            .mo {display: none;}
+            .mobile .slide, .mobile .column {display: none; !important}
+            .logo {margin-top: 10px; }
+            .logo img {width: 140px;} 
+            #gnb {position: relative; top: auto; right: auto; display: block; left: 0;}
+            .eventBtn {width: 80%;}
+            #contents .eventBtn {margin-top: 30px; width: 20%; margin-bottom: 30px;}
+            #contents.desk {background: #eedbeb}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox] {display: none;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .mainMenu{ padding-bottom: 10%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            .gnbDetail li:hover a{color: #eedbeb;}
+            .deskcolumn { width: 100%; height: 100%; min-height: 1040px; background-size: cover; clear: both; float: left; display: block; position: relative; background: url("./img/bg.png") no-repeat center center; }
+            [class*=desksection] { width: 450px; height: 968px; position: absolute;}
+            .desksection1 { float: left; top: 55px; left: 95px;}
+            .desksection2 { top: 55px; left: 590px;}
+            .desksection3 { top: 55px; left: 1090px;}
+            .col h2 { padding-top: 80%; padding-left: 0; font-size: 4em; color: #a173c3;}
+             
+            .deskslide {position: absolute; width: 448px; float: left; margin:19% 31.8% auto; overflow: hidden; }
+            .desk .deskbanFrame { width:3136px; min-width:3136px; }
+            .desk .deskbanFrame li { float:left; width: 448px; height:274px; overflow: hidden;}
+            .desk .deskbanFrame li img {width: 448px; height: 274px;}
+            .desk .deskbtnFrame { position:absolute; top:45%; z-index:90; width:100%; }
+            .desk .deskbtnFrame li { width: 30px; height:30px; }
+            .desk .deskbtnFrame .left { float: left; margin-left: 10px; }
+            .desk .deskbtnFrame .right { float: right; margin-right: 10px; }
+            .desk .deskbtnFrame .banBtn { display:block; width: 30px; height:30px;  text-indent:-9999px;   cursor:pointer; background-color: transparent;}
+            .prevBtn {width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-right: 30px solid #aaa; }
+            .nextBtn { width: 0; height: 0; border-top: 15px solid transparent; border-bottom: 15px solid transparent; border-left: 30px solid #aaa; }
+            #ft {display: none;}
+            .copy {width: 88%;}
+            }
+
+        @media screen and (min-width:768px) and (max-width:959px){
+            .hd {height: 10%;} 
+            .logo img {width: 140px;} 
+            #gnb .menuList li a {font-size: 1.5em;}
+            .apply {font-size: 1.3em;}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox] {display: none;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .mainMenu{ padding-bottom: 10%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            #curriSl {position: relative; width: 20%; margin: 10px; background: #eedbeb; padding: 1%; float: left;}
+            [class*=section] {width: 100%; height: 34%; display: block; clear: both;}
+            .col h2 {position: relative; text-align: center; color: #a173c3; font-size: 3em; padding-left: 5%; }
+           }
+        @media screen and (min-width:960px) and (max-width:1279px){
+        .hd {height: 10%;} 
+            .logo img {width: 140px;} 
+            #gnb .menuList li a {font-size: 1.5em;}
+            .apply {font-size: 1.3em;}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer; }
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .menuList input[type=checkbox] {display: none;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd;  }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 120px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 60px; margin-top: 10px; text-indent: 10px; background: #fff5fd; padding: 10px 0 10px 0; }
+            .mainMenu{ padding-bottom: 10%;}
+            .gnbDetail {margin-bottom: 20px;}
+            .gnbDetail li a{ color: #333; font-size: 14px;}
+            #curriSl {position: relative; width: 20%; margin: 10px; background: #eedbeb; padding: 1%; float: left;}
+            [class*=section] {width: 100%; height: 34%; display: block; clear: both;}
+            .col h2 {position: relative; text-align: center; color: #a173c3; font-size: 3em; padding-left: 5%; }
+        }    
