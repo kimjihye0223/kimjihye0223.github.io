@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>법무부</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="법무부 홈페이지">
+    <meta name="author" content="KIM">
+    <meta name="description" content="법무부 Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="법무부, 대한민국, 대한민국법무부">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <script src="./script/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .hd {width: 1260px; height: 74px; margin: 20px auto; top: 0; left: 0; display: block;}
+        .logo {display: block; width: 143px; height: 50px; background: url("./img/logo.png") no-repeat; background-position: center center; float: left; text-indent: -9999px; left: 0; top: 0; margin-top: 10px;}
+        #desk .hd li {float: left; text-align: center;}
+        .hd li a { color: #333;}
+        .member {display: block; position: relative; left: 75px; }
+        .member li {margin-right: 55px; line-height: 70px; height: 70px; transition: 0.6s ease-in;}
+        .member li a {font-weight: 600; }
+        .member li :hover {border-bottom: 2px solid #02487c;}
+        #gnb {width: 850px; height: 75px; float: right; line-height: 70px; position: relative; }
+        .mainMenu {z-index: 9999; transition: 0.6s;}
+        #gnb .mainMenu li {position: relative; width: 121px; float: left; text-align: center; }
+        .mainMenu li a {font-weight: 600;}
+        #gnb .subMenu { position: relative;  z-index: 9999; display: none; transition: 0.3s;}
+        #gnb .subMenu li {position: relative; line-height: 40px; }
+        #gnb li:hover .subhover {border-bottom: 2px solid #02487c;}
+        .subMenu li:hover {background: #02487c; }
+        .subMenu li:hover a {color: #fff;}
+        
+        #hdbg{width: 1260px; height: 320px; background: #fff; float: left; top: 70px; left: -48.2%; z-index: 999; position:absolute;  display: none; transition: 0.3s; }
+        #gnb .mainMenu:hover #hdbg {display: block; z-index: 999; }
+        #gnb .mainMenu:hover .subMenu{ z-index: 1; width: 129px; height: 320px; background: #fff; display: block; z-index: 9999; }
+        .raItem {display: none;}
+        .menuList input[type=checkbox] {display: none;}
+    </style>
+    <style>
+        #desk {clear: both; width: 1260px; height: 930px; margin:0 auto; }
+        .contents {position: relative; 1260px; height: 930px; margin: 0 auto;}
+        .section {display: block; clear: both; position: absolute; cursor: pointer; overflow: hidden;}
+        .section.item1 {width: 620px; height: 600px; overflow: hidden; }
+        .section.item2 {width: 620px; height: 300px; top: 620px; left: 0; overflow: hidden;}
+        .section.item3 {width: 300px; height: 450px; top: 240px; left: 640px; overflow: hidden;}
+        .section.item4 {width: 300px; height: 470px; top: 0; left: 960px; overflow: hidden;}
+        .section.item5 {width: 300px; height: 220px; top: 0; left: 640px; }
+        .section.item6 {width: 300px; height: 210px; top: 710px; left: 640px; }
+        .section.item7 {width: 300px; height: 430px; top: 490px; left: 960px; overflow: hidden;}
+      
+        .section.item1 img {width: 100%; height: 100%; transform: scale(1.0); transition: transform 0.3s ease-in-out;}
+        .section.item1 :hover {transform: scale(1.1);}
+        .section.item2 img {width: 100%; height: 100%; transform: scale(1.0); transition: transform 0.3s ease-in-out;}
+        .section.item2 :hover {transform: scale(1.1);}
+        .section.item3 img {width: 100%; height: 100%; transform: scale(1.0); transition: transform 0.3s ease-in-out;}
+        .section.item3 :hover {transform: scale(1.1);}
+        .section.item4 img {width: 100%; height: 100%; transform: scale(1.0); transition: transform 0.3s ease-in-out;}
+        .section.item4 :hover {transform: scale(1.1);}
+        .youtube { width: 620px; height: 600px; position: absolute; top: 0; display: none;}
+        .itembox1 {width: 300px; height: 210px;}
+        .notice {width: 300px; height: 210px; overflow: hidden;  text-overflow: ellipsis; background: #f1f8ff; margin-top: 10px;}
+        .notice a {color: #333; padding: 20px; display: block;}
+        .notice h2 {overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .notice p {color: #333; word-break: keep-all;}
+        .notice:hover p {color: #02487c; font-weight: 600;}
+    </style>
+    <script>
+    $(function(){
+        $(".youtubego").click(function(){
+            
+        })
+        
+    })
+    </script>
+    <style>
+        .category {width: 100%; height:80px; margin: 0 auto; background: #eee; position: relative; clear: both; background: #02487c; margin-top: 20px; }
+        .category .siteLinklst { width: 180px; height: 80px; float: left; display: block; position: relative; line-height: 80px; cursor: pointer;}
+        .category li {text-align: center; }
+        .category .list { width: 180px; height: 340px; background: #02487c; position: absolute; bottom: 80px; display:none; overflow-y: scroll; overflow-x: hidden; line-height: 40px; }
+        .category .list a {color: #fff; font-size: 14px; font-weight: 200; } 
+        .category button { background-color: transparent; font-size: 16px; color: #fff;}
+        .category .siteLinklst:hover .list{display: block; }
+        .search {display: block; line-height: 80px;}
+        #searchForm {width: 240px; height: 30px; line-height: 30px; padding-left: 10px; font-weight: 700; font-size: 16px; background-color: transparent; box-sizing: border-box; }
+        .searchBtn {display:inline-block; width: 40px; height: 40px; background: url("./img/search.png") no-repeat center center; vertical-align: middle; cursor: pointer;}
+        .ft {display: block; background: #fff; position: relative; clear: both; margin-left: 5%; width: 100%; height: 10%; color: #999; margin-top: 1%} 
+    </style>
+    <style>
+        @media screen and (max-width:767px) {
+            #mobile {display: block;}
+            #desk {display: none;}
+        }
+        @media screen and (min-width:768px) and (max-width:959px){
+            #mobile {display: block;}
+            #desk {display: none;}
+        }
+        @media screen and (min-width:960px) and (max-width:1279px){
+            #mobile {display: none;}
+            #desk {display: block;}
+        }
+        @media screen and (min-width:1280px){
+            #mobile {display: none;}
+            #desk {display: block;}
+        }
+    </style>
+    <style>
+        
+        @media screen and (max-width:767px) {
+            .hd {width: 100%; margin: 0 auto; position: relative;}
+            .logo { margin-left: 2%;}
+            .member {display: none;}
+            #gnb {width: 100%; height: 100%; clear: both; background: #fff;  position: fixed; right:-100%; z-index: 99999; transition: 0.6s; line-height: 3;}
+            #gnb .mainMenu {width: 70%; margin-left: 10%; border-bottom: 1px solid #ddd;}
+            #gnb .mainMenu:first-child {border-top: 1px solid #ddd;}
+            #gnb .mainMenu li { clear: both; text-align: left;}
+            #gnb .mainMenu li a {clear: both; }
+            #gnb .subMenu {position: relative; display: block; width: 100%; opacity: 0; height: 0;}
+            .menuOpen { display: block; width: 40px; height: 40px; background: url("./img/menuOpen.png") no-repeat center center; position: absolute; top: 15px; right: 20px;}
+            #ra1:checked ~ #gnb {right: 0; background: #fff;}
+            .menuClose {width: 40px; height: 40px; background: url("./img/menuClose.png") no-repeat center center; position: absolute; top: 15px; right: 20px;}
+            #ra1:checked ~ .menuOpen { display: block; }
+            .menuList {position: relative; margin-top: 25%}
+            .gnbBtn { display: block; color: #333; font-size: 0.92em; font-weight: 600; cursor: pointer;}
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .gnbDetail li {line-height: 0;}
+            .gnbDetail.menu1 li { height: 18%; }
+            .gnbDetail.menu2 li { height: 22%; }
+            .gnbDetail.menu3 li { height: 18%; } 
+            .gnbDetail.menu4 li { height: 18%; }
+            .gnbDetail.menu5 li { height: 18%; }
+            .gnbDetail.menu6 li { height: 27%; }
+            .gnbDetail.menu7 li { height: 27%; }
+            .gnbDetail li a {font-size: 0.8em;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 80px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu5 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu6 {height: 60px; background:rgba(223, 223, 255, 0.6); padding: 3%;}  
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu7 {height: 60px; background:rgba(223, 223, 255, 0.6); padding: 3%;}  
+            #mobile {clear: both; position: relative; width: 100%; height: 100%; margin: 0 auto; }
+            #mobile .contents {position: relative; 100%; height: 100%; clear: both; }
+            #mobile .section {display: block; clear: both; position: absolute; margin: 4% 4% auto; background-repeat: no-repeat; }
+            #mobile .section.item1 {width:92%; height: 25%; left: 0; top: 66%; overflow: hidden; background-image: url("./img/mainitem1.jpg"); background-size: 100%;}
+            #mobile .section.item2 {width: 92%; height: 30%; left: 0; top: 39.5%; overflow: hidden;  background-image: url("./img/mainitem2.jpg"); background-size: 100%;}
+            #mobile .section.item3 { width: 45%; height: 45%; background-size: 100%; left:48%; top: 0; overflow: hidden; background-image: url("./img/mainitem3.jpg");}
+            #mobile .section.item5 { width: 45%; height: 45%; background-size: 100%; left: 0; top: 19.3%; overflow: hidden; background-image: url("./img/mainitem5.jpg");}
+            #mobile .section.item7 { overflow: hidden; left: 0; top: 0; width: 45%; height: 45%;  background-image: url("./img/mainitem7.jpg"); background-size: 100%;}
+            .category {width: 100%; height:10%; margin: 0 auto; background: #eee; position: relative; clear: both; background: #02487c; margin-top: 20px; }
+            .category .siteLinklst { width: 30%; height: 10%; float: left; display: block; position: relative; line-height: 2; word-break: keep-all;}
+            .category li {text-align: center; }
+            .category .list { width: 120%; height:1000%; background: #02487c; position: absolute; bottom: 100%; display:none; opacity: 0; overflow-y: scroll; overflow-x: hidden; line-height: 1.8; word-break: keep-all;}
+            .category .list a {color: #fff; font-size: 1em; font-weight: 200; } 
+            .category button { background-color: transparent; font-size: 0.9em; color: #fff;}
+            .search {display: block; line-height:3em; background: #02487c; }
+            #searchForm {width: 80%; height: 50%; line-height: 2em; margin-left: 5%; font-weight: 700; font-size: 0.9em; color: #fff; background-color:#fff; box-sizing: border-box; padding:2%;}
+            .searchBtn {display:inline-block; width: 40px; height: 40px; background: url("./img/search.png") no-repeat center center; vertical-align: middle; cursor: pointer; }
+            .ft {display: block; background: #fff; position: relative; clear: both; margin-left: 5%; width: 100%; height: 10%; margin-top: 20%; color: #999; font-size: 0.8em;}
+        }
+        
+        @media screen and (min-width:768px) and (max-width:959px){
+          .hd {width: 100%; margin: 0 auto;}
+            .logo { margin-left: 2%;}
+            .member {display: none;}
+            #gnb {width: 100%; height: 100%; clear: both; background: #fff;  position: fixed; right:-100%; z-index: 99999; transition: 0.6s; }
+            #gnb .mainMenu {width: 100%;}
+            #gnb .mainMenu li {position: relative; width: 60%; float: none; text-align: justify; margin-left: 10%}
+            #gnb .subMenu {position: relative; display: block; width: 100%; opacity: 0; height: 0;}
+            .menuOpen { display: block; width: 40px; height: 40px; background: url("./img/menuOpen.png") no-repeat center center; position: absolute; top: 15px; right: 20px;}
+            #ra1:checked ~ #gnb {right: 0; background: #fff;}
+            #ra1:checked ~ .menuOpen { display: block; background: url("./img/menuClose.png") no-repeat center center;}
+            #gnb {width: 100%; height: 100%; clear: both; background: #fff;  position: fixed; right:-100%; z-index: 99999; transition: 0.6s; line-height: 3;}
+            #gnb .mainMenu {width: 80%; margin-left: 10%; border-bottom: 1px solid #ddd;}
+            #gnb .mainMenu:first-child {border-top: 1px solid #ddd;}
+            #gnb .mainMenu li { clear: both; text-align: left;}
+            #gnb .mainMenu li a {clear: both; }
+            #gnb .subMenu {position: relative; display: block; width: 100%; opacity: 0; height: 0;}
+            .menuOpen { display: block; width: 40px; height: 40px; background: url("./img/menuOpen.png") no-repeat center center; position: absolute; top: 15px; right: 20px;}
+            #ra1:checked ~ #gnb {right: 0; background: #fff;}
+            .menuClose {width: 40px; height: 40px; background: url("./img/menuClose.png") no-repeat center center; position: absolute; top: 15px; right: 20px;}
+            #ra1:checked ~ .menuOpen { display: block; }
+            .menuList {position: relative; margin-top: 15%}
+            .gnbBtn { display: block; color: #333; font-size: 1.2em; font-weight: 600; cursor: pointer;}
+            .gnbDetail {height: 0; overflow-y: hidden; padding-bottom: 0; transition: 0.6s;}
+            .gnbDetail li {line-height: 0;}
+            .gnbDetail.menu1 li { height: 18%; }
+            .gnbDetail.menu2 li { height: 22%; }
+            .gnbDetail.menu3 li { height: 18%; } 
+            .gnbDetail.menu4 li { height: 18%; }
+            .gnbDetail.menu5 li { height: 18%; }
+            .gnbDetail.menu6 li { height: 27%; }
+            .gnbDetail.menu7 li { height: 27%; }
+            .gnbDetail li a {font-size: 1em;}
+            .menuList input[type=checkbox]:checked ~ .gnbBtn {font-weight: 600;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu1 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%; }
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu2 {height: 80px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu3 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu4 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu5 {height: 100px; background:rgba(223, 223, 255, 0.6); padding: 3%;}
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu6 {height: 60px; background:rgba(223, 223, 255, 0.6); padding: 3%;}  
+            .menuList input[type=checkbox]:checked ~ .gnbDetail.menu7 {height: 60px; background:rgba(223, 223, 255, 0.6); padding: 3%;}  
+            #mobile {clear: both; position: relative; width: 100%; height: 130%; margin: 0 auto; }
+            #mobile .contents {position: relative; width: 100%; height: 100%; clear: both; }
+            #mobile .section {display: block; clear: both; position: absolute; margin: 4% 4% auto; background-repeat: no-repeat; }
+            #mobile .section.item1 {width:92%; height: 25%; left: 0; top: 69%; overflow: hidden; background-image: url("./img/mainitem1.jpg"); background-size: 100%;}
+            #mobile .section.item2 {width: 92%; height: 40%; left: 0; top: 41%; overflow: hidden;  background-image: url("./img/mainitem2.jpg"); background-size: 100%;}
+            #mobile .section.item3 { width: 45%; height: 49.5%; background-size: 100%; left:48%; top: 0; overflow: hidden; background-image: url("./img/mainitem3.jpg");}
+            #mobile .section.item5 { width: 45%; height: 45%; background-size: 100%; left: 0; top: 20%; overflow: hidden; background-image: url("./img/mainitem5.jpg");}
+            #mobile .section.item7 { overflow: hidden; left: 0; top: 0; width: 45%; height: 45%;  background-image: url("./img/mainitem7.jpg"); background-size: 100%;}
+            .category {width: 100%; height:10%; margin: 0 auto; background: #eee; position: relative; clear: both; background: #02487c; margin-top: 20px; }
+            .category .siteLinklst { width: 30%; height: 10%; float: left; display: block; position: relative; line-height: 2; word-break: keep-all;}
+            .category li {text-align: center; }
+            .category .list { width: 120%; height:1000%; background: #02487c; position: absolute; bottom: 100%; display:none; opacity: 0; overflow-y: scroll; overflow-x: hidden; line-height: 1.8; word-break: keep-all;}
+            .category .list a {color: #fff; font-size: 1em; font-weight: 200; } 
+            .category button { background-color: transparent; font-size: 1.2em; color: #fff;}
+            .search {display: block; line-height:3em; background: #02487c;}
+            #searchForm {width: 80%; height: 50%; line-height: 2em; margin-left: 5%; font-weight: 700; font-size: 1.2em; background-color: #fff; box-sizing: border-box; padding: 1%}
+            .ft {display: block; background: #fff; position: relative; clear: both; margin-left: 5%; width: 100%; height: 5%; font-size: 0.9em;}
+        }
+    </style>
+</head>
+<body>
+<div id="desk">
+   <header class="hd">
+            <a href="index.html" class="logo">로고</a>
+            <ul class="member">
+               <li><a href="login.html">로그인
+                   </a>
+               </li>
+               <li><a href="join.html">회원가입
+                   </a>
+               </li>
+            </ul>
+        <nav id="gnb">
+            <ul class="mainMenu">
+               <li><a href="sub1.html" class="subhover">법무부 소개</a>
+                  <ul class="subMenu">
+                       <li><a href="">인사말</a></li>
+                       <li><a href="">장관소개</a></li>
+                       <li><a href="">차관소개</a></li>
+                       <li><a href="">기관소개</a></li>
+                       <li><a href="">조직과 기능</a></li>
+                       <li><a href="">청사안내</a></li>
+                   </ul> 
+               </li>
+               <li><a href="sub2.html" class="subhover">온라인 민원</a>
+                   <ul class="subMenu">
+                       <li><a href="">민원신청 및 발급</a></li>
+                       <li><a href="">민원안내</a></li>
+                       <li><a href="">유사민원사례</a></li>
+                       <li><a href="">민원상담</a></li>
+                       <li><a href="">원격지원서비스</a></li>
+                   </ul>
+               </li>
+               <li><a href="sub3.html" class="subhover">정보공개·개방</a>
+                   <ul class="subMenu">
+                       <li><a href="">정보공개청구</a></li>
+                       <li><a href="">정보공개목록</a></li>
+                       <li><a href="">정책실명제</a></li>
+                       <li><a href="">공공데이터 개방</a></li>
+                       <li><a href="">청렴자료공개</a></li>
+                       <li><a href="">국고보조금</a></li>
+                   </ul>
+               </li>
+               <li><a href="sub4.html" class="subhover">법무정책 서비스</a>
+                   <ul class="subMenu">
+                       <li><a href="">법무·검찰</a></li>
+                       <li><a href="">범죄예방</a></li>
+                       <li><a href="">인권</a></li>
+                       <li><a href="">교정</a></li>
+                       <li><a href="">출입국·외국인</a></li>
+                       <li><a href="">시험정보</a></li>
+                   </ul>
+               </li>
+               <li><a href="sub5.html" class="subhover">국민참여</a>
+                   <ul class="subMenu">
+                       <li><a href="">칭찬합시다</a></li>
+                       <li><a href="">포상참여</a></li>
+                       <li><a href="">제안합니다</a></li>
+                       <li><a href="">신고센터</a></li>
+                       <li><a href="">규제개혁</a></li>
+                       <li><a href="">협동조합</a></li>
+                   </ul>
+               </li>
+               <li><a href="sub6.html" class="subhover">법령·자료</a>
+                   <ul class="subMenu">
+                       <li><a href="">법령정보</a></li>
+                       <li><a href="">통계정보</a></li>
+                       <li><a href="">자료실</a></li>
+                       <li><a href="">해외자료</a></li>
+                   </ul>
+               </li>
+               <li><a href="sub7.html" class="subhover">법무뉴스</a>
+                   <ul class="subMenu">
+                       <li><a href="">포토뉴스</a></li>
+                       <li><a href="">보도자료</a></li>
+                       <li><a href="">공지사항</a></li>
+                       <li><a href="">홍보자료</a></li>
+                   </ul>
+               </li>
+               <div id="hdbg"><img src="./img/navbgout.png" alt=""></div>
+           </ul>
+            
+        </nav>
+        
+    </header>
+    <div class="contents">
+            <div class="section item1">
+                <a href="" class="youtubego"><img src="./img/mainitem1.jpg" alt="">
+                </a>
+                <iframe id="youtubePlayer" class="youtube" width="100%" frameborder="0" loop autoplay allowfullscreen=""  title="youtube" src="https://www.youtube.com/embed/_pnHNNM6CoU"></iframe>
+            </div>
+            <div class="section item2">
+                <a href=""><img src="./img/mainitem2.jpg" alt=""></a>
+            </div>
+            <div class="section item3">
+                <a href=""><img src="./img/mainitem3.jpg" alt=""></a>
+            </div>
+            <div class="section item4">
+                <a href=""><img src="./img/mainitem4.jpg" alt=""></a>
+            </div>
+            <div class="section item5">
+                <a href=""><img src="./img/mainitem5.jpg" alt=""></a>
+            </div>
+            <div class="section item6">
+                <a href=""><img src="./img/mainitem6.jpg" alt=""></a>
+            </div>
+            <div class="section item7">
+                <div class="itembox1">
+                <a href=""><img src="./img/mainitem7.jpg" alt=""></a>
+                </div>
+                <div class="notice">
+                    <a href="">
+                        <h3>Notice</h3>
+                        <h2>국내 외국인들이 바라본 3·1운동은 어떤 의미일까?</h2>
+                        <p>법무부, 재한 외국인 대상으로 독립기념관 릴레이 탐방. 법무부는 3·1운동 및 대한민국 임시정부 수립 100주년을 맞아 국내 거주 외국인을 대상으로 독립기념관 탐방 교육을 실시합니다. 이번 교육은 </p>
+                    </a>
+                </div>
+            </div>
+       </div>
+       <div class="category">
+           <ul class="siteLink">
+               <li class="siteLinklst">
+                  <button type="button" class="sitebtn">실국본부운영</button>
+                   <ul class="list link1">
+                       <li><a href="">범죄예방정책국</a></li>
+                       <li><a href="">교정본부</a></li>
+                       <li><a href="">출입국·외국인정책본부</a></li>
+                       <li><a href="">공익신탁 공시시스템</a></li>
+                       <li><a href="">대한민국 비자포털</a></li>
+                       <li><a href="">버비생활법률지식서비스</a></li>
+                       <li><a href="">법교육 시스템</a></li>
+                       <li><a href="">법교육 전자도서관</a></li>
+                       <li><a href="">법률홈닥터</a></li>
+                       <li><a href="">법사랑 사이버랜드</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">소속기관</button>
+                   <ul class="list link2">
+                       <li><a href="">법무연수원</a></li>
+                       <li><a href="">대검찰청</a></li>
+                       <li><a href="">광주고등검찰청</a></li>
+                       <li><a href="">광주지방검찰청</a></li>
+                       <li><a href="">대구고등검찰청</a></li>
+                       <li><a href="">대구지방검찰청</a></li>
+                       <li><a href="">대전고등검찰청</a></li>
+                       <li><a href="">대전지방검찰청</a></li>
+                       <li><a href="">부산고등검찰청</a></li>
+                       <li><a href="">부산지방검찰청</a></li>
+                       <li><a href="">서울고등검찰청</a></li>
+                       <li><a href="">서울지방검찰청</a></li>
+                       <li><a href="">의정부지방검찰청</a></li>
+                       <li><a href="">수원지방검찰청</a></li>
+                       <li><a href="">울산지방검찰청</a></li>
+                       <li><a href="">인천지방검찰청</a></li>
+                       <li><a href="">전주지방검찰청</a></li>
+                       <li><a href="">제주지방검찰청</a></li>
+                       <li><a href="">창원지방검찰청</a></li>
+                       <li><a href="">청주지방검찰청</a></li>
+                       <li><a href="">춘천지방검찰청</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">산하기관 관련단체</button>
+                   <ul class="list link3">
+                       <li><a href="">대한법률구조공단</a></li>
+                       <li><a href="">범죄예방위원전국연합회</a></li>
+                       <li><a href="">법조협회</a></li>
+                       <li><a href="">전국범죄피해자지원연합회</a></li>
+                       <li><a href="">정부법무공단</a></li>
+                       <li><a href="">한국법무보호복지공단</a></li>
+                       <li><a href="">한국소년보호협회</a></li>
+                       <li><a href="">IOM이민정책연구원</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">정부부처</button>
+                   <ul class="list link4">
+                       <li><a href="">고용노동부</a></li>
+                       <li><a href="">교육부</a></li>
+                       <li><a href="">국방부</a></li>
+                       <li><a href="">국토교통부</a></li>
+                       <li><a href="">기획재정부</a></li>
+                       <li><a href="">농림축산식품부</a></li>
+                       <li><a href="">문화체육관광부</a></li>
+                       <li><a href="">과학기술정보통신부</a></li>
+                       <li><a href="">보건복지부</a></li>
+                       <li><a href="">산업통상자원부</a></li>
+                       <li><a href="">행정안전부</a></li>
+                       <li><a href="">여성가족부</a></li>
+                       <li><a href="">외교부</a></li>
+                       <li><a href="">통일부</a></li>
+                       <li><a href="">해양수산부</a></li>
+                       <li><a href="">환경부</a></li>
+                       <li><a href="">중소벤처기업부</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">정부기관</button>
+                   <ul class="list link5">
+                       <li><a href="">감사원</a></li>
+                       <li><a href="">경찰청</a></li>
+                       <li><a href="">공정거래위원회</a></li>
+                       <li><a href="">관세청</a></li>
+                       <li><a href="">국가교육과학기술자문회의</a></li>
+                       <li><a href="">국가보훈처</a></li>
+                       <li><a href="">국가정보원</a></li>
+                       <li><a href="">국무총리실</a></li>
+                       <li><a href="">국민권익위원회</a></li>
+                       <li><a href="">국세청</a></li>
+                       <li><a href="">금융위원회</a></li>
+                       <li><a href="">기상청</a></li>
+                       <li><a href="">농촌진흥청</a></li>
+                       <li><a href="">대법원</a></li>
+                       <li><a href="">문화재청</a></li>
+                       <li><a href="">민주평화통일자문회의</a></li>
+                       <li><a href="">방송통신위원회</a></li>
+                       <li><a href="">방위사업청</a></li>
+                       <li><a href="">법제처</a></li>
+                       <li><a href="">병무청</a></li>
+                       <li><a href="">산림청</a></li>
+                       <li><a href="">소방청</a></li>
+                       <li><a href="">식품의약품안전처</a></li>
+                       <li><a href="">인사혁신처</a></li>
+                       <li><a href="">조달청</a></li>
+                       <li><a href="">통계청</a></li>
+                       <li><a href="">특허청</a></li>
+                       <li><a href="">해양경찰청</a></li>
+                       <li><a href="">행정중심복합도시건설청</a></li>           
+                   </ul>
+               </li>
+           </ul>
+           <div class="search">
+               <input type="text" placeholder="검색어를 입력해주세요." id="searchForm" value="">
+               <button type="submit" class="searchBtn"></button>
+           </div>
+       </div>
+       <footer class="ft">
+           <p class="copy">경기도 과천시 관문로 47 정부과천청사 법무부(1동)<br>COPYRIGHTⓒ KIM. . ALL RIGHTS RESERVED.</p>
+       </footer>
+    </div>
+<div id="mobile">
+    <header class="hd">
+            <a href="index.html" class="logo">로고</a>
+            <ul class="member">
+               <li><a href="login.html">로그인
+                   </a>
+               </li>
+               <li><a href="join.html">회원가입
+                   </a>
+               </li>
+            </ul>
+            <input type="checkbox" name="checkBox" class="raItem" id="ra1">
+            <label for="ra1" class="menuOpen"></label>
+        <nav id="gnb">
+            <a href="index.html" class="logo">로고</a>
+            <label for="ra1" class="menuClose"></label>
+                <ul class="menuList">
+                    <li class="mainMenu">
+                       <input type="checkbox" name="gnbdt" id="gnbdt1">
+                       <label for="gnbdt1" class="gnbBtn">법무부 소개</label>
+                        <ul class="gnbDetail menu1">
+                            <li><a href="">인사말</a></li>
+                            <li><a href="">장관소개</a></li>
+                            <li><a href="">차관소개</a></li>
+                            <li><a href="">기관소개</a></li>
+                            <li><a href="">조직과 기능</a></li>
+                            <li><a href="">청사안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu">
+                      <input type="checkbox" name="gnbdt" id="gnbdt2">
+                       <label for="gnbdt2" class="gnbBtn">온라인 민원</label>
+                        <ul class="gnbDetail menu2">
+                            <li><a href="">민원신청 및 발급</a></li>
+                            <li><a href="">민원안내</a></li>
+                            <li><a href="">유사민원사례</a></li>
+                            <li><a href="">민원상담</a></li>
+                            <li><a href="">원격지원서비스</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu">
+                      <input type="checkbox" name="gnbdt" id="gnbdt3">
+                       <label for="gnbdt3" class="gnbBtn">정보공개·개방</label>
+                        <ul class="gnbDetail menu3">
+                            <li><a href="">정보공개청구</a></li>
+                            <li><a href="">정보공개목록</a></li>
+                            <li><a href="">정책실명제</a></li>
+                            <li><a href="">공공데이터 개방</a></li>
+                            <li><a href="">청렴자료공개</a></li>
+                            <li><a href="">국고보조금</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu">
+                      <input type="checkbox" name="gnbdt" id="gnbdt4">
+                       <label for="gnbdt4" class="gnbBtn">법무정책 서비스</label>
+                        <ul class="gnbDetail menu4">
+                            <li><a href="">법무·검찰</a></li>
+                            <li><a href="">범죄예방</a></li>
+                            <li><a href="">인권</a></li>
+                            <li><a href="">교정</a></li>
+                            <li><a href="">출입국·외국인</a></li>
+                            <li><a href="">시험정보</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu">
+                      <input type="checkbox" name="gnbdt" id="gnbdt5">
+                       <label for="gnbdt5" class="gnbBtn">국민참여</label>
+                        <ul class="gnbDetail menu5">
+                            <li><a href="">칭찬합시다</a></li>
+                            <li><a href="">포상참여</a></li>
+                            <li><a href="">제안합니다</a></li>
+                            <li><a href="">신고센터</a></li>
+                            <li><a href="">규제개혁</a></li>
+                            <li><a href="">협동조합</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu">
+                      <input type="checkbox" name="gnbdt" id="gnbdt6">
+                       <label for="gnbdt6" class="gnbBtn">법령·자료</label>
+                        <ul class="gnbDetail menu6">
+                            <li><a href="">법령정보</a></li>
+                            <li><a href="">통계정보</a></li>
+                            <li><a href="">자료실</a></li>
+                            <li><a href="">해외자료</a></li>
+                        </ul>
+                    </li>
+                    <li class="mainMenu">
+                      <input type="checkbox" name="gnbdt" id="gnbdt7">
+                       <label for="gnbdt7" class="gnbBtn">법무뉴스</label>
+                        <ul class="gnbDetail menu7">
+                            <li><a href="">포토뉴스</a></li>
+                            <li><a href="">보도자료</a></li>
+                            <li><a href="">공지사항</a></li>
+                            <li><a href="">홍보자료</a></li>
+                        </ul>
+                    </li>
+                </ul>
+             </nav>
+       </header>
+       <div class="contents">
+            <div class="section item1">
+                <a href=""></a>
+            </div>
+            <div class="section item2">
+                <a href=""></a>
+            </div>
+            <div class="section item3">
+                <a href=""></a>
+            </div>
+            <div class="section item5">
+                <a href=""></a>
+            </div>
+            <div class="section item7">
+                <div class="itembox1">
+                <a href=""></a>
+                </div>
+            </div>
+       </div>
+       <div class="category">
+           <ul class="siteLink">
+               <li class="siteLinklst">
+                  <button type="button" class="sitebtn">실국본부</button>
+                   <ul class="list link1">
+                       <li><a href="">범죄예방정책국</a></li>
+                       <li><a href="">교정본부</a></li>
+                       <li><a href="">출입국·외국인정책본부</a></li>
+                       <li><a href="">공익신탁 공시시스템</a></li>
+                       <li><a href="">대한민국 비자포털</a></li>
+                       <li><a href="">버비생활법률지식서비스</a></li>
+                       <li><a href="">법교육 시스템</a></li>
+                       <li><a href="">법교육 전자도서관</a></li>
+                       <li><a href="">법률홈닥터</a></li>
+                       <li><a href="">법사랑 사이버랜드</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">소속기관</button>
+                   <ul class="list link2">
+                       <li><a href="">법무연수원</a></li>
+                       <li><a href="">대검찰청</a></li>
+                       <li><a href="">광주고등검찰청</a></li>
+                       <li><a href="">광주지방검찰청</a></li>
+                       <li><a href="">대구고등검찰청</a></li>
+                       <li><a href="">대구지방검찰청</a></li>
+                       <li><a href="">대전고등검찰청</a></li>
+                       <li><a href="">대전지방검찰청</a></li>
+                       <li><a href="">부산고등검찰청</a></li>
+                       <li><a href="">부산지방검찰청</a></li>
+                       <li><a href="">서울고등검찰청</a></li>
+                       <li><a href="">서울지방검찰청</a></li>
+                       <li><a href="">의정부지방검찰청</a></li>
+                       <li><a href="">수원지방검찰청</a></li>
+                       <li><a href="">울산지방검찰청</a></li>
+                       <li><a href="">인천지방검찰청</a></li>
+                       <li><a href="">전주지방검찰청</a></li>
+                       <li><a href="">제주지방검찰청</a></li>
+                       <li><a href="">창원지방검찰청</a></li>
+                       <li><a href="">청주지방검찰청</a></li>
+                       <li><a href="">춘천지방검찰청</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">산하기관 관련단체</button>
+                   <ul class="list link3">
+                       <li><a href="">대한법률구조공단</a></li>
+                       <li><a href="">범죄예방위원전국연합회</a></li>
+                       <li><a href="">법조협회</a></li>
+                       <li><a href="">전국범죄피해자지원연합회</a></li>
+                       <li><a href="">정부법무공단</a></li>
+                       <li><a href="">한국법무보호복지공단</a></li>
+                       <li><a href="">한국소년보호협회</a></li>
+                       <li><a href="">IOM이민정책연구원</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">정부부처</button>
+                   <ul class="list link4">
+                       <li><a href="">고용노동부</a></li>
+                       <li><a href="">교육부</a></li>
+                       <li><a href="">국방부</a></li>
+                       <li><a href="">국토교통부</a></li>
+                       <li><a href="">기획재정부</a></li>
+                       <li><a href="">농림축산식품부</a></li>
+                       <li><a href="">문화체육관광부</a></li>
+                       <li><a href="">과학기술정보통신부</a></li>
+                       <li><a href="">보건복지부</a></li>
+                       <li><a href="">산업통상자원부</a></li>
+                       <li><a href="">행정안전부</a></li>
+                       <li><a href="">여성가족부</a></li>
+                       <li><a href="">외교부</a></li>
+                       <li><a href="">통일부</a></li>
+                       <li><a href="">해양수산부</a></li>
+                       <li><a href="">환경부</a></li>
+                       <li><a href="">중소벤처기업부</a></li>
+                   </ul>
+               </li>
+               <li class="siteLinklst">
+                  <button type="button">정부기관</button>
+                   <ul class="list link5">
+                       <li><a href="">감사원</a></li>
+                       <li><a href="">경찰청</a></li>
+                       <li><a href="">공정거래위원회</a></li>
+                       <li><a href="">관세청</a></li>
+                       <li><a href="">국가교육과학기술자문회의</a></li>
+                       <li><a href="">국가보훈처</a></li>
+                       <li><a href="">국가정보원</a></li>
+                       <li><a href="">국무총리실</a></li>
+                       <li><a href="">국민권익위원회</a></li>
+                       <li><a href="">국세청</a></li>
+                       <li><a href="">금융위원회</a></li>
+                       <li><a href="">기상청</a></li>
+                       <li><a href="">농촌진흥청</a></li>
+                       <li><a href="">대법원</a></li>
+                       <li><a href="">문화재청</a></li>
+                       <li><a href="">민주평화통일자문회의</a></li>
+                       <li><a href="">방송통신위원회</a></li>
+                       <li><a href="">방위사업청</a></li>
+                       <li><a href="">법제처</a></li>
+                       <li><a href="">병무청</a></li>
+                       <li><a href="">산림청</a></li>
+                       <li><a href="">소방청</a></li>
+                       <li><a href="">식품의약품안전처</a></li>
+                       <li><a href="">인사혁신처</a></li>
+                       <li><a href="">조달청</a></li>
+                       <li><a href="">통계청</a></li>
+                       <li><a href="">특허청</a></li>
+                       <li><a href="">해양경찰청</a></li>
+                       <li><a href="">행정중심복합도시건설청</a></li>           
+                   </ul>
+               </li>
+           </ul>
+           <div class="search">
+               <input type="text" placeholder="검색어를 입력해주세요." id="searchForm" value="">
+               <button type="submit" class="searchBtn"></button>
+           </div>
+       </div>
+       <footer class="ft">
+           <p class="copy">경기도 과천시 관문로 47 정부과천청사 법무부(1동)<br>COPYRIGHTⓒ KIM. . ALL RIGHTS RESERVED.</p>
+       </footer>
+    </div>     
+</body>
+</html>
