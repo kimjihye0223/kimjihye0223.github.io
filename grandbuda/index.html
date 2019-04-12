@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GRAND BUDAPEST HOTEL</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="Grand Budapest Hotel Home Page">
+    <meta name="author" content="KIM">
+    <meta name="description" content="Grand Budapest Hotel Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="Grand Budapest Hotel, 그랜드부다페스트호텔, Movie, 영화">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link rel="stylesheet" href="./font/KoPubWorld Dotum Light.ttf">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        .mobile {position: relative; width: 100%; background: url("./img/bg.png") no-repeat; background-size: cover; display: block;}
+        #hd {position: relative; width: 100%; height: 20%;  background: rgba(255,255,255,0.3);}
+        .hdInner {width: 100%; height: 100%; margin: 0 auto;}
+        .hdTop { height: 30%; padding-top: 5%; padding-bottom: 5%}
+        .logo { content: ""; display: block; background: url("./img/logo.png") no-repeat; width: 222px; height: 38px; margin: 0px auto; background-size:100%; }
+        #contents {position: relative; width: 100%; height: 80%;  clear: both;}
+        .main {margin: 2% 2% auto;}
+        .section {display: block;}
+        .section.item1 {width: 100%; height: 30%; }
+        .section .visual {position: relative; width: 100%; height: 100%; }
+        .visual img {position: relative; width: 100%; height: 100%;}
+        .visual .night { margin-top: -55%;}
+        .ckItem {display: none;}
+        .section.item2 {width: 100%; height: 30%; position: relative; }
+        .section.item2 ul li {position: relative; width: 49%; height: 100%; float: left;}
+        .section.item2 ul li:first-child {margin-right: 2%;}
+        .section.item2 img {width: 100%; height: 100%;}
+        .section.item3 {width: 100%; height: 40%;}
+        .section.item3 ul li {position: relative; width: 100%; height: 12%;}
+        .section.item3 ul li:first-child {margin-top: 0.4%}
+        .section.item3 img {width: 100%; height: auto;}
+        .share {position: relative; width: 100%; height: 50px; clear: both; margin-top: 10%; background: rgba(255,255,255,0.3)}
+        .share h3 {float: left; font-size: 1em; color: #424242; font-weight: 600; line-height: 2.9; padding: 0 2%;}
+        .share h3:after {content: ""; display: block; background: url("./img/sha.png") no-repeat; width: 30px; height: 30px; background-size: cover; position: absolute; top: 20%; left: 18%; }
+        .share ul {position: relative; width: 80%; height: 100%; margin-left: 30%;}
+        .share li { position: relative; width: 10%; float: left; text-indent: -99999px; width: 30px; height: 30px; display: block; padding:3% 1%; }
+        .share li:first-child {background: url("./img/fb.png") no-repeat center center;}
+        .share li:nth-child(2) {background: url("./img/bl.png") no-repeat center center;}
+        .share li:nth-child(3) {background: url("./img/tw.png") no-repeat center center;}
+        .share li:nth-child(4) {background: url("./img/kt.png") no-repeat center center;}
+        .share li:nth-child(5) {background: url("./img/in.png") no-repeat center center;}
+        
+        .ft {clear: both; width: 100%; height: 10%;}
+        .copy {margin: 0 auto; text-align: center; }
+        .copy a {color: #fff; font-size: 0.9em;}
+    </style>
+    <style>
+        @media screen and (max-width:767px) {
+            .mobile {display: block;}
+            .desk {display: none;}
+            #switch {position: fixed; right: 5%; z-index: 10; top: 13%; width: 46px; height: 89px; background: rgba(255,255,255,0.3); border-radius: 46px; animation:swc 0.7s infinite alternate both 0.5s;}
+            @keyframes swc {
+            from { bottom: 50px; transform:translateY(50px); }
+            to { bottom: 100px; transform:translateY(20px); }
+            } 
+            .day {display: block; transition:0.6s; opacity: 1;}
+            .night { display: block; transition: 0.6s; opacity: 0;}
+            .sun {display: block; background: url("./img/sun.png") no-repeat center center; width: 40px; height: 40px; background-size: cover; border-radius: 55px; z-index: 10; position: relative;  cursor: pointer; margin: 3px;}
+            .moon {display: block; background: url("./img/moon.png") no-repeat center center; width: 40px; height: 40px; background-size: cover; border-radius: 50%; position: relative; z-index: 10; cursor: pointer; margin: 3px;}
+            #swch2:checked ~ .night {opacity: 1;}
+            #swch2:checked ~ .day {opacity: 0; }
+            #swch2:checked ~ .desk {background: url("./img/bgn.png") no-repeat;}
+            
+            
+        }
+        @media screen and (min-width:768px) and (max-width:959px){
+            .mobile {display: block;}
+            .desk {display: none;}
+            #switch {position: fixed; left: 5%; z-index: 10; top: 16%; width: 66px; height: 128px; background: rgba(255,255,255,0.3); border-radius: 50px; animation:swc 0.7s infinite alternate both 0.5s;}
+            @keyframes swc {
+            from { bottom: 50px; transform:translateY(50px); }
+            to { bottom: 100px; transform:translateY(20px); }
+            } 
+            .day {display: block; transition:0.6s; opacity: 1;}
+            .night { display: block; transition: 0.6s; opacity: 0;}
+            .sun {display: block; background: url("./img/sun.png") no-repeat center center; width: 60px; height: 60px; background-size: cover; border-radius: 55px; z-index: 10; position: relative;  cursor: pointer; margin: 3px;}
+            .moon {display: block; background: url("./img/moon.png") no-repeat center center; width: 60px; height: 60px; background-size: cover; border-radius: 50%; position: relative; z-index: 10; cursor: pointer; margin: 3px;}
+            #swch2:checked ~ .night {opacity: 1;}
+            #swch2:checked ~ .day {opacity: 0; }
+            #swch2:checked ~ .desk {background: url("./img/bgn.png") no-repeat;}
+        }
+        @media screen and (min-width:960px) and (max-width:1279px){
+            .mobile {display: none;}
+            .desk {position: relative; width: 100%; height: 100%; background: url("./img/bg.png") no-repeat; background-size: cover; display: block;}
+            #hd {height: 15%;}
+            .hdInner {width: 1200px; }
+            .hdTop { height: 40%; padding-top: 30px; padding-bottom: 0;}
+            .logo { background: url("./img/hdlogo.png") ; width: 842px; height: 36px; }
+            #gnb {position: relative; width: 100%;  display: block;}
+            #gnb ul {line-height: 3; position: relative; height: 100%; padding:0 5% 0 5%; border-top: 1px solid rgba(255,255,255,0.3);}
+            #gnb ul li {float: left; width: 20%; text-align: center;}
+            #gnb ul li a {color: #424242; font-size: 1.2em;}
+            #contents {width: 1400px; margin: 0 auto; height: 70%;}
+            .section.item1 {width: 59%; float: left;}
+            .section.item2 {width: 40%; height: 100%; float: right;} 
+            .section.item2 ul li {float: none; width: 100%; height: 49%;}
+            .section.item2 ul li:first-child {margin-right: 0; margin-bottom: 1%; }
+            .section.item3 ul li {float: left; width: 32.66%; margin-right: 1%;}
+            .section.item3 ul li:last-child {margin-right: 0;}
+            .share h3:after {left: 7%;}
+            .share ul {margin-left: 10%;}
+            .share li {padding: 1% 2%; cursor: pointer;}
+            #switch {position: fixed; left: 5%; z-index: 10; top: 16%; width: 66px; height: 128px; background: rgba(255,255,255,0.3); border-radius: 50px; animation:swc 0.7s infinite alternate both 0.5s;}
+            @keyframes swc {
+            from { bottom: 50px; transform:translateY(50px); }
+            to { bottom: 100px; transform:translateY(20px); }
+            } 
+            .day {display: block; transition:0.6s; opacity: 1;}
+            .night { display: block; transition: 0.6s; opacity: 0;}
+            .sun {display: block; background: url("./img/sun.png") no-repeat center center; width: 60px; height: 60px; background-size: cover; border-radius: 55px; z-index: 10; position: relative;  cursor: pointer; margin: 3px;}
+            .moon {display: block; background: url("./img/moon.png") no-repeat center center; width: 60px; height: 60px; background-size: cover; border-radius: 50%; position: relative; z-index: 10; cursor: pointer; margin: 3px;}
+            #swch4:checked ~ .night {opacity: 1;}
+            #swch4:checked ~ .day {opacity: 0; }
+            
+        }
+        @media screen and (min-width:1280px){
+            .mobile {display: none;}
+            .desk {position: relative; width: 100%; height: 100%; background: url("./img/bg.png") no-repeat; background-size: cover; display: block;}
+            #hd {height: 15%;}
+            .hdInner {width: 1200px; }
+            .hdTop { height: 40%; padding-top: 30px; padding-bottom: 0;}
+            .logo { background: url("./img/hdlogo.png") ; width: 842px; height: 36px; }
+            #gnb {position: relative; width: 100%;  display: block;}
+            #gnb ul {line-height: 3; position: relative; height: 100%; padding:0 5% 0 5%; border-top: 1px solid rgba(255,255,255,0.3);}
+            #gnb ul li {float: left; width: 20%; text-align: center;}
+            #gnb ul li a {color: #424242; font-size: 1.2em;}
+            #contents {width: 1400px; margin: 0 auto; height: 70%;}
+            .section.item1 {width: 59%; float: left;}
+            .section.item2 {width: 40%; height: 100%; float: right;} 
+            .section.item2 ul li {float: none; width: 100%; height: 49%;}
+            .section.item2 ul li:first-child {margin-right: 0; margin-bottom: 1%; }
+            .section.item3 ul li {float: left; width: 32.66%; margin-right: 1%;}
+            .section.item3 ul li:last-child {margin-right: 0;}
+            .share h3:after {left: 7%;}
+            .share ul {margin-left: 10%;}
+            .share li {padding: 1% 2%; cursor: pointer;}
+            
+            #switch {position: fixed; left: 9%; z-index: 10; top: 16%; width: 66px; height: 128px; background: rgba(255,255,255,0.3); border-radius: 50px; animation:swc 0.7s infinite alternate both 0.5s;}
+            @keyframes swc {
+            from { bottom: 50px; transform:translateY(50px); }
+            to { bottom: 100px; transform:translateY(20px); }
+            } 
+            .day {display: block; transition:0.6s; opacity: 1;}
+            .night { display: block; transition: 0.6s; opacity: 0;}
+            .sun {display: block; background: url("./img/sun.png") no-repeat center center; width: 60px; height: 60px; background-size: cover; border-radius: 55px; z-index: 10; position: relative;  cursor: pointer; margin: 3px;}
+            .moon {display: block; background: url("./img/moon.png") no-repeat center center; width: 60px; height: 60px; background-size: cover; border-radius: 50%; position: relative; z-index: 10; cursor: pointer; margin: 3px;}
+            #swch4:checked ~ .night {opacity: 1;}
+            #swch4:checked ~ .day {opacity: 0; }
+            
+    </style>
+</head>
+<body>
+    <div class="mobile">
+        <header id="hd">
+            <div class="hdInner">
+                <div class="hdTop">
+                    <a href="" class="logo"></a>
+                </div>
+            </div>
+        </header>
+        <div id="contents">
+            <div class="main">
+                <div class="section item1">
+                    <div class="visual">
+                        <input type="radio" name="radiobox" id="swch1" class="ckItem" checked>
+                       <input type="radio" name="radiobox" id="swch2" class="ckItem">
+                        <div id="switch">
+                           <label for="swch1" class="sun"></label>
+                           <label for="swch2" class="moon"></label>
+                        </div>
+                        <img src="./img/visual01.jpg" alt="" class="day">
+                        <img src="./img/visual02.jpg" alt="" class="night">
+                    </div>
+                </div>
+                <div class="section item2">
+                    <ul>
+                        <li class="vsTwo">
+                            <a href=""><img src="./img/vstwo01.jpg" alt=""></a>
+                        </li>
+                        <li class="vsTwo">
+                            <a href=""><img src="./img/vstwo02.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section item3">
+                    <ul>
+                        <li class="vsThree">
+                            <a href=""><img src="./img/vsthree01.jpg" alt=""></a>
+                        </li>
+                        <li class="vsThree">
+                            <a href=""><img src="./img/vsthree02.jpg" alt=""></a>
+                        </li>
+                        <li class="vsThree">
+                            <a href=""><img src="./img/vsthree03.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="share">
+                    <h3>SHARE</h3>
+                    <ul>
+                        <li><a href="">fb</a></li>
+                        <li><a href="">bl</a></li>
+                        <li><a href="">tw</a></li>
+                        <li><a href="">kt</a></li>
+                        <li><a href="">in</a></li>
+                    </ul>
+                </div>
+            </div>        
+        </div>
+        <footer id="ft">
+            <div class="copy"><a href="">COPYRIGHT(C) KIM 2019.<br>ALL RIGHTS RESERVED.</a></div>
+        </footer>
+    </div>
+    <div class="desk">
+        <header id="hd">
+            <div class="hdInner">
+                <div class="hdTop">
+                    <a href="" class="logo"></a>
+                </div>
+                <nav id="gnb">
+                    <ul>
+                        <li class="menu"><a href="">INFO</a></li>
+                        <li class="menu"><a href="">CAST</a></li>
+                        <li class="menu"><a href="">VIDEO</a></li>
+                        <li class="menu"><a href="">PHOTO</a></li>
+                        <li class="menu"><a href="">REVIEW</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="contents">
+            <div class="main">
+                <div class="section item1">
+                    <div class="visual">
+                       
+                       <input type="radio" name="radiobox" id="swch3" class="ckItem" checked>
+                       <input type="radio" name="radiobox" id="swch4" class="ckItem">
+                       <div id="switch">
+                       <label for="swch3" class="sun"></label>
+                       <label for="swch4" class="moon"></label>
+                       </div>
+                       <img src="./img/visual01.jpg" alt="" class="day">
+                       <img src="./img/visual02.jpg" alt="" class="night">
+                    </div>
+                </div>
+                <div class="section item2">
+                    <ul>
+                        <li class="vsTwo">
+                            <a href=""><img src="./img/vstwo01m.jpg" alt=""></a>
+                        </li>
+                        <li class="vsTwo">
+                            <a href=""><img src="./img/vstwo02m.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="section item3">
+                    <ul>
+                        <li class="vsThree">
+                            <a href=""><img src="./img/vsthree01.jpg" alt=""></a>
+                        </li>
+                        <li class="vsThree">
+                            <a href=""><img src="./img/vsthree02.jpg" alt=""></a>
+                        </li>
+                        <li class="vsThree">
+                            <a href=""><img src="./img/vsthree03.jpg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="share">
+                    <h3>SHARE</h3>
+                    <ul>
+                        <li><a href="">fb</a></li>
+                        <li><a href="">bl</a></li>
+                        <li><a href="">tw</a></li>
+                        <li><a href="">kt</a></li>
+                        <li><a href="">in</a></li>
+                    </ul>
+                </div>
+            </div>        
+        </div>
+
+        <footer id="ft">
+            <div class="copy"><a href="">COPYRIGHT(C) KIM 2019.<br>ALL RIGHTS RESERVED.</a></div>
+        </footer>
+    </div>
+    <div id="particles-js"></div>
+</body>
+</html>
