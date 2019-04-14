@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>대상주식회사</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="DAESANG Group Site">
+    <meta name="author" content="KIM">
+    <meta name="description" content="DAESANG Group Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="대상, 대상주식회사, 대상그룹">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    
+    <!--[if lt IE 9]>
+    <script src="./js/html5shiv.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" href="nomalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans|Noto+Sans+KR|Noto+Serif+KR" rel="stylesheet">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="sub.css">
+    
+    <style>
+        font-family: 'Nanum Gothic', sans-serif;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'Noto Serif KR', serif;
+        font-family: 'Noto Sans', sans-serif;
+        
+    #page1 { background-image: url("./index/main_img1.jpg"); }
+    #page2 { background-image: url("./index/main_img1.jpg"); }
+    #page3 { background-image: url("./index/main_img2.jpg"); }
+    #page4 { background: rgba(128,128,128,0.3);}
+    .videosection {width: 100%; height: 100%; overflow: hidden;} 
+    .videosection video {display: block; width: auto; height: 100%; min-height: 1080px;}
+    
+    .page {position: relative; clear: both; overflow: hidden;}
+    .section {width: 1200px; margin: 0 auto;}
+        
+    #page1 .section {position: absolute; top: 0; left:calc(50% - 600px);}
+    .txtBox {clear: both;}
+    .pageTit {color: #fff; padding-top: 350px; font-size: 60px; background-image: url("./index/logonon.png"); background-repeat: no-repeat; background-position: 0px 300px; clear: both; line-height: 1.3;}
+    .pageTxt {color: #fff; font-size: 16px;}
+    
+    #seachfrm {clear: both; padding-top: 60px;}       
+    #keyword {border: 0; outline: 0; background: #fff; display: block; width: 500px; line-height: 60px; text-indent: 30px; float: left;}
+    .scfrm {outline: 0; border: 0; display: block; width: 60px; height: 62px; line-height: 62px; float: left; background-color: #8a7256; background-repeat: no-repeat; background-position: center center;}
+    .scbtn {background-image: url("./index/seach.png"); background-size: 50px 50px;}
+        
+    .quickBox {position: absolute; right: 300px; top: 200px; width: 200px; height: 600px;}
+    .quickBox li {clear: both; width: 200px; height: 200px; overflow: hidden; }
+    .quickBox li a {display: block; width: 200px; text-align: center;}
+    .quickBox li .offBox, .quickBox li .onBox { width: 200px; height: 200px; clear: both;}
+    .quickBox li .onBox {display: none;}
+    .quickBox li:hover .onBox {display: block;}
+    .quickBox li .offBox {display: block;}
+    .quickBox li:hover .offBox {display: none;}
+    .quickBox li .offBox .quickTxt {color: #fff;}
+    .quickBox li .offBox .quickTxt:before {content: ""; display: block; width: 58px; height: 55px; clear: both; margin: 20px auto; background-position: center center; background-repeat: no-repeat;}
+    .quickBox li .item1 .offBox .quickTxt:before {background-image: url("./index/main_ico1.png");}
+    .quickBox li .item2 .offBox .quickTxt:before {background-image: url("./index/main_ico2.png");}
+    .quickBox li .item3 .offBox .quickTxt:before {background-image: url("./index/main_ico3.png");}
+    .quickBox li .offBox .quickTxt:after {background-image: url("./index/arrow.png"); background-size: 50% 50%; content: ""; display: block; width: 28px; height: 28px; clear: both; margin: 20px auto; background-position: center center; background-repeat: no-repeat;}
+    .quickBox li .onBox {background-position: center center; background-repeat: repeat; background-size: 100% 100%; overflow: hidden;}
+    .quickBox li .item1 .onBox { background-image: url("./index/button_01.png");}
+    .quickBox li .item2 .onBox { background-image: url("./index/button_02.png");}
+    .quickBox li .item3 .onBox { background-image: url("./index/button_03.png");}
+     
+    .more {display: inline-block; padding: 20px; border: 2px solid #fff; color: #fff; margin-top: 30px; border-radius: 30px; padding-right: 30px;}
+    .more:after {content: ""; display: inline-block; width: 13px; height: 13px; background-image: url("./index/arrow1.png"); margin-left: 30px; }
+        
+    #page2 { background-image: url("./index/main_img1.jpg"); background-size: 125% 125%; opacity: 0.8; transition: 1s; transition-delay: 0.2s;}
+    #page3 { background-image: url("./index/main_img2.jpg"); background-size: 125% 125%; opacity: 0.8; transition: 1s; transition-delay: 0.2s;}
+    #page2:hover, #page3:hover {background-size: 100% 100%; opacity: 1;}
+    .comentBox {width: 450px; border-radius: 0px 0px 0px 100px; height: 200px; background-clip: #333; margin-top: 50px;}
+    .num {display: block; color: #fff; font-size: 48px; text-indent: 20px; padding-top: 15px;}
+    .coment {padding: 20px; color: #fff; padding-top: 10px;}
+        
+    .col3 {display: block; float: left; width: 285px; margin-right: 20px; box-sizing: border-box;}
+    .col3.first {clear: both;}
+    .col3.last {margin-right: 0;}
+    .col6 {width: 590px; margin-right: 20px; float: left;}
+        
+    #page4 .titBox {position: relative; clear: both;}
+    #page4 .pageTit {background-image: url("./index/logonon1.png"); color: #333; padding-top: 10px;}
+    #page4 .pageComent {color: #333;}    
+    .row {clear: both; margin: 0; padding: 0;}    
+    .row a {color: #333;}
+    .row .wtxt {color: #fff;}
+    .row.one {height: 320px; margin-top: 30px;}
+        .row.one .col3, .row.one .col6 {height: 320px;}
+    .row.two {height: 225px; margin-top: 30px;}
+    .curBox {height: 320px; width: 590px; overflow: hidden; background-image: url("./index/news.jpg"); background-repeat: no-repeat; background-size: 100% auto; position: relative; transition: 0.4s}
+    .curBox:hover {border-radius: 0px 90px 0px 0px;}
+    .curBox a {display: block; padding: 35px;}
+    .hvBox1, .hvBox2, .hvBox3 {display: block; padding: 35px; position: relative;}
+    .hvBox1 {height: 250px;}
+    .hvBox2, hvBox3 { height: 150px;}
+    .curTit { font-size: 28px; line-height: 60px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-shadow:0px 0px 15px #333;}
+    .notiTit {overflow: hidden; white-space: normal; line-height: 1.2; height: 3.6em; word-wrap: break-word; text-overflow: ellipsis; line-clamp:3; -webkit-line-clamp:3; box-orient:vertical; -webkit-box-orient:vertical; display:-webkit-box; font-size: 22px;} 
+    .date { position: absolute; bottom: 15px; left: 35px;}
+    .notiBox1 {height: 320px; border-radius: 0px; background-color: #8a7256; transition: 0.4s;}
+    .notiBox1:hover {border-radius: 0px 90px 0px 0px;}
+    .notiBox2 {height: 225px; border-radius: 0px; background-color: #ac967d; transition: 0.4s;} 
+    .notiBox2:hover {border-radius: 0px 0px 0px 90px;}
+    .notiBox3 {border:1px solid #999; overflow: hidden; height: 225px;}
+    .notiBox3 a:before {content: ""; display: block; width: 283px; height: 225px; background-color: #d5edff; transition: 0.3s; position: absolute; top: 0; left: -285px; z-index: -1;}
+    .notiBox3 a:hover::before {left: 0;}
+    .row.two .col3.last {background-color: #e4ebf0; height: 225px;}
+    .notiBox4 {padding: 35px;}
+    .notiBox4 .notiTit {height: auto;}
+    .snsLst {margin: 0; padding: 0;}
+    .snsLst li { float: left; width: 104px; box-sizing: border-box;} 
+    .snsTit {font-size: 14px; font-weight: 600;}        
+    
+    .ft {clear: both; width: 100%; height: 180px; margin-top: 20px; padding-top: 20px;}
+    .ftWrap {clear: both; width: 100%; height: 100px;}
+    .ftWrap.first {height: 80px; background-color: #333;}
+    #relNav {width: 1200px; margin: 0 auto;}
+    #relNav ul {clear: both; margin: 0; padding: 0;}
+    #relNav .col2 {width: 200px; float: left; height: 80px; overflow: hidden; box-sizing: border-box;}
+    #relNav .col2 a {display: block; height: 80px;}
+    .bgIcon {background-size: 110px auto; background-position: center center; background-repeat: no-repeat; color: #fff; text-align: center;}
+    #relNav .col2 a.item1 {border-left: 1px solid #444; border-right: 1px solid #444; background-image: url("./index/logo2.png"); background-position: center center;}
+    .familyTxt {display: none;}
+    #relNav .col2 a.item2 {background-image: url("./index/logo_daesang.png");}
+    #relNav .col2 a.item3 {background-image: url("./index/logo_daesangit.png");}
+    #relNav .col2 a.item4 {background-image: url("./index/logo_dongseo.png");}
+    #relNav .col2 a.item5 {background-image: url("./index/logo_found.png");}
+    #relNav .col2 a.item6 {background-image: url("./index/logo_holdings.png");}
+    
+    #ftArea {width: 1200px; margin: 0 auto;}
+        .copyright {width: 70%; float: left; font-size: 0.8em; line-height: 1.6; padding-top: 35px; color: #777;}
+        .ftLink {width: 28%; float: right; font-weight: 300; padding-top: 45px;}
+        .ftLink ul {margin: 0; padding: 0;}
+        .spl:after {content:"|"; display: inline-block; padding-left: 7px; padding-right: 7px;}
+        .ftLink li {float: left;}
+        .ftLink li a {color: #444; padding: 6px; font-size: 0.8em;}
+        .ftLink li a.item1 { border-radius: 40px; border: 1px solid #333; color: #333; padding-left: 10px; padding-right: 10px;}
+
+    </style>
+    <link rel="stylesheet" href="par.css">
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="par.js"></script>
+    <script>
+    $(document).ready(function(){
+        
+        
+    });
+    </script>
+        
+</head>
+<body>
+    <header class="hd">
+        <div class="hdWrap">
+            <a href="index.html" class="logo">로고</a>
+            <nav id="mainMenu">
+                <ul>
+                    <li class="item1">
+                        <a href="dsabout.html" class="menuDs">대상소개</a>
+                        <ul class="subMenu">
+                            <li><a href="dsabout.html#page1">경영철학</a></li>
+                            <li><a href="dsabout.html#page2">대표인사말</a></li>
+                            <li><a href="dsabout.html#page3">네트워크</a></li>
+                            <li><a href="dsabout.html#page4">사업분야</a></li>
+                            <li><a href="dsabout.html#page5">연혁</a></li>
+                            <li><a href="dsabout.html#page6">투자정보</a></li>
+                        </ul>
+                    </li>
+                    <li class="item1">
+                        <a href="careers.html" class="menuDs">채용정보</a>
+                        <ul class="subMenu">
+                            <li><a href="careers.html#page1">인재상</a></li>
+                            <li><a href="careers.html#page2">인사제도</a></li>
+                            <li><a href="careers.html#page3">채용안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="item1">
+                        <a href="media.html" class="menuDs">홍보센터</a>
+                        <ul class="subMenu">
+                            <li><a href="media.html#page1">대상NEWS</a></li>
+                            <li><a href="media.html#page2">소셜허브</a></li>
+                            <li><a href="media.html#page3">광고</a></li>
+                            <li><a href="media.html#page4">CI</a></li>
+                        </ul>
+                    </li>
+                    <li class="item1">
+                        <a href="csv.html" class="menuDs">사회공헌</a>
+                        <ul class="subMenu">
+                            <li><a href="csv.html#page1">대상사회공헌</a></li>
+                            <li><a href="csv.html#page2">청정원봉사단</a></li>
+                            <li><a href="csv.html#page3">후원사업</a></li>
+                            <li><a href="csv.html#page4">해외사회공헌</a></li>
+                            <li><a href="csv.html#page5">대상문화재단</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </nav>
+        <nav id="topNav">
+            <ul>
+                <li><a href="contact.html" class="contact">Contact Us</a></li>
+                <li><a href="#">ENG</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <div class="page" id="page1" data-page="0">
+        <div class="videosection">
+            <video autoplay loop muted="">
+            <source src="./index/main_video.mp4" type="video/mp4"> 
+            <source src="./index/main_video.ogg" type="video/ogg">
+            <source src="./index/main_video.webm" type="video/webm">   
+            </video>
+        </div>
+        <div class="section">
+            <div class="txtBox">
+                <h1 class="pageTit">당신과 함께한 행복의 길</h1>
+                <p class="pageTxt">당신과 함께해 온, 여기 이 길 바로 대상의 행복의 길입니다.</p>
+            </div>
+            <form action="" id="seachfrm">
+                <input type="text" id="keyword" placeholder="검색어를 입력하세요" autofocus name="keyword">
+                <input type="submit" class="scfrm scbtn" value="">
+            </form>
+        </div>
+        <ul class="quickBox">
+            <li>
+                <a href="" class="item1">
+                    <div class="offBox">
+                        <span class="quickTxt">사업분야</span>
+                    </div>
+                    <div class="onBox">
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href=""  class="item2">
+                    <div class="offBox">
+                         <span class="quickTxt">투자정보</span>
+                    </div>
+                    <div class="onBox">
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href=""  class="item3">
+                    <div class="offBox">
+                         <span class="quickTxt">채용안내</span>
+                     </div>
+                    <div class="onBox">                       
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="page" id="page2" data-page="1">
+         <div class="section">
+            <div class="txtBox">
+                <h1 class="pageTit">최고로 가는 최선의 길</h1>
+                <p class="pageTxt">생각한다는 것 어디에도 머물지 않는다는 것<br>생각의 길은 최고로 가는 최선의 길입니다.</p>
+            </div>
+            <a href="" class="more">계열사</a>
+            <div class="commentBox">
+                <span class="num">01</span>
+                <p class="coment"> 국내 최대 규모의 전분당 사업을 지속적으로 발전시키며, 첨단발효기술을<br>바탕으로 한 페닐알라닌, 글루타민, 아르지닌 등 바이오 사업과 필수 아미노산인<br>라이신 제품을 통해 글로벌 소재 기업으로 도약하고 있습니다.
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="page3" data-page="2">
+         <div class="section">
+            <div class="txtBox">
+                <h1 class="pageTit">함께 가는 길은 행복의 지름길</h1>
+                <p class="pageTxt">함께 누리고 함께 기쁘고 함께 살아가고<br>우리가 함께 가는 길은 행복의 지름길입니다.</p>
+            </div>
+            <a href="" class="more">사회공헌</a>
+            <div class="commentBox">
+                <span class="num">01</span>
+                <p class="coment">다 함께 행복할 수 있는 세상을 만들기 위해 대상은 사회적 책임을 다합니다.                    
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="page" id="page4" data-page="3">
+        <div class="section">
+            <ul class="row one">
+                <li class="col3 first">
+                    <div class="titBox">
+                        <h1 class="pageTit">대상소식</h1>
+                        <p class="pageComent">대상의 최신 소식을 알려드립니다.</p>
+                    </div>
+                </li>
+                <li class="col6">
+                    <div class="curBox">
+                           <a href="">
+                            <h2 class="curTit wtxt"></h2>
+                            <p class="date wtxt">2019-01-31</p>
+                        </a>
+                    </div>
+                </li>
+                <li class="col3 last">
+                    <div class="notiBox1">
+                           <a href="" class="hvBox1">
+                            <h2 class="notiTit wtxt">대상 설맞이 '청정원 설날 사랑이 떡국 나눔' 행사 진행</h2>
+                            <p class="date wtxt">2019-01-24</p>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="row two">
+                <li class="col3 first">
+                    <div class="notiBox2">
+                           <a href="" class="hvBox2">
+                            <h2 class="notiTit wtxt">대상홀딩스 한국-인도네시아 대학생 스마트폰 푸드영화제 개최</h2>
+                            <p class="date wtxt">2019-01-23</p>
+                            </a>
+                    </div>
+                </li>
+                <li class="col3">
+                    <div class="notiBox3">
+                           <a href="" class="hvBox3">
+                            <h2 class="notiTit">청정원 맛있는 콜라보, 제주올레 팝업 레스토랑 성황리에 마쳐</h2>
+                            <p class="date">2019-01-21</p>
+                            </a>
+                    </div>
+                </li>
+                <li class="col3">
+                    <div class="notiBox3">
+                           <a href="" class="hvBox3">
+                            <h2 class="notiTit">대상한림식품과학상 시상식 진행</h2>
+                            <p class="date">2018-11-30</p>
+                            </a>
+                    </div>
+                </li>
+                <li class="col3 last">
+                    <div class="notiBox4">
+                        <h2 class="notiTit">SNS</h2>
+                        <hr>
+                        <ul class="snsLst">
+                            <li class="snsCol">
+                                <a href="">
+                                    <img src="./index/ico_sns1.png" alt="블로그">
+                                </a>
+                                <a href="">
+                                    <img src="./index/ico_sns2.png" alt="페이스북">
+                                </a>
+                            </li>
+                            <li class="snsCol">
+                                <a href="">
+                                    <img src="./index/ico_sns3.png" alt="인스타그램">
+                                </a>
+                                <a href="">
+                                    <img src="./index/ico_sns4.png" alt="유튜브">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    <footer class="ft">
+       <div class="ftWrap first">
+           <nav id="relNav">
+               <ul>
+                   <li class="col2">
+                       <a href="" class="bgIcon item1">
+                           <span class="familyTxt">FAMILY SITE</span>
+                       </a>
+                    </li>
+                    <li class="col2">
+                       <a href="" class="bgIcon item2"></a>
+                    </li>
+                    <li class="col2">
+                       <a href="" class="bgIcon item3"></a>
+                    </li>
+                    <li class="col2">
+                       <a href="" class="bgIcon item4"></a>
+                    </li>
+                    <li class="col2">
+                       <a href="" class="bgIcon item5"></a>
+                    </li>
+                    <li class="col2">
+                       <a href="" class="bgIcon item6"></a>
+                    </li>
+               </ul>
+           </nav>
+       </div>
+        <div class="ftWrap">
+            <div id="ftArea">
+                <div class="copyright">
+                    <p class="info"> <span class="spl">서울특별시 동대문구 천호대로 26(신설동) 대상빌딩</span> <span class="spl">TEL:02-2220-9500</span> FAX:02-2232-3719<br>COPYRIGHT DAESANG ALL RIGHTS RESERVED.</p>
+                </div>
+                <nav class="ftLink">
+                    <ul>
+                        <li><a href="" class="item1">개인정보처리방침</a></li>
+                        <li><a href="">고객의 소리</a></li>
+                        <li><a href="">사이트맵</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>    
+    </div>
+    <section id="quick">
+        <a data-val="0" class="pageMove on">
+            <span class="qtxt">대상의 가치</span>
+            <span class="qbtn"></span>
+        </a>
+        <a data-val="1" class="pageMove">
+            <span class="qtxt">대상의 사업분야</span>
+            <span class="qbtn"></span>
+        </a>
+        <a data-val="2" class="pageMove">
+            <span class="qtxt">대상의 사회공헌</span>
+            <span class="qbtn"></span>
+        </a>
+        <a data-val="3" class="pageMove">
+            <span class="qtxt">대상의 소식</span>
+            <span class="qbtn"></span>
+        </a>
+    </section>
+    <button id="quick_up" class="scrollBtn">▲</button>
+    <botton id="quick_down" class="scrollBtn">▼</botton>
+</body>
+</html>
