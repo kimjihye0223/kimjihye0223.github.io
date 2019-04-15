@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SONYa</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SONYa 홈페이지">
+    <meta name="author" content="KIM">
+    <meta name="description" content="SONYa Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="SONYa, SONYA, 소냐, 카메라, 가전제품">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link rel="stylesheet" href="./font/KoPubWorld Dotum Light.ttf">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .mobile {width: 100%; position: relative; background: url("./img/right.jpg") no-repeat top center; background-size: cover; }
+        .mobile #hd  {position: fixed; width: 100%; height: 9%; display: block; background: #fff; z-index: 10; }
+        .mobile .logo {display: block; margin: 0 auto; content: ""; background: url("./img/logo.png") no-repeat center center; width: 226px; height: 41px; background-size: 70%; margin-top: 15px;}
+        .mobile .menuOpen { display: block; width: 40px; height: 40px; background: url("./img/menuOpen.png") no-repeat center center; position: absolute; top: 15px; right: 20px; background-size: cover;}
+        .mobile .raItem {display: none;}
+        #ra4:checked ~ #gnb {right: 0;}
+        #ra4:checked ~ .menuOpen { display: block; background: url("./img/menuClose.png") no-repeat center center;}
+        #gnb {width: 100%; height: 100%; clear: both; background: #fff;  position: fixed; right:-100%; z-index: 999; transition: 0.6s;}
+        .menuList { position: relative; padding: 10%; }
+        .menuList .menuLst {border-top: 1px solid #ddd; padding-left:5%;}
+        .menuList li {height: 15%; font-size: 1em; line-height:4em; }
+        .menuList li a {color: #333; font-weight: 600;}
+        .searchForm {display: block; width: 100%; height: 10%; border-top: 1px solid #ddd; padding-top: 20px; padding-left: 5%; }
+        .searchForm p {font-size: 0.9em; padding-bottom: 10px;}
+        #searchBoxForm {border: 1px solid #333; padding: 10px 40px 10px 10px;}
+        .menuBlist {display: block; margin-top: 10%; }
+        .menuBlist li {float: left; width: 40%; text-align: center; background-color: #222; margin-right:5%; margin-left:5%; margin-top: 5%}
+        .menuBlist li a {color: #fff !important; font-weight: 500 !important;}
+        
+        .mobile #contents {position: relative; clear: both; width: 100%; height: auto;  color: #fff; padding-top: 10% }
+        .mobile .vs {position: relative; display: block; clear: both; width: 100%;  height: 400px; margin-top: 40px;}
+        .mobile .vr_box { width:400px; height:400px; margin:0 auto; }
+        .mobile .vr_box img { width:100%; height:100%; }
+        .mobile .vr_img { display:block; }
+        .mobile .alpha {display: block; margin: 0 auto; width: 90%; padding-left: 20%;  overflow: hidden;  clear: both; padding-top: 180px;}
+        .mobile .alphaMd {float: left; color: #333; font-size: 0.8em; padding-right: 10px;}
+        .mobile .alphaTit {margin-left: 5px; color:#333; font-size: 1em;}
+        .mobile .alphaCom {position: relative; color: #333; padding-top: 2%; font-size: 0.8em;}
+        
+        .ft {display: block; position: relative; clear: both;}
+        .ftTop {width: 100%; height: 50px;}
+        .ftTop ul {position: relative; height: 50px}
+        .ftTop li {width: 49.8%; height: 100%; float: left; text-align: center; background: #fff; line-height: 50px; border-right: 1px solid #333; border-top: 2px solid red;}
+        .ftTop li:last-child {border-right: 0;}
+        .ftTop li a {color: #333;}
+        .ftMid {width: 100%; height: 30px; clear: both;}
+        .ftMid ul {position: relative; height: 40px;}
+        .ftMid li {width: 33.12%; height: 100%; float: left; text-align: center; background: #fff; line-height: 40px; border-right: 1px solid #333; border-top: 1px solid #333;}
+        .ftMid li:last-child {border-right: 0;}
+        .ftMid li a {color: #333; font-size: 0.9em;}
+        .ftBottom {width: 100%; height: 50px; clear: both; position: relative; text-align: center; background: #fff; line-height: 30px; border-top: 1px solid #333; padding-top: 5px;}
+        .ftBottom .copy {font-size: 0.8em;} 
+                
+    </style>
+    <style>
+        .desk {width: 100%; height: 100%; position: relative; }
+        .leftSide {position: fixed; width: calc(50% - 30px); height: 100%; background: url("./img/left.jpg")no-repeat top center; top: 0; left: 0; min-width: 640px;}
+        .rightSide {position: absolute; width: calc(50% - 20px);  top: 0; left: calc(50% + 20px); background: url("./img/right.jpg") no-repeat top center; background-size: cover; color: #fff; height: auto;}
+        .centerMenu {position: fixed; width: 120px; height: 100%; top: 0; left: calc(50% - 30px); background: #222; color: #fff; ; z-index: 10; }
+    </style>
+    <style>
+        .leftSide .videoWrap {position: relative; width: 80%; margin:90px auto; padding-top: 100px;}
+        .leftSide .video{ display: block; position: absolute; top: 50%;}
+        .leftSide .snsShare {display: block; position: absolute; top: 57%; left: 20%; color: #fff; width: 400px; height: 50px;}
+        .snsShare ul {width: 100%; height: 100%; position: relative;}
+        .snsShare h3 {float: left; margin-right: 8%; font-weight: 500;}
+        .snsShare li {float: left; position: relative; width: 10%; height: 80%; text-indent: -9999px; margin-right: 10px; cursor: pointer;}
+        .snsShare li:first-child {background:url("./img/sns1.png") no-repeat center center; background-size: cover;}
+        .snsShare li:nth-child(2) {background:url("./img/sns2.png") no-repeat center center; background-size: cover;}
+        .snsShare li:last-child {background:url("./img/sns3.png") no-repeat center center; background-size: cover;}
+    </style>
+    <style>
+        .centerMenu {display: block;}
+        .centerMenu ul {margin-top: 20%; position: relative; width: 100%; height: 50%;}
+        .centerMenu ul li {position: relative; height: 15%; text-align: center; padding-top: 35px;}
+        .centerMenu ul li:hover{ display: block; background: rgba(255,255,255,1);}
+        .centerMenu ul li:hover a {color: #333;}
+        .centerMenu ul li a { position: relative; color: #fff; width: 100%; height: 100%; font-size: 1.2em; padding-top: 20px;}
+    </style>
+    <style>
+        .rightSide #hd  {position: relative; width: 100%; height: 9%; display: block; background: #fff; }
+        .rightSide .logo {display: block; margin: 0 auto; content: ""; background: url("./img/logo.png") no-repeat center center; width: 226px; height: 41px; background-size: 70%; padding: 4%}
+        .rightSide #contents {position: relative; clear: both; width: 100%; height:auto; display: block; min-height: 2500px;}
+        .vr_box1 { width:500px; height:400px; margin:20px auto; padding-top: 5%;}
+        .vr_box1 img { width:100%; height: 100%; height:auto; }    
+        .vr_img1 { display:block; }
+        .desk .alpha {display: block; position: relative; margin: 50px auto; width: 50%; overflow: hidden; padding-top: 15%; height: auto; padding-left: 10%}
+        .desk .alphaMd {float: left; color: #333; font-size: 0.9em; padding-right: 10px;}
+        .desk .alphaTit {margin-left: 5%; color:#333; font-size: 2em;}
+        .desk .alphaCom {position: relative; color: #333; padding-top: 2%; margin-left: 7%;}
+        .section {position: relative; width: 100%; margin: 0 auto; clear: both;}
+        .section ul {width: 80%; height: 100%; padding-left: 20%; margin-bottom: 50px;}
+        .section ul li {position: relative; width: 100%; height: 300px; margin: 0 auto; margin-bottom: 5%;}
+        .section ul li .col6 { width: 35%; height: 276px; box-sizing: border-box; float: left; }
+        .section ul li .col6.coment {background-color: rgba(255,255,255,0.9); padding: 3%;  color: #333; line-height: 2; margin-left: 10%;  }
+        .col6 h4 {font-size: 1.8em; font-weight: 600;}
+        .col6 p { font-size: 0.9em;}
+        .col6 .price { color: #dc1414; font-weight: 600; font-size: 1.4em;}
+        .col6 .label1 { background: #f22c2c; padding: 1%; color: #fff; font-size: 0.8em;}
+        .col6 .label2 { background: #42429f; padding: 1%; color: #fff; font-size: 0.8em;}
+        .col6 .label3 { background: #7e7e7e; padding: 1%; color: #fff; font-size: 0.8em;}
+        .section ul li .col6 img {width: 100%; background-color: rgba(255,255,255,0.6); padding: 3%; transition: 0.5s;}
+        .section ul li:hover .col6 img {border-top-right-radius: 20%; background-color: rgba(255,255,255,0.9);}
+   
+        .rightSide .eventBox { width: 50%; margin: 0 auto;}
+        .rightSide #ft {position: relative; clear: both; width: 100%; margin: 0 auto; right: 0; height: 9%;}
+        
+    </style>
+    <style>
+        @media screen and (max-width:767px) {
+            .mobile {display: block; background: url("./img/right.jpg") no-repeat top center;  background-size: cover;}
+            .desk {display: none;}
+            .mobile .menuOpen {width: 30px; height: 30px;}
+            .menuBlist li {line-height: 2;}
+            .mobile .alpha { width: 80%; padding-top: 25%; padding-left: 10%;}
+            .mobile .vr_box { width: 300px; height: 300px;}
+            .section {padding-top: 30%;}
+            .section ul {width: 90%; padding-left: 5%;}
+            .section ul li {margin-bottom: 0; height: 230px;}
+            .section ul li .col6 {width: 40%; height: 210px;}
+            .section ul li .col6.img {background: rgba(255,255,255,0.6); padding: 3%; padding-top: 10%;}
+            .section ul li .col6 img {background: none; padding: 0;}
+            .col6 h4 {font-size: 1em;}
+            .col6 p {font-size: 0.8em;}
+            .col6 .price { font-size: 1em;}
+            .col6 .label1 {font-size: 0.6em;}
+            .col6 .label2 {font-size: 0.6em;}
+            .col6 .label3 {font-size: 0.6em;}
+            
+            
+        }
+        @media screen and (min-width:768px) and (max-width:959px){
+            .mobile {display: block; }
+            .desk {display: none;}
+            .mobile #hd {height: 10%;}
+            .mobile .logo {width: 323px; height: 58px;}
+            .mobile .alpha { width: 80%; padding-top: 15%; padding-left: 10%;}
+            .mobile .alphaMd {font-size: 1.6em;}
+            .mobile .alphaTit {font-size: 2em;}
+            .mobile .alphaCom {font-size: 1.1em;}
+            .section {padding-top: 35%}
+            .section ul {width: 90%; padding-left: 5%;}
+            .section ul li {margin-bottom: 10%; height: 240px;}
+            .section ul li .col6 {width: 40%; height: 270px;}
+            .section ul li .col6.img {background: rgba(255,255,255,0.6); padding: 3%; }
+            .section ul li .col6 img {background: none; padding: 0;}
+            .ftTop li {width: 49.93%;}
+            .ftMid li {width: 33.24%;}
+        }
+        @media screen and (min-width:960px) and (max-width:1279px){
+            .mobile {display: none;}
+            .desk {display: block;}
+        }
+        @media screen and (min-width:1280px){
+            .mobile {display: none;}
+            .desk {display: block;}
+            .section {padding-top: 30%;}
+            #ft { margin-top: 10%;}
+            
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>37){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 80);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con1").attr("src", "./img/vrbox/S.00"+vrNum+".png");
+            } else {
+                $("#vr_con1").attr("src", "./img/vrbox/S.000"+vrNum+".png");
+            }
+        }
+    });    
+    </script>
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>37){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 80);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con2").attr("src", "./img/vrbox/S.00"+vrNum+".png");
+            } else {
+                $("#vr_con2").attr("src", "./img/vrbox/S.000"+vrNum+".png");
+            }
+        }
+    });    
+    </script>
+</head>
+<body>
+<div class="wrap mobile">
+    <header id="hd">
+    <input type="checkbox" name="checkBox" class="raItem" id="ra4">
+        <a href="index.html" class="logo"></a>
+        <label for="ra4" class="menuOpen"></label>
+    <nav id="gnb">
+        <label for="ra4" class="menuClose"></label>
+        <div class="menuList">
+            <ul class="menuLst">
+                <li><a href="sub1.html">NEW</a></li>
+                <li><a href="#">EVENT</a></li>
+                <li><a href="#">DSLR</a></li>
+                <li><a href="#">DISITAL</a></li>
+                <li><a href="#">ActionCAM</a></li>
+            </ul>
+            <div class="searchForm">
+                <p>검색</p>
+                <input type="text" id="searchBoxForm" placeholder="검색어 입력">
+                <button type="button" id="searchBoxBtn"><span></span></button>
+            </div>
+            <div class="menuBlist">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">주문조회</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div id="contents">
+        <figure class="vs">
+            <div class="vr_box on">
+            <img src="./img/vrbox/S.0000.png" alt="" class="vr_img" id="vr_con1">
+            </div>    
+        </figure>
+        <div class="alpha">
+                <p class="alphaMd">α7R</p>
+                <h2 class="alphaTit">풀프레임의 이상을 실현하다</h2>
+                <p class="alphaCom">손 안에 쏙 들어오는 사이즈의 풀프레임 α7R을 만나보세요.<br> 전례 없이 우수한 휴대성과 프로 기능이 결합되어 있습니다.
+        </div>
+        <div class="section">
+            <ul>
+                <li><a href="">
+                        <div class="col6 coment">
+                            <h4>ILCE=7RM3</h4>
+                            <p>Resolution X Speed<br>4240만화소<br>10fps 연속촬영</p>
+                            <span class="price">3,899,000원<br></span>
+                            <span class="label1">이벤트</span>
+                            <span class="label2">신제품</span>
+                            <span class="label3">무료배송</span>
+                        </div>
+                        <div class="col6 img">
+                            <img src="./img/item1.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li><a href="">
+                        <div class="col6 coment">
+                            <h4>DSE=RX10M4</h4>
+                            <p>세계에서<br>가장 빠른<br>초망원 카메라<br>RX10 IV</p>
+                            <span class="price">2,199,000원<br></span>
+                            <span class="label1">이벤트</span>
+                            <span class="label3">무료배송</span>
+                        </div>
+                        <div class="col6 img">
+                            <img src="./img/item2.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li><a href="">
+                        <div class="col6 coment">
+                            <h4>SEL85F14GM</h4>
+                            <p>풀프레임 바디에<br>최적화된 프리미엄<br>85mm F1.4고정<br> 준망원 단렌즈</p>
+                            <span class="price">2,249,000원<br></span>
+                            <span class="label1">이벤트</span>
+                            <span class="label2">신제품</span>
+                        </div>
+                        <div class="col6 img">
+                            <img src="./img/item3.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li><a href="">
+                        <div class="col6 coment">
+                            <h4>FDR-X3000R</h4>
+                            <p>세계최초 광학식 손떨림<br>보정 기술 탑재</p>
+                            <span class="price">699,000원<br></span>
+                            <span class="label1">이벤트</span>
+                            <span class="label3">무료배송</span>
+                        </div>
+                        <div class="col6 img">
+                            <img src="./img/item4.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li><a href="">
+                        <div class="col6 coment">
+                            <h4>DSC-RX100M5A</h4>
+                            <p>최상의 화질 초고속 카메라<br>24-200mm 올인원</p>
+                            <span class="price">1,299,000원<br></span>
+                            <span class="label1">이벤트</span>
+                            <span class="label2">신제품</span>
+                            <span class="label3">무료배송</span>
+                        </div>
+                        <div class="col6 img">
+                            <img src="./img/item5.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li><a href="">
+                        <div class="col6 coment">
+                            <h4>FDR-AX700</h4>
+                            <p>4K HDR, Fast Hybrid AF 탑재<br>전문가급1인치 핸디캠</p>
+                            <span class="price">2,499,000원<br></span>
+                            <span class="label2">신제품</span>
+                            <span class="label3">무료배송</span>
+                        </div>
+                        <div class="col6 img">
+                            <img src="./img/item6.png" alt="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer id="ft">
+        <div class="ftTop">
+            <ul>
+                <li><a href="#">SONYa APP</a></li>
+                <li><a href="#">SONYa 고객지원</a></li>
+            </ul>
+        </div>  
+        <div class="ftMid">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">PC버전</a></li>
+            </ul>
+        </div>
+        <div class="ftBottom">
+            <p class="copy">서울특별시 영등포구 국제금융로 10 원아이에프씨 24F<br>Tel : SONYa코리아 고객지원 1588-0911</p>
+        </div> 
+    </footer>
+</div>
+<div class="wrap desk">
+    <div class="leftSide">
+        <div class="videoWrap">
+            <video width="80%" height="80%" controls autoplay loop>
+              <source src="sonyaalpha.mp4" type="video/mp4">
+            </video>   
+        </div>
+        <div class="snsShare">
+           <h3>SHARE</h3>
+            <ul>
+                <li><a href="#">face</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">insta</a></li>
+            </ul>
+        </div>    
+    </div>
+    <nav class="centerMenu">
+        <ul>
+            <li><a href="./sub1.html">NEW</a></li>
+            <li><a href="#">EVENT</a></li>
+            <li><a href="#">DSLR</a></li>
+            <li><a href="#">DISITAL</a></li>
+            <li><a href="#">ActionCAM</a></li>
+        </ul>        
+    </nav>
+    <div class="rightSide">
+        <header id="hd">
+            <a href="index.html" class="logo"></a>
+        </header>
+        <div id="contents">
+            <figure class="vs">
+                <div class="vr_box1 on">
+                <img src="./img/vrbox/S.0000.png" alt="" class="vr_img1" id="vr_con2">
+                </div>    
+            </figure>
+            <div class="alpha">
+                <p class="alphaMd">α7R</p>
+                <h2 class="alphaTit">풀프레임의 이상을 실현하다</h2>
+                <p class="alphaCom">손 안에 쏙 들어오는 사이즈의 풀프레임 α7R을 만나보세요.<br> 전례 없이 우수한 휴대성과 프로 기능이 결합되어 있습니다.<br>36.4MP 35mm 풀 프레임 센서를 주요 DSLR 제품 무게의<br>절반에 해당하는 본체에 장착한 이 제품은 탁월한 작업<br>도구를 찾는 사진 작가들을 위한 새로운 표준입니다.</p>          
+            </div>
+            <div class="section">
+                <ul>
+                    <li><a href="">
+                            <div class="col6 coment">
+                                <h4>ILCE=7RM3</h4>
+                                <p>Resolution X Speed<br>4240만화소<br>10fps 연속촬영</p>
+                                <span class="price">3,899,000원<br></span>
+                                <span class="label1">이벤트</span>
+                                <span class="label2">신제품</span>
+                                <span class="label3">무료배송</span>
+                            </div>
+                            <div class="col6">
+                                <img src="./img/item1.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="">
+                            <div class="col6 coment">
+                                <h4>DSE=RX10M4</h4>
+                                <p>세계에서<br>가장 빠른<br>초망원 카메라<br>RX10 IV</p>
+                                <span class="price">2,199,000원<br></span>
+                                <span class="label1">이벤트</span>
+                                <span class="label3">무료배송</span>
+                            </div>
+                            <div class="col6">
+                                <img src="./img/item2.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="">
+                            <div class="col6 coment">
+                                <h4>SEL85F14GM</h4>
+                                <p>풀프레임 바디에<br>최적화된 프리미엄<br>85mm F1.4고정<br> 준망원 단렌즈</p>
+                                <span class="price">2,249,000원<br></span>
+                                <span class="label1">이벤트</span>
+                                <span class="label2">신제품</span>
+                            </div>
+                            <div class="col6">
+                                <img src="./img/item3.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="">
+                            <div class="col6 coment">
+                                <h4>FDR-X3000R</h4>
+                                <p>세계최초 광학식 손떨림<br>보정 기술 탑재</p>
+                                <span class="price">699,000원<br></span>
+                                <span class="label1">이벤트</span>
+                                <span class="label3">무료배송</span>
+                            </div>
+                            <div class="col6">
+                                <img src="./img/item4.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="">
+                            <div class="col6 coment">
+                                <h4>DSC-RX100M5A</h4>
+                                <p>최상의 화질 초고속 카메라<br>24-200mm 올인원</p>
+                                <span class="price">1,299,000원<br></span>
+                                <span class="label1">이벤트</span>
+                                <span class="label2">신제품</span>
+                                <span class="label3">무료배송</span>
+                            </div>
+                            <div class="col6">
+                                <img src="./img/item5.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="">
+                            <div class="col6 coment">
+                                <h4>FDR-AX700</h4>
+                                <p>4K HDR, Fast Hybrid AF 탑재<br>전문가급1인치 핸디캠</p>
+                                <span class="price">2,499,000원<br></span>
+                                <span class="label2">신제품</span>
+                                <span class="label3">무료배송</span>
+                            </div>
+                            <div class="col6">
+                                <img src="./img/item6.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer id="ft">
+        <div class="ftTop">
+            <ul>
+                <li><a href="#">소냐스토어 APP</a></li>
+                <li><a href="#">소냐코리아 고객지원</a></li>
+            </ul>
+        </div>  
+        <div class="ftMid">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">PC버전</a></li>
+            </ul>
+        </div>
+        <div class="ftBottom">
+            <p class="copy">서울특별시 영등포구 국제금융로 10 원아이에프씨 24F<br>Tel : SONYa코리아 고객지원 1588-0911</p>
+        </div> 
+    </footer> 
+    </div>
+</div>
+</body>
+</html>

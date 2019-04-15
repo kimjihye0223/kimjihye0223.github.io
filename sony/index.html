@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SONYa</title>
+    <!-- 구형브라우저    -->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon16.ico">
+    <!-- 신형 브라우저와 안드로이드 폰-->
+    <link rel="shortcut icon" type="image/x-icon" href="./ico/favicon32.png">
+    <!-- 아이폰3 이하-->
+    <link rel="apple-touch-icon" size="57x57" href="./ico/favicon57.png">
+    <!-- 아이패드-->
+    <link rel="apple-touch-icon" size="72x72" href="./ico/favicon72.png">
+    <!-- 아이폰4 이상-->
+    <link rel="apple-touch-icon" size="114x114" href="./ico/favicon114.png">
+    <!-- IE 10 이상-->
+    
+    <!--웹사이트 정보-->
+    <meta name="application-TileColor" content="#FFFFFF">
+    <meta name="application-TileImage" content="./ico/favicon144.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="application-name" content="SONYa 홈페이지">
+    <meta name="author" content="KIM">
+    <meta name="description" content="SONYa Site">
+    <meta name="generator" content="Brackts">        
+    <meta name="keywords" content="SONYa, SONYA, 소냐, 카메라, 가전제품">
+    
+    <!--뷰포인트-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">     
+    <!--적응형 미디어 스크립트 연결-->
+    <script src="media.js"></script>
+    <!--타이포 폰트 연결-->
+    <link rel="stylesheet" href="./font/KoPubWorld Dotum Light.ttf">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <style>
+        .mobile {width: 100%; height: auto; position: relative; background: url("./img/rightm.jpg") no-repeat top center; background-size: cover; max-height: 1800px;}
+        .mobile #hd  {position: fixed; width: 100%; height: 9%; display: block; background: #fff; z-index: 10; }
+        .mobile .logo {display: block; margin: 0 auto; content: ""; background: url("./img/logo.png") no-repeat center center; width: 226px; height: 41px; background-size: 70%; margin-top: 15px;}
+        .mobile .menuOpen { display: block; width: 40px; height: 40px; background: url("./img/menuOpen.png") no-repeat center center; position: absolute; top: 15px; right: 20px; background-size: cover;}
+        .mobile .raItem {display: none;}
+        #ra4:checked ~ #gnb {right: 0;}
+        #ra4:checked ~ .menuOpen { display: block; background: url("./img/menuClose.png") no-repeat center center;}
+        #gnb {width: 100%; height: 100%; clear: both; background: #fff;  position: fixed; right:-100%; z-index: 999; transition: 0.6s;}
+        .menuList { position: relative; padding: 10%; }
+        .menuList .menuLst {border-top: 1px solid #ddd; padding-left:5%;}
+        .menuList li {height: 15%; font-size: 1em; line-height:4em; }
+        .menuList li a {color: #333; font-weight: 600;}
+        .searchForm {display: block; width: 100%; height: 10%; border-top: 1px solid #ddd; padding-top: 20px; padding-left: 5%; }
+        .searchForm p {font-size: 0.9em; padding-bottom: 10px;}
+        #searchBoxForm {border: 1px solid #333; padding: 10px 40px 10px 10px;}
+        .menuBlist {display: block; margin-top: 10%; }
+        .menuBlist li {float: left; width: 40%; text-align: center; background-color: #222; margin-right:5%; margin-left:5%; margin-top: 5%}
+        .menuBlist li a {color: #fff !important; font-weight: 500 !important;}
+        
+        .mobile #contents {position: relative; clear: both; width: 100%; height: auto;  color: #fff;}
+        .mobile .vs {position: relative; display: block; clear: both; width: 100%; padding-top: 30%; }
+        .mobile .vr_box { width:400px; height:200px; margin:20% auto; }
+        .mobile .vr_box img { width:100%; height:auto; }
+        .mobile .vr_img { display:block; }
+        .mobile .alpha {display: block; position: relative; margin: 0 auto; width: 90%; padding-left: 20px; padding-top: 49%; overflow: hidden; }
+        .mobile .alphaMd {float: left; color: #333; font-size: 0.8em; padding-right: 10px;}
+        .mobile .alphaTit {margin-left: 5px; color:#333; font-size: 1em;}
+        .mobile .alphaCom {position: relative; color: #333; padding-top: 2%; font-size: 0.8em;}
+        .section { position: relative; display: block; text-align: center; padding-top: 100px;}
+        .section h3 {display: inline-block; font-size: 1.8em; border-top: 1px solid; border-bottom: 1px solid; margin-bottom: 40px;}
+        .section .eventList {display: block; margin-bottom: 50px; word-break: keep-all; padding: 5%; }
+        .section .eventList .triangle {width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 20px solid red; transition: 0.3s;}
+        .section .eventBox {display: block; background-color: rgba(255,255,255,0.9); 
+        position: relative; overflow: hidden; padding: 5%; cursor: pointer;}
+        .section .eventList .big {font-size: 1.1em; padding-bottom: 10px; color: #222; font-weight: 600;}
+        .section .eventList .nomal {font-size: 0.9em; font-weight: 300; color: #222;}
+        .ft {display: block; position: relative; clear: both;}
+        .ftTop {width: 100%; height: 50px;}
+        .ftTop ul {position: relative; height: 50px}
+        .ftTop li {width: 49.8%; height: 100%; float: left; text-align: center; background: #fff; line-height: 50px; border-right: 1px solid #333; border-top: 2px solid red;}
+        .ftTop li:last-child {border-right: 0;}
+        .ftTop li a {color: #333;}
+        .ftMid {width: 100%; height: 30px; clear: both;}
+        .ftMid ul {position: relative; height: 40px;}
+        .ftMid li {width: 33.12%; height: 100%; float: left; text-align: center; background: #fff; line-height: 40px; border-right: 1px solid #333; border-top: 1px solid #333;}
+        .ftMid li:last-child {border-right: 0;}
+        .ftMid li a {color: #333; font-size: 0.9em;}
+        .ftBottom {width: 100%; height: 50px; clear: both; position: relative; text-align: center; background: #fff; line-height: 30px; border-top: 1px solid #333; padding-top: 5px;}
+        .ftBottom .copy {font-size: 0.8em;} 
+                
+    </style>
+    <style>
+        .desk {width: 100%; height: 100%; position: relative; }
+        .leftSide {position: fixed; width: calc(50% - 30px); height: 100%; background: url("./img/left.jpg")no-repeat top center; top: 0; left: 0; min-width: 640px;}
+        .rightSide {position: absolute; width: calc(50% - 20px);  top: 0; left: calc(50% + 20px); background: url("./img/right.jpg") no-repeat top center; background-size: cover; color: #fff;}
+        .centerMenu {position: fixed; width: 120px; height: 100%; top: 0; left: calc(50% - 30px); background: #222; color: #fff; ; z-index: 10; }
+    </style>
+    <style>
+        .leftSide .videoWrap {position: relative; width: 80%; margin:90px auto; padding-top: 100px;}
+        .leftSide .video{ display: block; position: absolute; top: 50%;}
+        .leftSide .snsShare {display: block; position: absolute; top: 57%; left: 20%; color: #fff; width: 400px; height: 50px;}
+        .snsShare ul {width: 100%; height: 100%; position: relative;}
+        .snsShare h3 {float: left; margin-right: 8%; font-weight: 500;}
+        .snsShare li {float: left; position: relative; width: 10%; height: 80%; text-indent: -9999px; margin-right: 10px; cursor: pointer;}
+        .snsShare li:first-child {background:url("./img/sns1.png") no-repeat center center; background-size: cover;}
+        .snsShare li:nth-child(2) {background:url("./img/sns2.png") no-repeat center center; background-size: cover;}
+        .snsShare li:last-child {background:url("./img/sns3.png") no-repeat center center; background-size: cover;}
+    </style>
+    <style>
+        .centerMenu {display: block;}
+        .centerMenu ul {margin-top: 20%; position: relative; width: 100%; height: 50%;}
+        .centerMenu ul li {position: relative; height: 15%; text-align: center; padding-top: 35px;}
+        .centerMenu ul li:hover{ display: block; background: rgba(255,255,255,1);}
+        .centerMenu ul li:hover a {color: #333;}
+        .centerMenu ul li a { position: relative; color: #fff; width: 100%; height: 100%; font-size: 1.2em; padding-top: 20px;}
+    </style>
+    <style>
+        .rightSide #hd  {position: relative; width: 100%; height: 9%; display: block; background: #fff; }
+        .rightSide .logo {display: block; margin: 0 auto; content: ""; background: url("./img/logo.png") no-repeat center center; width: 226px; height: 41px; background-size: 70%; padding: 4%}
+        .rightSide #contents {position: relative; clear: both; width: 100%; height: auto;}
+        .vr_box1 { width:500px; height:400px; margin:20px auto; padding-top: 5%;}
+        .vr_box1 img { width:100%; height:auto; }    
+        .vr_img1 { display:block; }
+        .alpha {display: block; position: relative; margin: 0px auto; width: 50%; padding-left: 90px;  overflow: hidden; padding-top: 5%;}
+        .alphaMd {float: left; color: #333; font-size: 0.9em; padding-right: 10px;}
+        .alphaTit {margin-left: 5px; color:#333; font-size: 2em;}
+        .alphaCom {position: relative; color: #333; padding-top: 2%;}
+        .rightSide .eventBox { width: 50%; margin: 0 auto;}
+        .rightSide #ft {position: relative; clear: both; width: 100%; margin: 0 auto; right: 0;}
+        
+    </style>
+    <style>
+        @media screen and (max-width:767px) {
+            .mobile {display: block;}
+            .desk {display: none;}
+            .mobile .menuOpen {width: 60px; height: 60px;}
+        }
+        @media screen and (min-width:768px) and (max-width:959px){
+            .mobile {display: block; min-height: 2200px;}
+            .desk {display: none;}
+            .mobile #hd {height: 16%;}
+            .mobile .logo {width: 323px; height: 58px;}
+            .mobile .vs {padding-top: 20%; }
+            .mobile .vr_box { width:800px; height:200px; margin:auto; }
+            .mobile .alpha { padding-left: 24%; padding-top: 55%}
+            .mobile .alphaMd {font-size: 1.6em;}
+            .mobile .alphaTit {font-size: 2em;}
+            .mobile .alphaCom {font-size: 1.1em;}
+            .section {padding-top: 20%;}
+            .ftTop li {width: 49.93%;}
+            .ftMid li {width: 33.24%;}
+        }
+        @media screen and (min-width:960px) and (max-width:1279px){
+            .mobile {display: none;}
+            .desk {display: block;}
+        }
+        @media screen and (min-width:1280px){
+            .mobile {display: none;}
+            .desk {display: block;}
+            .mobile .vs {width: 200%;}
+            .mobile .vr_box { width:1000px; height:300px; margin:auto; }
+            .mobile .vr_box img { width:200%; height:auto; }
+            .section {padding-top: 20%;}
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>37){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 80);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con1").attr("src", "./img/vrbox/S.00"+vrNum+".png");
+            } else {
+                $("#vr_con1").attr("src", "./img/vrbox/S.000"+vrNum+".png");
+            }
+        }
+    });    
+    </script>
+    <script>
+    $(document).ready(function(){
+        var vr_cnt=0;
+        var vr_src;
+        var vrIntv = setInterval(function(){ 
+            vr_cnt++;
+            if(vr_cnt>37){
+                vr_cnt=0;
+            }
+            vrAni(vr_cnt);
+        }, 80);
+        function vrAni(vrNum){
+            if(vrNum>=10){
+                $("#vr_con2").attr("src", "./img/vrbox/S.00"+vrNum+".png");
+            } else {
+                $("#vr_con2").attr("src", "./img/vrbox/S.000"+vrNum+".png");
+            }
+        }
+    });    
+    </script>
+</head>
+<body>
+<div class="wrap mobile">
+    <header id="hd">
+    <input type="checkbox" name="checkBox" class="raItem" id="ra4">
+        <a href="index.html" class="logo"></a>
+        <label for="ra4" class="menuOpen"></label>
+    <nav id="gnb">
+        <label for="ra4" class="menuClose"></label>
+        <div class="menuList">
+            <ul class="menuLst">
+                <li><a href="sub1.html">NEW</a></li>
+                <li><a href="#">EVENT</a></li>
+                <li><a href="#">DSLR</a></li>
+                <li><a href="#">DISITAL</a></li>
+                <li><a href="#">ActionCAM</a></li>
+            </ul>
+            <div class="searchForm">
+                <p>검색</p>
+                <input type="text" id="searchBoxForm" placeholder="검색어 입력">
+                <button type="button" id="searchBoxBtn"><span></span></button>
+            </div>
+            <div class="menuBlist">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">회원가입</a></li>
+                    <li><a href="#">주문조회</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+    <div id="contents">
+        <div class="main">
+            <figure class="vs">
+                <div class="vr_box on">
+                <img src="./img/vrbox/S.0000.png" alt="" class="vr_img" id="vr_con1">
+                </div>    
+            </figure>
+            <div class="alpha">
+                    <p class="alphaMd">α7R</p>
+                    <h2 class="alphaTit">풀프레임의 이상을 실현하다</h2>
+                    <p class="alphaCom">손 안에 쏙 들어오는 사이즈의 풀프레임 α7R을 만나보세요.<br> 전례 없이 우수한 휴대성과 프로 기능이 결합되어 있습니다.
+            </div>
+            <div class="section">
+                <h3>SONYa EVENT</h3>
+                <div class="eventList">
+                    <span class="triangle"></span>
+                    <div class="eventBox">
+                        <p class="big">알파 아카데미,<br>프로사진작가들에게 배우는 전문 강의</p>
+                        <p class="nomal">인생 사진을 건질 수 있는 인물 보정 노하우와<br>남과 다른 특별한 사진을 찍고자 하시는 분들을 위한 특별 강좌.<br>알파 아카데미 4월 강좌를 통해 만나보세요!</p>
+                    </div>
+                </div>
+                <div class="eventList">
+                    <span class="triangle"></span>
+                    <div class="eventBox">    
+                        <p class="big">새학기 맞이,<br>마일리지 즉시 할인 이벤트</p>
+                        <p class="nomal">소냐스토어 압구정에 방문하여 100만원 이상 구매하시는 고객님들께<br>적립될 마일리지를 즉시 할인해 드립니다.<br>선착순으로 제공되는 특별한 선물도 놓치지 마세요!</p>
+                    </div>
+                </div>
+                <div class="eventList">
+                    <span class="triangle"></span>
+                    <div class="eventBox">
+                        <p class="big">알파와 함께 봄을 꽃피우다</p>
+                        <p class="nomal">소냐스토어의 봄 이벤트<br>행사제품 구매 후 정품등록 및 별도의 사은품 신청시 선물을 드립니다!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="ft">
+        <div class="ftTop">
+            <ul>
+                <li><a href="#">SONYa APP</a></li>
+                <li><a href="#">SONYa 고객지원</a></li>
+            </ul>
+        </div>  
+        <div class="ftMid">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">PC버전</a></li>
+            </ul>
+        </div>
+        <div class="ftBottom">
+            <p class="copy">서울특별시 영등포구 국제금융로 10 원아이에프씨 24F<br>Tel : SONYa코리아 고객지원 1588-0911</p>
+        </div> 
+    </footer>
+</div>
+<div class="wrap desk">
+    <div class="leftSide">
+        <div class="videoWrap">
+            <video width="80%" height="80%" controls autoplay loop>
+              <source src="sonyaalpha.mp4" type="video/mp4">
+            </video>   
+        </div>
+        <div class="snsShare">
+           <h3>SHARE</h3>
+            <ul>
+                <li><a href="#">face</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">insta</a></li>
+            </ul>
+        </div>    
+    </div>
+    <nav class="centerMenu">
+        <ul>
+            <li><a href="sub1.html">NEW</a></li>
+            <li><a href="#">EVENT</a></li>
+            <li><a href="#">DSLR</a></li>
+            <li><a href="#">DISITAL</a></li>
+            <li><a href="#">ActionCAM</a></li>
+        </ul>        
+    </nav>
+    <div class="rightSide">
+        <header id="hd">
+            <a href="index.html" class="logo"></a>
+        </header>
+        <div id="contents">
+            <div class="main">
+                <figure class="vs">
+                    <div class="vr_box1 on">
+                    <img src="./img/vrbox/S.0000.png" alt="" class="vr_img1" id="vr_con2">
+                    </div>    
+                </figure>
+                <div class="alpha">
+                    <p class="alphaMd">α7R</p>
+                    <h2 class="alphaTit">풀프레임의 이상을 실현하다</h2>
+                    <p class="alphaCom">손 안에 쏙 들어오는 사이즈의 풀프레임 α7R을 만나보세요.<br> 전례 없이 우수한 휴대성과 프로 기능이 결합되어 있습니다.<br>36.4MP 35mm 풀 프레임 센서를 주요 DSLR 제품 무게의<br>절반에 해당하는 본체에 장착한 이 제품은 탁월한 작업<br>도구를 찾는 사진 작가들을 위한 새로운 표준입니다.</p>          
+                </div>
+                <div class="section">
+                    <h3>SONYa EVENT</h3>
+                    <div class="eventList">
+                        <span class="triangle"></span>
+                        <div class="eventBox">
+                            <p class="big">알파 아카데미,<br>프로사진작가들에게 배우는 전문 강의</p>
+                            <p class="nomal">인생 사진을 건질 수 있는 인물 보정 노하우와<br>남과 다른 특별한 사진을 찍고자 하시는 분들을 위한 특별 강좌.<br>알파 아카데미 4월 강좌를 통해 만나보세요!</p>
+                        </div>
+                    </div>
+                    <div class="eventList">
+                        <span class="triangle"></span>
+                        <div class="eventBox">    
+                            <p class="big">새학기 맞이,<br>마일리지 즉시 할인 이벤트</p>
+                            <p class="nomal">소냐스토어 압구정에 방문하여 100만원 이상 구매하시는 고객님들께<br>적립될 마일리지를 즉시 할인해 드립니다.<br>선착순으로 제공되는 특별한 선물도 놓치지 마세요!</p>
+                        </div>
+                    </div>
+                    <div class="eventList">
+                        <span class="triangle"></span>
+                        <div class="eventBox">
+                            <p class="big">알파와 함께 봄을 꽃피우다</p>
+                            <p class="nomal">소냐스토어의 봄 이벤트<br>행사제품 구매 후 정품등록 및 별도의 사은품 신청시 선물을 드립니다!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer id="ft">
+        <div class="ftTop">
+            <ul>
+                <li><a href="#">소냐스토어 APP</a></li>
+                <li><a href="#">소냐코리아 고객지원</a></li>
+            </ul>
+        </div>  
+        <div class="ftMid">
+            <ul>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">PC버전</a></li>
+            </ul>
+        </div>
+        <div class="ftBottom">
+            <p class="copy">서울특별시 영등포구 국제금융로 10 원아이에프씨 24F<br>Tel : SONYa코리아 고객지원 1588-0911</p>
+        </div> 
+    </footer> 
+    </div>
+</div>
+</body>
+</html>
