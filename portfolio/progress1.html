@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .progress {position: relative; display: inline-block; padding: 0; text-align: center;}
+        .progress li {display: inline-block; position: relative; text-align: center; margin: 2em; list-style: none; }
+        .progress li:before {content: attr(data-name); position: absolute; width: 100%; bottom: -2em; font-weight: 400;}
+        .progress li:after {content: attr(data-percent); position: absolute; width: 100%; top: 3.7em; left: 0; }
+        .progress svg {width: 10em; height: 10em; }
+        .progress svg:nth-child(2) {position: absolute; left: 0; top: 0; transform: rotate(-90deg);}
+        .progress svg:nth-child(2) path { fill:none; stroke-width:25; stroke-dasharray:629; stroke:#fff; opacity: 0.9; animation: load 10s;}
+        @keyframes load {0% {stroke-dashoffset:0;} }
+    </style>
+</head>
+<body>
+    
+   
+<ul class="progress">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+    <li>
+        <circle fill="#00A651" cx="358.318" cy="367.935" r="100"/>
+    </li>
+    <li>
+        <g>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M255.928,136.141
+            c0,27.614,11.192,52.614,29.289,70.71"/>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M455.928,136.141
+            c0-27.614-11.193-52.615-29.29-70.711"/>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M355.928,236.141
+            c27.614,0,52.614-11.193,70.71-29.289"/>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M285.217,206.851
+            c18.097,18.097,43.097,29.29,70.711,29.29"/>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M426.638,206.852
+            c18.097-18.096,29.29-43.097,29.29-70.711"/>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M285.217,65.43
+            c-18.097,18.096-29.289,43.096-29.289,70.71"/>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M355.928,36.141
+            c-27.614,0-52.614,11.193-70.711,29.29"/>
+        <path fill="none" stroke="#00A651" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M426.638,65.43
+            c-18.096-18.096-43.096-29.289-70.71-29.289"/>
+        </g>
+    </li>
+</ul>
+</svg> 
+</body>
+</html>
