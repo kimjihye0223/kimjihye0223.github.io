@@ -34,8 +34,11 @@
     <link rel="stylesheet" href="./font/KiloGram_KG.otf">
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./common.css">
+    <link rel="stylesheet" href="./media.css">
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="./script/imgload.js"></script>
+    <script src="./script/imgloadm.js"></script>
+
     <script>
     $(document).ready(function(){
         $("#sel2").click(function(){
@@ -45,10 +48,36 @@
             $(".bar.item4").css("width", "80%");
             $(".bar.item5").css("width", "95%");
             $(".bar.item6").css("width", "90%");
-            $(".barName").css("color", "#fff").css("transition", "1s");
+            $(".barName").css("color", "#fff").css("transition", "2s");
         });
     });
+    </script>
+    <script>
+   $(window).scroll(function(){
+        var scTop = $("body, html").scrollTop(); 
+        if(scTop>=100){
+            $(".hdLeft").addClass("scroll");
+        } else {
+            $(".hdLeft").removeClass("scroll");
+        }
+      });
     </script> 
+    <script>
+    $(document).ready(function(){
+        $("#sel1").click(function(){
+            $(".crumb").text("PROFILE");
+        })
+        $("#sel2").click(function(){
+            $(".crumb").text("ABILITY");
+        })
+        $("#sel3").click(function(){
+            $(".crumb").text("COLLECTION");
+        })
+        $("#sel4").click(function(){
+            $(".crumb").text("WORKS");
+        });
+    });
+    </script>
 </head>
 <body>
 <div id="wrap">
@@ -57,6 +86,7 @@
     <input type="radio" name="collapRa" class="raItem" id="sel2">
     <input type="radio" name="collapRa" class="raItem" id="sel3">
     <input type="radio" name="collapRa" class="raItem" id="sel4">
+        <div class="hd">
         <div class="hdLeft">
             <label for="sel0" class="menu0">
             </label>
@@ -21594,7 +21624,13 @@
 </g>
 </svg>
                 </span>
-            <div class="click"></div> 
+            <div class="click"></div>
+            <div class="title"></div>
+            <div class="bread"><p class="crumb">profile</p></div> 
+            <div class="copy">
+                <p>Copyright. 2019. Kim Ji Hye. All rights reserved.</p>
+            </div>
+        </div>
         </div>
         <div class="hdRight">    
         </div>
@@ -21605,6 +21641,446 @@
             <label for="sel4" class="menu4"></label>
         </div>   
     <div id="contents" class="mobile">
+        <div class="section1">
+            <div class="page1">
+                <div class="col4 prof"></div>
+                <div class="col4">
+                    <ul>
+                        <li>
+                            <div class="tit">김지혜</div>
+                            <p class="midtxt">웹퍼블리셔(Webpublisher)</p>
+                        </li>
+                        <li>
+                            <div class="tit">MAIL</div>
+                            <p class="txt">kimjihye0223@nate.com</p>
+                        </li>
+                        <li>
+                            <div class="tit">WEB</div>
+                            <p class="txt">kimjihye0223.github.io</p>
+                            <p class="txt">kimjihye0223.dothome.co.kr</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col4">
+                    <ul>
+                        <li>
+                            <div class="tit">PHONE</div>
+                            <p class="txt">+82-10-3012-3221</p>
+                        </li>
+                        <li>
+                            <div class="tit">BIRTH</div>
+                            <p class="txt">1987.02.23</p>
+                            <p class="txt">A형</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="page2">
+                <div class="col3">
+                    <h3>EXPERIENCE</h3>
+                    <p class="term">2015.1 ~ 2018.10</p>
+                    <p class="txt">황금파닭 / 매니저</p>
+                    <p class="term">2011.3 ~ 2014.11</p>
+                    <p class="txt">CNT / 영업마케팅</p>
+                    <p class="term">2009.1 ~ 2010.8</p>
+                    <p class="txt">이룸법무사무소 / 경리.회계</p>                    
+                </div>
+                <div class="col3">
+                    <h3>EDUCATION</h3>
+                    <p class="term">2005.2 ~ 2009.2</p>
+                    <p class="txt">한남대학교 경찰행정</p>
+                    <p class="term">2002.2 ~ 2005.2</p>
+                    <p class="txt">진천고등학교 인문계 졸업</p>
+                </div>
+                <div class="col3">
+                    <h3>LICENSE</h3>
+                    <p class="term">2018.12.14</p>
+                    <p class="txt">GTQ그래픽기술자격1급</p>
+                    <p class="term">2013.04.19</p>
+                    <p class="txt">웹디자인기능사</p>
+                    <p class="term">2007.05.01</p>
+                    <p class="txt">검도 2단</p>
+                    <p class="term">2006.08.28</p>
+                    <p class="txt">유도 1단</p>
+                </div>
+                <div class="col3">
+                    <h3>WORKS</h3>
+                    <p class="term">2019.2</p>
+                    <p class="txt">남자친구의 주방 / CI / 카탈로그</p>
+                    <p class="term">2014.11 ~ 2015.1</p>
+                    <p class="txt">레스토랑 아쿠아 / 카탈로그</p>
+                    <p class="term">2013.7 ~ 2018.10</p>
+                    <p class="txt">황금파닭 브랜딩 / CI / 카탈로그</p>
+                    <p class="term">2010.8 ~ 2011.3</p>
+                    <p class="txt">리브리브 브랜딩 / CI / 카탈로그</p>
+                </div>
+            </div>
+        </div>
+        <div class="section2">
+            <ul>
+                <li>
+                    <img src="./img/skill1.png" alt="" class="skill">
+                    <div class="bar item1"></div>
+                    <div class="barafter"></div>
+                    <p class="barName">HTML</p>
+                    <p class="percent">95%</p>
+                </li>
+                <li>
+                    <img src="./img/skill2.png" alt="" class="skill">
+                    <div class="bar item2"></div>
+                    <div class="barafter"></div>
+                    <p class="barName">CSS</p>
+                    <p class="percent">95%</p>
+                </li>
+                <li>
+                    <img src="./img/skill3.png" alt="" class="skill">
+                    <div class="bar item3"></div>
+                    <div class="barafter"></div>
+                    <p class="barName">JAVASCRIPT</p>
+                    <p class="percent">80%</p>
+                </li>
+                <li>
+                    <img src="./img/skill4.png" alt="" class="skill">
+                    <div class="bar item4"></div>
+                    <div class="barafter"></div>
+                    <p class="barName">JQUERY</p>
+                    <p class="percent">80%</p>
+                </li>
+                <li>
+                    <img src="./img/skill5.png" alt="" class="skill">
+                    <div class="bar item5"></div>
+                    <div class="barafter"></div>
+                    <p class="barName">PHOTOSHOP</p>
+                    <p class="percent">95%</p>
+                </li>
+                <li>
+                    <img src="./img/skill6.png" alt="" class="skill">
+                    <div class="bar item6"></div>
+                    <div class="barafter"></div>
+                    <p class="barName">ILLUSTRATOR</p>
+                    <p class="percent">90%</p>
+                </li>
+            </ul>
+        </div>
+        <div class="section3">
+            <div class="viewboxm">
+            <div class="collectionm">
+                <ul class="generboxm box1">
+                    <li class="leftbox">
+                        <div class="collName collect1">
+                            <h2>Ministry of Justice</h2>
+                            <p>법무부 반응형 홈페이지</p>
+                            <p>HTML · CSS · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect1">
+                                <div class="mockup1"></div>
+                            </li>
+                            <li class="muCom collect1">
+                                <div class="muCom1">
+                                    <p>기존 법무부의 디자인에서 사용자의 접근성과 편의성을 고려한 인터렉션을 강조하였으며 전체적으로 어두운 톤이었던 컬러를 밝은 톤으로 변경해 가독성과 심미성에 중점을 두어 제작했습니다.</p>
+                                </div>
+                            </li>
+                            <li class="muLink collect1">
+                                <div class="muLink1"><a href="https://kimjihye0223.github.io/g2">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box2">
+                    <li class="leftbox">
+                        <div class="collName collect2">
+                            <h2>Air Asia</h2>
+                            <p>에어아시아 반응형 홈페이지</p>
+                            <p>HTML · CSS · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect2">
+                                <div class="mockup2"></div>
+                            </li>
+                            <li class="muCom collect2">
+                                <div class="muCom2">
+                                    <p>에어아시아의 메인컬러인 레드계열을 주로 사용해 강조될 부분과 메타포 요소를 접목시켜 메뉴에 대한 이해도를 높이고 쉽고 편리한 홈페이지를 고려하여 제작했습니다. </p>
+                                </div>
+                            </li>
+                            <li class="muLink collect2">
+                                <div class="muLink2"><a href="https://kimjihye0223.github.io/airasia">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box3">
+                    <li class="leftbox">
+                       <div class="collName collect3">
+                        <h2>VANs</h2>
+                        <p>반스 반응형 홈페이지</p>
+                        <p>HTML · CSS · JQUERY · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect3">
+                                <div class="mockup3"></div>
+                            </li>
+                            <li class="muCom collect3">
+                                <div class="muCom3">
+                                    <p>정적인 인터렉션에서 유동적인 인터렉션을 구현하고자 Slide, fade In&amp;Out, Spin Off 등 효과를 적용하였으며 패션 브랜드와 걸맞는 심플하고 개성있는 디자인을 염두하고 제작했습니다. </p>
+                                </div>
+                            </li>
+                            <li class="muLink collect3">
+                                <div class="muLink3"><a href="https://kimjihye0223.github.io/vans">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box4">
+                    <li class="leftbox">
+                        <div class="collName collect4">
+                            <h2>SEOUL Jazz Festival</h2>
+                            <p>서울 재즈 페스티벌 반응형 홈페이지</p>
+                            <p>HTML · CSS · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect4">
+                                <div class="mockup4"></div>
+                            </li>
+                            <li class="muCom collect4">
+                                <div class="muCom4">
+                                    <p>사용자의 관점에서 편리하도록 한 페이지 안에서 중요도와 관심도가 높은 정보를 빠르게 취합할 수 있게 하였으며, 타깃층을 공략한 컬러감과 심미성에 중점을 두어 제작했습니다.</p>
+                                </div>
+                            </li>
+                            <li class="muLink collect4">
+                                <div class="muLink4"><a href="https://kimjihye0223.github.io/sjf">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box5">
+                    <li class="leftbox">
+                        <div class="collName collect5">
+                            <h2>Grand Budapest Hotel</h2>
+                            <p>그랜드 부다페스트 호텔 반응형 홈페이지</p>
+                            <p>HTML · CSS · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect5">
+                                <div class="mockup5"></div>
+                            </li>
+                            <li class="muCom collect5">
+                                <div class="muCom5">
+                                    <p>그랜드 부다페스트 호텔의 컬러감과 무드를 극대화시켜 그대로 담아내었으며, 화려한 인터렉션을 배제하고 심미성 위주로 표현한 홈페이지입니다. </p>
+                                </div>
+                            </li>
+                            <li class="muLink collect5">
+                                <div class="muLink5"><a href="https://kimjihye0223.github.io/grand">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box6">
+                    <li class="leftbox">
+                        <div class="collName collect6">
+                            <h2>SONY KOREA</h2>
+                            <p>소니 코리아 반응형 홈페이지</p>
+                            <p>HTML · CSS · JQUERY · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect6">
+                                <div class="mockup6"></div>
+                            </li>
+                            <li class="muCom collect6">
+                                <div class="muCom6">
+                                    <p>기존의 레이아웃을 다르게 변형시켜 메뉴를 중앙에 배치하고 소니 카메라를 3D로 나타내 디테일함을 강조해 제작했습니다.   </p>
+                                </div>
+                            </li>
+                            <li class="muLink collect6">
+                                <div class="muLink6"><a href="https://kimjihye0223.github.io/sony">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box7">
+                    <li class="leftbox">
+                        <div class="collName collect7">
+                            <h2>espoir</h2>
+                            <p>에스쁘아 모바일 홈페이지</p>
+                            <p>HTML · CSS · JQUERY · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect7">
+                                <div class="mockup7"></div>
+                            </li>
+                            <li class="muCom collect7">
+                                <div class="muCom7">
+                                    <p>모바일 인터렉션의 한계를 탈피하고자 심플하지만 디테일을 살려 사용자 관점에서 코스메틱 브랜드 홈페이지에 필요한 요소들을 가미시켜 제작했습니다.</p>
+                                </div>
+                            </li>
+                            <li class="muLink collect7">
+                                <div class="muLink7"><a href="https://kimjihye0223.github.io/m4">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box8">
+                    <li class="leftbox">
+                        <div class="collName collect8">
+                            <h2>OUTBACK</h2>
+                            <p>아웃백 모바일 홈페이지</p>
+                            <p>HTML · CSS · JQUERY · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect8">
+                                <div class="mockup8"></div>
+                            </li>
+                            <li class="muCom collect8">
+                                <div class="muCom8">
+                                    <p>눈에 보이는 것만으로도 시각적으로 집중할 수 있도록 이미지와 레이아웃을 배치해 사용자에게 중요도가 높은 요소들을 위주로 제작했습니다. </p>
+                                </div>
+                            </li>
+                            <li class="muLink collect8">
+                                <div class="muLink8"><a href="https://kimjihye0223.github.io/m1">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box9">
+                    <li class="leftbox">
+                        <div class="collName collect9">
+                            <h2>DAE-GU</h2>
+                            <p>대구광역시청 데스크탑 홈페이지</p>
+                            <p>HTML · CSS · JQUERY · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect9">
+                                <div class="mockup9"></div>
+                            </li>
+                            <li class="muCom collect9">
+                                <div class="muCom9">
+                                    <p>기본적인 틀에 익숙한 사용자를 위해 레이아웃을 배치하였으며 심플함과 가독성을 중점적으로 두고 편의성에 맞추어 제작했습니다.</p>
+                                </div>
+                            </li>
+                            <li class="muLink collect9">
+                                <div class="muLink9"><a href="https://kimjihye0223.github.io/g1">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <ul class="generboxm box10">
+                    <li class="leftbox">        
+                        <div class="collName collect10">
+                            <h2>DAESANG</h2>
+                            <p>대상그룹 데스크탑 홈페이지</p>
+                            <p>HTML · CSS · JQUERY · PHOTOSHOP · ILUSTRATOR</p>
+                        </div>
+                    </li>
+                    <li class="rightbox">
+                        <ul>
+                            <li class="mockup collect10">
+                                <div class="mockup10"></div>
+                            </li>
+                            <li class="muCom collect10">
+                                <div class="muCom10">
+                                    <p>대상그룹의 기업소개, 채용정보, 홍보센터, 사회공헌의 메뉴 구조로 배치해 브랜드 이미지에 맞게 각각의 요소들을 배치하고 구성해 제작했습니다.</p>
+                                </div>
+                            </li>
+                            <li class="muLink collect10">
+                                <div class="muLink10"><a href="https://kimjihye0223.github.io/c2">view more<span class="arrow"></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+            </div>
+            </div>
+            <ul class="btnBox">
+                <li class="topFr">
+                    <button class="btn top"></button>
+                </li>
+                <li class="bottomFr">
+                    <button class="btn bottom"></button>
+                </li>
+            </ul>
+            <div class="numBtnBoxm">
+                <ul class="numBtnFramem">
+                    <li class="num1">
+                        <button class="numBtn on"></button>
+                    </li>
+                    <li class="num2">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num3">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num4">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num5">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num6">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num7">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num8">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num9">
+                        <button class="numBtn"></button>
+                    </li>
+                    <li class="num10">
+                        <button class="numBtn"></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section4">
+            <div class="page3">
+                <ul>
+                    <li class="workList"><a href="https://postimg.cc/jnV59kqD"><h2>스토리보드</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/PCMS5BBk"><h2>XD 사이트 시안</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/47yLMB2R"><h2>XD 프로토타입</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/zbQt1K4b"><h2>경쟁사 분석</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/BXHhd8pb"><h2>레이블링</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/xqkp3pbK"><h2>콘텐츠 배치도</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/nM6RRKvN"><h2>사용성 테스트</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/JHBT7tWT"><h2>사이트 설계구조</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/FfDCD2Zx"><h2>브랜드 스토리 제고</h2><span></span></a></li>
+                   <li class="workList"><a href="https://postimg.cc/8FPtJZSf"><h2>워크플로우</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/ctYmyjQ2"><h2>카달로그 제작</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/LJSyRHQT"><h2>페르소나 정의</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/8JxHYDrL"><h2>페이퍼 프로토타입</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/FdYpG119"><h2>프로젝트 결과 보고</h2><span></span></a></li>
+                    <li class="workList"><a href="https://postimg.cc/3yS9g28S"><h2>프로젝트 최종 결과</h2><span></span></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div id="contents" class="desk">
         <div class="section1">
@@ -22029,11 +22505,33 @@
                 </ul>
             </div>
         </div>
-        <div class="section4"></div>
+        <div class="section4">
+            <div class="title"></div>
+            <div class="page3">
+                <ul>
+                    <li class="workList1"><a href="https://postimg.cc/jnV59kqD"><h2>스토리보드</h2><span></span></a></li>
+                    <li class="workList1"><a href="https://postimg.cc/PCMS5BBk"><h2>XD 사이트 시안</h2><span></span></a></li>
+                    <li class="workList1"><a href="https://postimg.cc/47yLMB2R"><h2>XD 프로토타입</h2><span></span></a></li>
+                    <li class="workList1"><a href="https://postimg.cc/zbQt1K4b"><h2>경쟁사 분석</h2><span></span></a></li>
+                    <li class="workList1"><a href="https://postimg.cc/BXHhd8pb"><h2>레이블링</h2><span></span></a></li>
+                </ul>
+                <ul>
+                    <li class="workList2"><a href="https://postimg.cc/xqkp3pbK"><h2>콘텐츠 배치도</h2><span></span></a></li>
+                    <li class="workList2"><a href="https://postimg.cc/nM6RRKvN"><h2>사용성 테스트</h2><span></span></a></li>
+                    <li class="workList2"><a href="https://postimg.cc/JHBT7tWT"><h2>사이트 설계구조</h2><span></span></a></li>
+                    <li class="workList2"><a href="https://postimg.cc/FfDCD2Zx"><h2>브랜드 스토리 제고</h2><span></span></a></li>
+                    <li class="workList2"><a href="https://postimg.cc/8FPtJZSf"><h2>워크플로우</h2><span></span></a></li>
+                </ul>
+                <ul>
+                    <li class="workList3"><a href="https://postimg.cc/ctYmyjQ2"><h2>카달로그 제작</h2><span></span></a></li>
+                    <li class="workList3"><a href="https://postimg.cc/LJSyRHQT"><h2>페르소나 정의</h2><span></span></a></li>
+                    <li class="workList3"><a href="https://postimg.cc/8JxHYDrL"><h2>페이퍼 프로토타입</h2><span></span></a></li>
+                    <li class="workList3"><a href="https://postimg.cc/FdYpG119"><h2>프로젝트 결과 보고</h2><span></span></a></li>
+                    <li class="workList3"><a href="https://postimg.cc/3yS9g28S"><h2>프로젝트 최종 결과</h2><span></span></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <footer id="ft">
-
-    </footer>
 </div>
 </body>
 </html>
