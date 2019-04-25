@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+@media screen and (max-width:767px) {
+    .menuList {left: 10%;}
+    .menu0 { width: 80px; height: 80px; animation: bubblem 15s infinite;  background-size: 100%;}
+    .svg { width: 92px; height: 114px; animation: svgm 15s infinite; top: 1%; left: -3%; }
+    @keyframes bubblem {
+        from {transform: translateX(0px) rotate(0deg); }
+        50% {transform: translateX(100px) rotate(360deg);}
+        51% {transform: translateX(100px) rotate(360deg);}
+        to {transform: translateX(0px) rotate(0deg);}  }
+    @keyframes bubblevm {
+        from {transform: translateX(0px) rotate(0deg); }
+        50% {transform: translateX(200px) rotate(360deg);}
+        51% {transform: translateX(200px) rotate(360deg);}
+        to {transform: translateX(0px) rotate(0deg);}  }
+    @keyframes svgm {
+        from {transform: translateX(0px) rotateY(180deg);}
+        50% {transform: translateX(100px) rotateY(180deg);}
+        51% {transform: translateX(100px) rotateY(0deg);}
+        to {transform: translateX(0) rotateY(0deg);}
+    }
+    @keyframes svgvm {
+        from {transform: translateX(0px) rotateY(180deg);}
+        50% {transform: translateX(200px) rotateY(180deg);}
+        51% {transform: translateX(200px) rotateY(0deg);}
+        to {transform: translateX(0) rotateY(0deg);}
+    }
+    .menuList {width: 300px; top: 10%;}
+    #sel1:checked ~ .hd .hdLeft {top: 0; left: 0; width: 100%; height: 13%; background: rgba(255,255,255,0.8); }
+    #sel2:checked ~ .hd .hdLeft {top: 0; left: 0; width: 100%; height: 13%; background: rgba(255,255,255,0.8);  }
+    #sel3:checked ~ .hd .hdLeft {top: 0; left: 0; width: 100%; height: 13%; background: rgba(255,255,255,0.8);  }
+    #sel4:checked ~ .hd .hdLeft {top: 0; left: 0; width: 100%; height: 13%; background: rgba(255,255,255,0.8); }
+    #sel1:checked ~ .menuList {display: none;}
+    #sel2:checked ~ .menuList {display: none;}
+    #sel3:checked ~ .menuList {display: none;}
+    #sel4:checked ~ .menuList {display: none;}
+    #sel1:checked ~ .hd .hdLeft .menu0 {top: 5%; left: 1%; animation: bubblevm 20s infinite; background-size: 100%;}
+    #sel2:checked ~ .hd .hdLeft .menu0 {top: 5%; left: 1%; animation: bubblevm 20s infinite; background-size: 100%;}
+    #sel3:checked ~ .hd .hdLeft .menu0 {top: 5%; left: 1%; animation: bubblevm 20s infinite; background-size: 100%;}
+    #sel4:checked ~ .hd .hdLeft .menu0 {top: 5%; left: 1%; animation: bubblevm 20s infinite; background-size: 100%;}
+    .click { top: 3%; left: 20%; width: 60px; height: 60px; animation: clickm 20s infinite;}
+    @keyframes clickm {
+        from {transform: translateX(0px); }
+        50% {transform: translateX(200px); }
+        51% {transform: translateX(200px); }
+        to {transform: translateX(0px);}
+    }
+    #sel1:checked ~ .hd .hdLeft .svg { top: -30%; left: 0; animation: svgvm 20s infinite;}
+    #sel2:checked ~ .hd .hdLeft .svg { top: -30%; left: 0; animation: svgvm 20s infinite;}
+    #sel3:checked ~ .hd .hdLeft .svg { top: -30%; left: 0; animation: svgvm 20s infinite;}
+    #sel4:checked ~ .hd .hdLeft .svg { top: -30%; left: 0; animation: svgvm 20s infinite;}
+    #sel1:checked ~ .menuList { left: 2%; margin: 20px auto; width: 400px;}
+    #contents.desk {display: none;}
+    #contents.mobile {display: block; width: 100%; height: 100%;}
+    .click {background: url("./img/click1.svg"); top: 2%; left: 23%;}
+    .copy {display: none;}
+    .title {top: 14%; transition: 0.6s; opacity: 0;}
+    .bread {position: absolute; width: 100px; height: 28px; background-color: #243068; left: 65.5%;  opacity: 0; transition: 0.6s; top: 14%; display: block;}
+    .bread p {text-align: center; color: #fff; }
+    #sel1:checked ~ .hd .hdLeft .title {opacity: 1;top: 95%;}
+    #sel2:checked ~ .hd .hdLeft .title {opacity: 1;top: 95%;}
+    #sel3:checked ~ .hd .hdLeft .title {opacity: 1;top: 95%;}
+    #sel4:checked ~ .hd .hdLeft .title {opacity: 1;top: 95%;}
+    #sel1:checked ~ .hd .hdLeft .bread {opacity: 1;top: 99%;}
+    #sel2:checked ~ .hd .hdLeft .bread {opacity: 1;top: 99%;}
+    #sel3:checked ~ .hd .hdLeft .bread {opacity: 1;top: 99%;}
+    #sel4:checked ~ .hd .hdLeft .bread {opacity: 1;top: 99%;}
+    .hdLeft.scroll {top: 0; left: 0; width: 100%; height: 7%; background: rgba(255,255,255,0.9); }
+    .section1 .page1 {padding-top:25%; margin: 0 auto; height: 600px;}
+    .col4 { width: 49%; height: 250px; text-align: center;}
+    .prof { width: 100%; height: 50%; background-size: 70%;}
+    .col4:nth-child(2) {margin-top: 5%;}
+    .col4:nth-child(3) {margin-top: 5%;}
+    .col4 li {height: 60px;}
+    .col4 .tit {font-size: 1.2em;}
+    .col4 .midtxt {font-size: 0.8em;}
+    .col4 .txt {font-size: 0.8em;}
+    .section1 .page2 {margin: 1% auto; height: 600px;}
+    .col3 {margin-top: 5%;margin-left: 5%; width: 45%; height: 40%; word-break: break-all; }
+    .col3 h3 {font-size: 1.2em;}
+    .col3 .term {font-size: 0.9em; line-height: 2;}
+    .col3 .term:before {margin-top: 10px;}
+    .col3 .txt {font-size: 0.9em; word-break: keep-all;}
+    .section2 {padding-top:25%; height: 85%;}
+    .section2 ul {width: 60%; height: 80%;}
+    .section2 ul li {margin-left: 20px; margin-bottom: 10px;}
+    .skill {left:-90px; top: 2px; width: 80px;}
+    .barafter {left: 5%;}
+    .percent {right: -40%;}
+    .collName { margin-top: 10%;}
+    .collName h2 {font-size: 1.4em; line-height: 2;}
+    .collName p {font-size: 0.9em; line-height: 2; margin-top: 15%; word-break: keep-all;}
+    .viewboxm {clear: both; position: absolute; width: 90%; height: 500px; min-height: 500px; top: 70%;left: 5%; overflow: hidden;}
+    .collectionm {width: 100%; height: 1000%; position: relative;}
+    .generboxm { width: 100%; height: 10%;}
+    .muCom {left: -70%; bottom: 3%; width: 200px; height: 150px;}
+    .muCom p {font-size: 0.8em; line-height: 1.4;}
+    .muLink {width: 65%; height: 23.2%; margin-top: -14%;}
+    .muLink {line-height: 6em;}
+    .arrow { left: 15%; top: 50%;}
+    .btnBox {top:55%;left: 0; width: 100%; height: 5%;}
+    .btn.top {left: 2%; top: 0;}
+    .btn.bottom {right: 2%; top: 0;}
+    .numBtnBoxm {left: 5%; height: 28%;position: absolute; top: 20%; z-index:71; width: 90%; }
+    .numBtnFramem {width: 100%; height: 100%;position:relative; margin:0 auto;}
+    .numBtnFramem li{width: 20%; height: 50%; position:absolute; top:12%; cursor: pointer;}
+    .numBtnFramem li.num1 {left: 0%; top: 0; background: url("./img/justice.png") no-repeat center center; background-size: 100%;}
+    .numBtnFramem li.num2 {left: 20%; top: 0; background: url("./img/airasia.png") no-repeat center center; background-size: 100%;}
+    .numBtnFramem li.num3 {left: 40%; top: 0; background: url("./img/vans.png") no-repeat center center; background-size: 100%;}
+    .numBtnFramem li.num4 {left: 60%; top: 0; background: url("./img/seoul.png") no-repeat center center; background-size: 100%;}
+    .numBtnFramem li.num5 {left: 80%; top: 0; background: url("./img/grand.png") no-repeat center center; background-size: 100%;}
+    .numBtnFramem li.num6 {left: 0%; top: 50%; background: url("./img/sony.png") no-repeat center center; background-size: 100%;}
+    .numBtnFramem li.num7 {left: 20%; top: 50%; background: url("./img/espoir.png") no-repeat center center; background-size: 100%;}
+    .numBtnFramem li.num8 {left: 40%; top: 50%; background: url("./img/outback.png") no-repeat center center; background-size: 100%; }
+    .numBtnFramem li.num9 {left: 60%; top: 50%; background: url("./img/daegu.png") no-repeat center center; background-size: 100%; }
+    .numBtnFramem li.num10 {left: 80%; top: 50%; background: url("./img/daesang.png") no-repeat center center; background-size: 100%;}
+    .numBtn.on {width: 100%;height: 100%;}
+    .page3 {width: 100%; height: auto; padding-top: 35%}
+    .page3 ul {height: auto; margin-bottom: 12%;}
+    .page3 ul li {width: 55%; height: 200px; margin-bottom: 80px; margin-right: 3%;  margin-left: 5%;}
+    .page3 h2 {opacity: 1; left:110%; font-size: 1.2em; width: 50%; position: absolute;}
+    .page3 span {opacity: 1; left: 124%;}
+    .workList:nth-child(1) {background: url("./img/works1.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(2) {background: url("./img/works2.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(3) {background: url("./img/works3.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(4) {background: url("./img/works4.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(5) {background: url("./img/works5.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(6) {background: url("./img/works6.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(7) {background: url("./img/works7.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(8) {background: url("./img/works8.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(9) {background: url("./img/works9.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(10) {background: url("./img/works10.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(11) {background: url("./img/works11.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(12) {background: url("./img/works12.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(13) {background: url("./img/works13.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(14) {background: url("./img/works14.png") no-repeat top center; background-size: cover;}
+    .workList:nth-child(15) {background: url("./img/works15.png") no-repeat top center; background-size: cover;}
+    }
+@media screen and (min-width:768px) and (max-width:1024px){
+
+    }
+@media screen and (min-width:1025px){
+
+    }
